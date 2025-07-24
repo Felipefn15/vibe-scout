@@ -13,18 +13,11 @@ cmds = [
   "python -c 'import requests; print(\"Requests installed\")'",
   "python -c 'import bs4; print(\"BeautifulSoup installed\")'",
   "python -c 'import pandas; print(\"Pandas installed\")'",
-  "python -c 'import openpyxl; print(\"OpenPyXL installed\")'",
-  "python -c 'import selenium; print(\"Selenium installed\")'",
-  "python -c 'import fake_useragent; print(\"FakeUserAgent installed\")'",
-  "python -c 'import playwright; print(\"Playwright installed\")'",
   "python -c 'import schedule; print(\"Schedule installed\")'",
   "python -c 'import psutil; print(\"Psutil installed\")'",
-  "python -c 'import groq; print(\"Groq SDK installed\")'",
-  "python -c 'import sendgrid; print(\"SendGrid installed\")'",
-  "python -c 'import urllib3; print(\"Urllib3 installed\")'",
-  "python -c 'import lxml; print(\"LXML installed\")'",
+  "python -c 'import playwright; print(\"Playwright installed\")'",
   "playwright --version",
-  "python -c 'print(\"All dependencies installed successfully!\")'"
+  "python -c 'print(\"Build completed successfully\")'"
 ]
 
 [start]
