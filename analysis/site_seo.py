@@ -14,7 +14,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class SiteAnalyzer:
+class SiteSEOAnalyzer:
     def __init__(self):
         self.lighthouse_timeout = int(os.getenv('LIGHTHOUSE_TIMEOUT', 30000))
         self.seo_threshold = int(os.getenv('SEO_SCORE_THRESHOLD', 70))
@@ -346,6 +346,40 @@ class SiteAnalyzer:
             },
             'sitemap_found': True,
             'total_score': 78.5
+        }
+    
+    def analyze_website(self, url: str) -> Dict:
+        """Analyze a single website and return comprehensive analysis"""
+        try:
+            logger.info(f"Analyzing website: {url}")
+            
+            if not url or url == "":
+                return self._get_empty_analysis_data()
+            
+            # Run Lighthouse analysis
+            lighthouse_data = self.run_lighthouse(url)
+            
+            # Run SEO analysis
+            seo_data = self.analyze_seo_onpage(url)
+            
+            return {
+                'lighthouse': lighthouse_data,
+                'seo': seo_data,
+                'url': url,
+                'analysis_timestamp': time.time()
+            }
+            
+        except Exception as e:
+            logger.error(f"Error analyzing website {url}: {e}")
+            return self._get_empty_analysis_data()
+    
+    def _get_empty_analysis_data(self) -> Dict:
+        """Return empty analysis data"""
+        return {
+            'lighthouse': self._get_empty_lighthouse_data(""),
+            'seo': self._get_empty_seo_data(),
+            'url': "",
+            'analysis_timestamp': time.time()
         }
     
     def analyze_sites_from_leads(self, leads: List[Dict], test_mode: bool = False) -> List[Dict]:

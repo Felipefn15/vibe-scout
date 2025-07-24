@@ -24,6 +24,10 @@ class EmailGenerator:
         
         self.model = "llama3-8b-8192"  # Free tier model
     
+    def generate_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
+        """Generate a personalized email based on lead analysis (alias for generate_personalized_email)"""
+        return self.generate_personalized_email(lead_data, analysis_data, social_data)
+    
     def generate_personalized_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
         """Generate a personalized email based on lead analysis"""
         try:

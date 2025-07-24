@@ -1,0 +1,1 @@
+web: python scheduler/daily_campaign.py 

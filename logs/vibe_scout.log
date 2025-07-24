@@ -1963,3 +1963,5 @@ Call log:
 2025-07-23 22:02:54,385 - mailer.send_emails - INFO - Email sent successfully to Rio de Janeiro | Locations
 2025-07-23 22:02:54,385 - mailer.send_emails - INFO - Bulk email send completed. Sent: 14, Failed: 0
 2025-07-23 22:02:54,386 - __main__ - ERROR - Error in simple pipeline: name 'time' is not defined
+2025-07-23 22:30:40 [INFO] test: 🚀 Campanha iniciada | {"event": "campaign_start", "sectors": ["Advocacia"], "regions": ["Rio de Janeiro"], "max_emails": 100, "timestamp": "2025-07-23T22:30:40.404442"}
+2025-07-23 22:30:40 [INFO] test: Teste de log funcionando

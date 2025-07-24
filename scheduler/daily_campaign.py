@@ -9,6 +9,7 @@ import sys
 import json
 import random
 import logging
+import psutil
 from datetime import datetime, timedelta
 from typing import List, Dict
 import schedule
@@ -23,17 +24,10 @@ from analysis.site_seo import SiteSEOAnalyzer
 from llm.generate_email import EmailGenerator
 from email_sender.sendgrid_sender import SendGridSender
 from utils.rate_limiter import RateLimiter
+from utils.logger import get_logger
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('logs/daily_campaign.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+# Configure logger
+logger = get_logger("daily_campaign")
 
 class DailyCampaignScheduler:
     def __init__(self):
@@ -144,16 +138,18 @@ class DailyCampaignScheduler:
     def _process_sector(self, sector: Dict, regions: List[str]) -> int:
         """Process a single sector and return number of emails sent"""
         sector_name = sector['name']
-        logger.info(f"Processing sector: {sector_name}")
-        
         emails_sent = 0
+        leads_found = 0
         
         for region in regions:
             if not self._can_send_more_emails():
-                logger.info(f"Daily email limit reached ({self.max_emails_per_day})")
+                logger.api_limit_reached("SendGrid", self.max_emails_per_day)
                 break
             
             try:
+                # Log sector start
+                logger.sector_start(sector_name, region)
+                
                 # Collect leads for this sector and region
                 leads = self.lead_collector.collect_leads(
                     industry=sector_name,
@@ -166,7 +162,7 @@ class DailyCampaignScheduler:
                     logger.warning(f"No leads found for {sector_name} in {region}")
                     continue
                 
-                logger.info(f"Found {len(leads)} leads for {sector_name} in {region}")
+                leads_found += len(leads)
                 
                 # Process each lead
                 for lead in leads:
@@ -174,6 +170,9 @@ class DailyCampaignScheduler:
                         break
                     
                     try:
+                        # Log lead collected
+                        logger.lead_collected(lead.get('name', ''), sector_name, region)
+                        
                         # Analyze lead
                         analysis_data = self.site_analyzer.analyze_website(lead.get('website', ''))
                         social_data = self.social_analyzer.analyze_social_presence(lead.get('name', ''))
@@ -193,9 +192,10 @@ class DailyCampaignScheduler:
                             if success:
                                 emails_sent += 1
                                 self.daily_usage['emails_sent'] += 1
-                                logger.info(f"Email sent to {lead.get('name')} ({emails_sent}/{self.max_emails_per_day})")
+                                # Log email sent
+                                logger.email_sent(lead.get('name', ''), lead.get('email', ''), sector_name)
                             else:
-                                logger.warning(f"Failed to send email to {lead.get('name')}")
+                                logger.email_failed(lead.get('name', ''), lead.get('email', ''), "SendGrid error")
                         
                         # Rate limiting
                         self.rate_limiter.wait()
@@ -212,41 +212,55 @@ class DailyCampaignScheduler:
         self.daily_usage['sectors_processed'].append(sector_name)
         self._save_daily_usage()
         
-        logger.info(f"Completed sector {sector_name}: {emails_sent} emails sent")
+        # Log sector completion
+        logger.sector_complete(sector_name, region, leads_found, emails_sent)
         return emails_sent
     
     def run_daily_campaign(self):
         """Run the daily campaign"""
-        logger.info("=== Starting Daily Campaign ===")
+        start_time = time.time()
         
         # Reset daily usage if it's a new day
         self._reset_daily_usage()
         
         # Check if we've already sent emails today
         if self.daily_usage.get('emails_sent', 0) >= self.max_emails_per_day:
-            logger.info("Daily email limit already reached, skipping campaign")
+            logger.warning("Daily email limit already reached, skipping campaign")
             return
         
         # Select random sectors and regions
         selected_sectors = self._select_random_sectors(5)
         selected_regions = self._select_random_regions(3)
         
-        logger.info(f"Selected regions: {selected_regions}")
+        sector_names = [s['name'] for s in selected_sectors]
+        
+        # Log campaign start with structured data
+        logger.campaign_start(sector_names, selected_regions, self.max_emails_per_day)
         
         total_emails_sent = 0
         
         # Process each sector
         for sector in selected_sectors:
             if not self._can_send_more_emails():
+                logger.api_limit_reached("SendGrid", self.max_emails_per_day)
                 break
             
             emails_sent = self._process_sector(sector, selected_regions)
             total_emails_sent += emails_sent
         
-        logger.info(f"=== Daily Campaign Complete ===")
-        logger.info(f"Total emails sent: {total_emails_sent}")
-        logger.info(f"Daily usage: {self.daily_usage['emails_sent']}/{self.max_emails_per_day}")
-        logger.info(f"Sectors processed: {self.daily_usage['sectors_processed']}")
+        duration = time.time() - start_time
+        
+        # Log campaign completion with structured data
+        logger.campaign_complete(total_emails_sent, self.daily_usage['sectors_processed'], duration)
+        
+        # Log system health
+        try:
+            memory = psutil.virtual_memory()
+            cpu = psutil.cpu_percent()
+            disk = psutil.disk_usage('/').percent
+            logger.system_health(memory.used / 1024 / 1024, cpu, disk)
+        except Exception as e:
+            logger.warning(f"Could not log system health: {e}")
     
     def schedule_daily_campaign(self, time: str = "08:00"):
         """Schedule the daily campaign to run at specified time"""

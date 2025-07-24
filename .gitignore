@@ -6,4 +6,8 @@ llm/__pycache__/*
 logs/*
 scraper/__pycache__/*
 utils/__pycache__/*
-
+analysis/__pycache__/*
+email_sender/__pycache__/*
+scripts/__pycache__/*
+analysis/__pycache__/*
+scheduler/__pycache__/*
