@@ -506,3 +506,550 @@ context.is-instance[_NotSpecified]
 2025-07-23 21:18:10,379 - __main__ - INFO - Starting CrewAI pipeline execution...
 2025-07-23 21:18:10,405 - __main__ - ERROR - Error in CrewAI pipeline: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=llama3-8b-8192
  Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2025-07-23 21:22:23,888 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:22:24,996 - __main__ - INFO - Starting CrewAI pipeline for restaurant in São Paulo
+2025-07-23 21:22:24,996 - __main__ - INFO - Test mode: False
+2025-07-23 21:22:25,003 - __main__ - INFO - Starting CrewAI pipeline execution...
+2025-07-23 21:22:25,031 - __main__ - ERROR - Error in CrewAI pipeline: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=llama3-8b-8192
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2025-07-23 21:22:36,182 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:22:37,338 - __main__ - INFO - Starting CrewAI pipeline for restaurant in São Paulo
+2025-07-23 21:22:37,338 - __main__ - INFO - Test mode: False
+2025-07-23 21:22:37,346 - __main__ - INFO - Starting CrewAI pipeline execution...
+2025-07-23 21:22:37,367 - __main__ - ERROR - Error in CrewAI pipeline: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=llama3.1-8b-8192
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2025-07-23 21:22:45,857 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:22:47,139 - __main__ - INFO - Starting CrewAI pipeline for restaurant in São Paulo
+2025-07-23 21:22:47,139 - __main__ - INFO - Test mode: False
+2025-07-23 21:22:47,145 - __main__ - INFO - Starting CrewAI pipeline execution...
+2025-07-23 21:22:47,167 - __main__ - ERROR - Error in CrewAI pipeline: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=mixtral-8x7b-32768
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2025-07-23 21:22:53,711 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:22:53,711 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:22:53,877 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:22:53,877 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:22:56,250 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:22:58,728 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:23:00,733 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:23:00,734 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:23:00,743 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:23:00,743 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:23:00,743 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:23:00,743 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:23:00,743 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:23:00,745 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:23:00,745 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:23:00,745 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:23:00,745 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:23:00,745 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:23:00,745 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:23:01,747 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:23:01,748 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:23:01,748 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:23:01,748 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:23:01,748 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:23:02,749 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:23:02,750 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 21:23:03,040 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:23:04,550 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:04,555 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:04,556 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:23:04,556 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:23:05,225 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:05,227 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:05,227 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:23:05,228 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:23:05,261 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:23:05,261 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:23:05,271 - mailer.send_emails - ERROR - Error sending email to Restaurant São Paulo: Personalization.add_substitution() takes 2 positional arguments but 3 were given
+2025-07-23 21:23:07,277 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:23:07,278 - mailer.send_emails - ERROR - Error sending email to Premium restaurant São Paulo: Personalization.add_substitution() takes 2 positional arguments but 3 were given
+2025-07-23 21:23:07,278 - mailer.send_emails - INFO - Bulk email send completed. Sent: 0, Failed: 2
+2025-07-23 21:23:07,278 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:23:07,689 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:23:07,702 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_212307.xlsx
+2025-07-23 21:23:07,702 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:23:07,702 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:23:10,129 - mailer.send_emails - INFO - Campaign summary sent to consultant successfully
+2025-07-23 21:23:10,130 - __main__ - INFO - Simple pipeline completed successfully!
+2025-07-23 21:23:34,321 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:23:34,321 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:23:34,499 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:23:34,499 - scraper.collect - INFO - Test mode: Collected 2 mock leads
+2025-07-23 21:23:34,500 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:23:34,504 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:23:34,505 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste1.com
+2025-07-23 21:23:34,505 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste1.com
+2025-07-23 21:23:34,511 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:23:34,511 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste1.com
+2025-07-23 21:23:34,522 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste1.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102065e80>: Failed to resolve 'restauranteteste1.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:23:34,522 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste2.com
+2025-07-23 21:23:34,522 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste2.com
+2025-07-23 21:23:34,525 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:23:34,525 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste2.com
+2025-07-23 21:23:34,528 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste2.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10207f110>: Failed to resolve 'restauranteteste2.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:23:34,528 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:23:34,528 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:23:34,530 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 1
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 1
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste1
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 1
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 1
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 2
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 2
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste2
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 2
+2025-07-23 21:23:34,530 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 2
+2025-07-23 21:23:34,530 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:23:34,531 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 21:23:34,841 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 1
+2025-07-23 21:23:35,580 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:35,583 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:35,583 - llm.generate_email - INFO - Generated email for Restaurante Teste 1
+2025-07-23 21:23:35,583 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 2
+2025-07-23 21:23:36,660 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:36,661 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:36,661 - llm.generate_email - INFO - Generated email for Restaurante Teste 2
+2025-07-23 21:23:36,662 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:23:36,719 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:23:36,719 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 1
+2025-07-23 21:23:36,719 - mailer.send_emails - ERROR - Error sending email to Restaurante Teste 1: Personalization.add_substitution() takes 2 positional arguments but 3 were given
+2025-07-23 21:23:38,720 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 2
+2025-07-23 21:23:38,720 - mailer.send_emails - ERROR - Error sending email to Restaurante Teste 2: Personalization.add_substitution() takes 2 positional arguments but 3 were given
+2025-07-23 21:23:38,721 - mailer.send_emails - INFO - Bulk email send completed. Sent: 0, Failed: 2
+2025-07-23 21:23:38,721 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:23:39,164 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:23:39,178 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_212339.xlsx
+2025-07-23 21:23:39,179 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:23:39,179 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:23:41,024 - mailer.send_emails - INFO - Campaign summary sent to consultant successfully
+2025-07-23 21:23:41,024 - __main__ - INFO - Simple pipeline completed successfully!
+2025-07-23 21:23:52,750 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:23:52,750 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:23:52,936 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:23:52,936 - scraper.collect - INFO - Test mode: Collected 2 mock leads
+2025-07-23 21:23:52,937 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:23:52,942 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:23:52,942 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste1.com
+2025-07-23 21:23:52,942 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste1.com
+2025-07-23 21:23:52,945 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:23:52,945 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste1.com
+2025-07-23 21:23:52,957 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste1.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102d65e80>: Failed to resolve 'restauranteteste1.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:23:52,957 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste2.com
+2025-07-23 21:23:52,957 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste2.com
+2025-07-23 21:23:52,961 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:23:52,961 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste2.com
+2025-07-23 21:23:52,964 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste2.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102d7f110>: Failed to resolve 'restauranteteste2.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:23:52,964 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:23:52,965 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:23:52,966 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 1
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 1
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste1
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 1
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 1
+2025-07-23 21:23:52,966 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 2
+2025-07-23 21:23:52,967 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 2
+2025-07-23 21:23:52,967 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste2
+2025-07-23 21:23:52,967 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 2
+2025-07-23 21:23:52,967 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 2
+2025-07-23 21:23:52,967 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:23:52,967 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 21:23:53,381 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 1
+2025-07-23 21:23:54,170 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:54,172 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:54,172 - llm.generate_email - INFO - Generated email for Restaurante Teste 1
+2025-07-23 21:23:54,172 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 2
+2025-07-23 21:23:55,048 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:23:55,048 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:23:55,049 - llm.generate_email - INFO - Generated email for Restaurante Teste 2
+2025-07-23 21:23:55,049 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:23:55,079 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:23:55,079 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 1
+2025-07-23 21:23:56,635 - mailer.send_emails - INFO - Email sent successfully to Restaurante Teste 1
+2025-07-23 21:23:58,640 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 2
+2025-07-23 21:24:00,728 - mailer.send_emails - INFO - Email sent successfully to Restaurante Teste 2
+2025-07-23 21:24:00,728 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:24:00,728 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:24:01,134 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:24:01,150 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_212401.xlsx
+2025-07-23 21:24:01,150 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:24:01,150 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:24:03,499 - mailer.send_emails - INFO - Campaign summary sent to consultant successfully
+2025-07-23 21:24:03,499 - __main__ - INFO - Simple pipeline completed successfully!
+2025-07-23 21:24:13,837 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:24:13,837 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:24:13,999 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:24:13,999 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:24:16,616 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:24:20,396 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:24:22,397 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:24:22,398 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:24:22,406 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:24:22,406 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:24:22,406 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:24:22,406 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:24:22,407 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:24:22,408 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:24:22,408 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:24:22,408 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:24:22,408 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:24:22,408 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:24:22,408 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:24:23,410 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:24:23,410 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:24:23,410 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:24:23,410 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:24:23,410 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:24:24,415 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:24:24,416 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 21:24:24,727 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:24:25,795 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:24:25,798 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:24:25,798 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:24:25,798 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:24:26,354 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:24:26,355 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:24:26,356 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:24:26,380 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:24:26,380 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:24:27,975 - mailer.send_emails - INFO - Email sent successfully to Restaurant São Paulo
+2025-07-23 21:24:29,980 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:24:31,502 - mailer.send_emails - INFO - Email sent successfully to Premium restaurant São Paulo
+2025-07-23 21:24:31,502 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:24:31,502 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:24:32,631 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:24:32,700 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_212432.xlsx
+2025-07-23 21:24:32,700 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:24:32,700 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:24:34,258 - mailer.send_emails - INFO - Campaign summary sent to consultant successfully
+2025-07-23 21:24:34,258 - __main__ - INFO - Simple pipeline completed successfully!
+2025-07-23 21:28:45,234 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurantes in Rio de Janeiro
+2025-07-23 21:28:45,236 - utils.lead_manager - INFO - Loaded 0 contacted leads
+2025-07-23 21:28:45,236 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:28:45,407 - scraper.collect - INFO - Starting lead collection for restaurantes in Rio de Janeiro (target: 25 leads)
+2025-07-23 21:28:45,407 - scraper.collect - INFO - Test mode: Collected 25 mock leads
+2025-07-23 21:28:45,407 - utils.lead_manager - INFO - Filtered 0 already contacted/blacklisted leads
+2025-07-23 21:28:45,407 - utils.lead_manager - INFO - Found 25 new leads to contact
+2025-07-23 21:28:45,407 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:28:45,412 - analysis.site_seo - INFO - Starting site analysis for 25 leads
+2025-07-23 21:28:45,412 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste1.com
+2025-07-23 21:28:45,412 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste1.com
+2025-07-23 21:28:45,417 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:45,417 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste1.com
+2025-07-23 21:28:45,573 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste1.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10756e120>: Failed to resolve 'restaurantesteste1.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:45,573 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste2.com
+2025-07-23 21:28:45,573 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste2.com
+2025-07-23 21:28:45,576 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:45,577 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste2.com
+2025-07-23 21:28:45,721 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste2.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757f390>: Failed to resolve 'restaurantesteste2.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:45,721 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste3.com
+2025-07-23 21:28:45,721 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste3.com
+2025-07-23 21:28:45,724 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:45,724 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste3.com
+2025-07-23 21:28:45,871 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste3.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757fc50>: Failed to resolve 'restaurantesteste3.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:45,871 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste4.com
+2025-07-23 21:28:45,871 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste4.com
+2025-07-23 21:28:45,875 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:45,875 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste4.com
+2025-07-23 21:28:46,016 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste4.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107510050>: Failed to resolve 'restaurantesteste4.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,016 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste5.com
+2025-07-23 21:28:46,016 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste5.com
+2025-07-23 21:28:46,019 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,019 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste5.com
+2025-07-23 21:28:46,163 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste5.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107510410>: Failed to resolve 'restaurantesteste5.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,163 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste6.com
+2025-07-23 21:28:46,163 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste6.com
+2025-07-23 21:28:46,166 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,166 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste6.com
+2025-07-23 21:28:46,309 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste6.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1075107d0>: Failed to resolve 'restaurantesteste6.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,310 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste7.com
+2025-07-23 21:28:46,310 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste7.com
+2025-07-23 21:28:46,313 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,313 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste7.com
+2025-07-23 21:28:46,459 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste7.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107510b90>: Failed to resolve 'restaurantesteste7.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,459 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste8.com
+2025-07-23 21:28:46,459 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste8.com
+2025-07-23 21:28:46,462 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,462 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste8.com
+2025-07-23 21:28:46,646 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste8.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107510f50>: Failed to resolve 'restaurantesteste8.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,646 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste9.com
+2025-07-23 21:28:46,646 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste9.com
+2025-07-23 21:28:46,649 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,649 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste9.com
+2025-07-23 21:28:46,787 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste9.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107511310>: Failed to resolve 'restaurantesteste9.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,787 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste10.com
+2025-07-23 21:28:46,787 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste10.com
+2025-07-23 21:28:46,790 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,790 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste10.com
+2025-07-23 21:28:46,945 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste10.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1075116d0>: Failed to resolve 'restaurantesteste10.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:46,945 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste11.com
+2025-07-23 21:28:46,945 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste11.com
+2025-07-23 21:28:46,948 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:46,948 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste11.com
+2025-07-23 21:28:47,101 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste11.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107511a90>: Failed to resolve 'restaurantesteste11.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,101 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste12.com
+2025-07-23 21:28:47,101 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste12.com
+2025-07-23 21:28:47,107 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,108 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste12.com
+2025-07-23 21:28:47,252 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste12.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107511e50>: Failed to resolve 'restaurantesteste12.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,252 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste13.com
+2025-07-23 21:28:47,252 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste13.com
+2025-07-23 21:28:47,255 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,255 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste13.com
+2025-07-23 21:28:47,393 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste13.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107512210>: Failed to resolve 'restaurantesteste13.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,393 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste14.com
+2025-07-23 21:28:47,393 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste14.com
+2025-07-23 21:28:47,396 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,397 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste14.com
+2025-07-23 21:28:47,535 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste14.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1075125d0>: Failed to resolve 'restaurantesteste14.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,535 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste15.com
+2025-07-23 21:28:47,535 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste15.com
+2025-07-23 21:28:47,538 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,538 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste15.com
+2025-07-23 21:28:47,677 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste15.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107512990>: Failed to resolve 'restaurantesteste15.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,677 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste16.com
+2025-07-23 21:28:47,677 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste16.com
+2025-07-23 21:28:47,680 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,680 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste16.com
+2025-07-23 21:28:47,861 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste16.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107512d50>: Failed to resolve 'restaurantesteste16.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:47,861 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste17.com
+2025-07-23 21:28:47,861 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste17.com
+2025-07-23 21:28:47,864 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:47,864 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste17.com
+2025-07-23 21:28:48,010 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste17.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107513110>: Failed to resolve 'restaurantesteste17.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,010 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste18.com
+2025-07-23 21:28:48,011 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste18.com
+2025-07-23 21:28:48,013 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,014 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste18.com
+2025-07-23 21:28:48,158 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste18.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1075134d0>: Failed to resolve 'restaurantesteste18.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,158 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste19.com
+2025-07-23 21:28:48,158 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste19.com
+2025-07-23 21:28:48,161 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,161 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste19.com
+2025-07-23 21:28:48,304 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste19.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107513890>: Failed to resolve 'restaurantesteste19.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,304 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste20.com
+2025-07-23 21:28:48,304 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste20.com
+2025-07-23 21:28:48,308 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,308 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste20.com
+2025-07-23 21:28:48,455 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste20.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x107513c50>: Failed to resolve 'restaurantesteste20.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,455 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste21.com
+2025-07-23 21:28:48,455 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste21.com
+2025-07-23 21:28:48,458 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,458 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste21.com
+2025-07-23 21:28:48,597 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste21.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757fed0>: Failed to resolve 'restaurantesteste21.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,597 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste22.com
+2025-07-23 21:28:48,597 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste22.com
+2025-07-23 21:28:48,604 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,605 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste22.com
+2025-07-23 21:28:48,784 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste22.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757f9d0>: Failed to resolve 'restaurantesteste22.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,785 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste23.com
+2025-07-23 21:28:48,785 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste23.com
+2025-07-23 21:28:48,788 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,788 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste23.com
+2025-07-23 21:28:48,934 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste23.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757fb10>: Failed to resolve 'restaurantesteste23.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:48,934 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste24.com
+2025-07-23 21:28:48,934 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste24.com
+2025-07-23 21:28:48,937 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:48,937 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste24.com
+2025-07-23 21:28:49,084 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste24.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757ee90>: Failed to resolve 'restaurantesteste24.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:49,085 - analysis.site_seo - INFO - Analyzing website: https://restaurantesteste25.com
+2025-07-23 21:28:49,085 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restaurantesteste25.com
+2025-07-23 21:28:49,088 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:28:49,088 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restaurantesteste25.com
+2025-07-23 21:28:49,228 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restaurantesteste25.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10757f4d0>: Failed to resolve 'restaurantesteste25.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:28:49,228 - analysis.site_seo - INFO - Completed site analysis for 25 leads
+2025-07-23 21:28:49,230 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:28:49,232 - analysis.social - INFO - Starting social media analysis for 25 leads
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 1
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 1
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste1
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 1
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 1
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 2
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 2
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste2
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 2
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 2
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 3
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 3
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste3
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 3
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 3
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 4
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 4
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste4
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 4
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 4
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 5
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 5
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste5
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 5
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 5
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 6
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 6
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste6
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 6
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 6
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 7
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 7
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste7
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 7
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 7
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 8
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 8
+2025-07-23 21:28:49,232 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste8
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 8
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 8
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 9
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 9
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste9
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 9
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 9
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 10
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 10
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste10
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 10
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 10
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 11
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 11
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste11
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 11
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 11
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 12
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 12
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste12
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 12
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 12
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 13
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 13
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste13
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 13
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 13
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 14
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 14
+2025-07-23 21:28:49,233 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste14
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 14
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 14
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 15
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 15
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste15
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 15
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 15
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 16
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 16
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste16
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 16
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 16
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 17
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 17
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste17
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 17
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 17
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 18
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 18
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste18
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 18
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 18
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 19
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 19
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste19
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 19
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 19
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 20
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 20
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste20
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 20
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 20
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 21
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 21
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste21
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 21
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 21
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 22
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 22
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste22
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 22
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 22
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 23
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 23
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste23
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 23
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 23
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 24
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 24
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste24
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 24
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 24
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social media for: Restaurantes Teste 25
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing social presence for: Restaurantes Teste 25
+2025-07-23 21:28:49,234 - analysis.social - INFO - Analyzing Instagram profile: @restaurantesteste25
+2025-07-23 21:28:49,235 - analysis.social - INFO - Analyzing Facebook page: Restaurantes Teste 25
+2025-07-23 21:28:49,235 - analysis.social - INFO - Analyzing LinkedIn company: Restaurantes Teste 25
+2025-07-23 21:28:49,235 - analysis.social - INFO - Completed social media analysis for 25 leads
+2025-07-23 21:28:49,237 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 21:28:49,546 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 1
+2025-07-23 21:28:50,689 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:50,691 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:50,691 - llm.generate_email - INFO - Generated email for Restaurantes Teste 1
+2025-07-23 21:28:50,691 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 2
+2025-07-23 21:28:51,408 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:51,409 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:51,409 - llm.generate_email - INFO - Generated email for Restaurantes Teste 2
+2025-07-23 21:28:51,409 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 3
+2025-07-23 21:28:52,095 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:52,096 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:52,096 - llm.generate_email - INFO - Generated email for Restaurantes Teste 3
+2025-07-23 21:28:52,096 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 4
+2025-07-23 21:28:52,927 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:52,927 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:52,927 - llm.generate_email - INFO - Generated email for Restaurantes Teste 4
+2025-07-23 21:28:52,927 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 5
+2025-07-23 21:28:53,781 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:53,781 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:53,781 - llm.generate_email - INFO - Generated email for Restaurantes Teste 5
+2025-07-23 21:28:53,781 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 6
+2025-07-23 21:28:54,590 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:54,592 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:54,592 - llm.generate_email - INFO - Generated email for Restaurantes Teste 6
+2025-07-23 21:28:54,592 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 7
+2025-07-23 21:28:55,346 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:55,346 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:55,346 - llm.generate_email - INFO - Generated email for Restaurantes Teste 7
+2025-07-23 21:28:55,346 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 8
+2025-07-23 21:28:55,952 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:55,953 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:28:55,953 - llm.generate_email - INFO - Generated email for Restaurantes Teste 8
+2025-07-23 21:28:55,953 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 9
+2025-07-23 21:28:56,569 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:56,570 - llm.generate_email - INFO - Generated email for Restaurantes Teste 9
+2025-07-23 21:28:56,570 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 10
+2025-07-23 21:28:56,624 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:28:56,624 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-07-23 21:28:58,272 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:28:58,273 - llm.generate_email - INFO - Generated email for Restaurantes Teste 10
+2025-07-23 21:28:58,273 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 11
+2025-07-23 21:28:58,319 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:28:58,320 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2025-07-23 21:29:05,094 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:29:05,096 - llm.generate_email - INFO - Generated email for Restaurantes Teste 11
+2025-07-23 21:29:05,096 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 12
+2025-07-23 21:29:05,149 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:29:05,149 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2025-07-23 21:29:11,819 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:29:11,823 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 21:29:11,823 - llm.generate_email - INFO - Generated email for Restaurantes Teste 12
+2025-07-23 21:29:11,823 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 13
+2025-07-23 21:29:11,878 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:29:11,878 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2025-07-23 21:29:17,729 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:29:17,730 - llm.generate_email - INFO - Generated email for Restaurantes Teste 13
+2025-07-23 21:29:17,730 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 14
+2025-07-23 21:29:17,810 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:29:17,811 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2025-07-23 21:29:25,563 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 21:29:25,571 - llm.generate_email - INFO - Generated email for Restaurantes Teste 14
+2025-07-23 21:29:25,571 - llm.generate_email - INFO - Generating personalized email for: Restaurantes Teste 15
+2025-07-23 21:29:25,624 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 21:29:25,624 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds

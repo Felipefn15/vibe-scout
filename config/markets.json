@@ -1,0 +1,74 @@
+{
+  "markets": [
+    {
+      "name": "restaurantes",
+      "display_name": "Restaurantes",
+      "keywords": ["restaurante", "restaurantes", "gastronomia", "comida","cafeteria","café"],
+      "priority": 1,
+      "target_count": 25
+    },
+    {
+      "name": "advocacias",
+      "display_name": "Advocacias",
+      "keywords": ["advocacia", "advogado", "escritório de advocacia", "advocacia"],
+      "priority": 2,
+      "target_count": 20
+    },
+    {
+      "name": "farmacias",
+      "display_name": "Farmácias",
+      "keywords": ["farmácia", "drogaria", "farmácia", "medicamentos"],
+      "priority": 3,
+      "target_count": 20
+    },
+    {
+      "name": "clinicas",
+      "display_name": "Clínicas Médicas",
+      "keywords": ["clínica", "médico", "consultório", "saúde"],
+      "priority": 4,
+      "target_count": 20
+    },
+    {
+      "name": "academias",
+      "display_name": "Academias",
+      "keywords": ["academia", "ginástica", "fitness", "treino"],
+      "priority": 5,
+      "target_count": 20
+    },
+    {
+      "name": "salões",
+      "display_name": "Salões de Beleza",
+      "keywords": ["salão", "beleza", "cabeleireiro", "estética"],
+      "priority": 6,
+      "target_count": 20
+    },
+    {
+      "name": "imobiliarias",
+      "display_name": "Imobiliárias",
+      "keywords": ["imobiliária", "imóveis", "corretor", "aluguel"],
+      "priority": 7,
+      "target_count": 20
+    },
+    {
+      "name": "consultorias",
+      "display_name": "Consultorias",
+      "keywords": ["consultoria", "consultor", "assessoria", "consulting"],
+      "priority": 8,
+      "target_count": 20
+    }
+  ],
+  "regions": [
+    {
+      "name": "rio_de_janeiro",
+      "display_name": "Rio de Janeiro",
+      "priority": 1,
+      "keywords": ["Rio de Janeiro", "RJ", "Copacabana", "Ipanema", "Leblon", "Botafogo", "Flamengo", "Centro", "Barra da Tijuca","Zona Sul","Zona Norte","Zona Oeste"]
+    },
+    {
+      "name": "sao_paulo",
+      "display_name": "São Paulo",
+      "priority": 2,
+      "keywords": ["São Paulo", "SP", "Vila Madalena", "Pinheiros", "Itaim Bibi", "Jardins", "Centro", "Moema"]
+    }
+  ]
+} 

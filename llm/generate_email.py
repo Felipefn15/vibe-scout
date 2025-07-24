@@ -1,9 +1,11 @@
 import json
 import logging
+import time
 from typing import Dict, List, Optional
 import os
 from dotenv import load_dotenv
 from groq import Groq
+from utils.rate_limiter import groq_limiter, rate_limited
 
 load_dotenv()
 
@@ -126,8 +128,9 @@ class EmailGenerator:
         
         return context
     
+    @rate_limited(max_requests=45, time_window=60, retries=3)
     def _call_groq_api(self, context: str) -> Dict:
-        """Call Groq API to generate email content"""
+        """Call Groq API to generate email content with rate limiting"""
         try:
             prompt = f"""
             You are a digital marketing consultant writing personalized outreach emails to business owners.
@@ -246,10 +249,11 @@ Consultor de Marketing Digital""",
         }
     
     def generate_bulk_emails(self, leads_data: List[Dict], test_mode: bool = False) -> List[Dict]:
-        """Generate personalized emails for all leads"""
+        """Generate personalized emails for all leads with rate limiting"""
         emails = []
+        batch_size = 10  # Process in batches to avoid overwhelming the API
         
-        for lead in leads_data:
+        for i, lead in enumerate(leads_data):
             try:
                 # Extract analysis data
                 analysis_data = lead.get('site_analysis', {})
@@ -265,13 +269,19 @@ Consultor de Marketing Digital""",
                 
                 emails.append(email)
                 
-                logger.info(f"Generated email for {lead['name']}")
+                logger.info(f"Generated email for {lead['name']} ({i+1}/{len(leads_data)})")
+                
+                # Add delay between batches to respect rate limits
+                if (i + 1) % batch_size == 0 and i < len(leads_data) - 1:
+                    groq_limiter.wait_between_batches(batch_size)
                 
             except Exception as e:
                 logger.error(f"Error generating email for {lead.get('name', 'Unknown')}: {e}")
                 # Add error email
                 error_email = {
                     'lead_id': lead.get('name', 'Unknown'),
+                    'website': lead.get('website', ''),
+                    'source': lead.get('source', ''),
                     'subject': 'Erro na Geração de Email',
                     'body': 'Erro técnico na geração do email personalizado.',
                     'personalization_score': 0,

@@ -44,10 +44,9 @@ class EmailSender:
                 html_content=self._format_email_body(email_data['body'])
             )
             
-            # Add personalization
+            # Add personalization (simplified)
             personalization = Personalization()
             personalization.add_to(Email(recipient_email or self._generate_test_email(email_data['lead_id'])))
-            personalization.add_substitution("{{lead_name}}", email_data.get('lead_name', 'Cliente'))
             message.add_personalization(personalization)
             
             # Send email

@@ -1,0 +1,28 @@
+{
+  "total_emails": 2,
+  "sent_count": 2,
+  "failed_count": 0,
+  "sent_emails": [
+    {
+      "lead_id": "Restaurant S\u00e3o Paulo",
+      "email": "test.restaurants\u00e3opaulo@example.com",
+      "subject": "Oportunidade de Melhoria Digital para seu Neg\u00f3cio",
+      "status": "sent",
+      "status_code": 202,
+      "message_id": "chPEbyY8ShKx99hUBkxJtA",
+      "sent_at": "2025-07-23 21:24:27",
+      "personalization_score": 60
+    },
+    {
+      "lead_id": "Premium restaurant S\u00e3o Paulo",
+      "email": "test.premiumrestaurants\u00e3opaulo@example.com",
+      "subject": "Melhorando a presen\u00e7a online do seu restaurante",
+      "status": "sent",
+      "status_code": 202,
+      "message_id": "uYTxjx2SS0qUcsxpzcaACg",
+      "sent_at": "2025-07-23 21:24:31",
+      "personalization_score": 95
+    }
+  ],
+  "failed_emails": []
+}

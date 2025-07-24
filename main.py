@@ -43,7 +43,7 @@ def run_crewai_pipeline(industry: str, region: str, test_mode: bool = False):
         
         llm = ChatGroq(
             groq_api_key=groq_api_key,
-            model_name="llama3-8b-8192"  # Fast and cost-effective model
+            model_name="mixtral-8x7b-32768"  # Fast and cost-effective model
         ) if groq_api_key else None
         
         logger.info(f"Starting CrewAI pipeline for {industry} in {region}")
@@ -279,16 +279,44 @@ def run_pipeline_simple(industry, region, test_mode=False):
     try:
         logger.info(f"Starting simple Vibe Scout pipeline for {industry} in {region}")
         
+        # Initialize lead manager
+        from utils.lead_manager import LeadManager
+        lead_manager = LeadManager()
+        
         # Step 1: Lead Collection
         logger.info("Step 1: Collecting leads...")
         from scraper.collect import LeadCollector
         collector = LeadCollector()
-        leads = collector.collect_leads(industry, region, test_mode=test_mode)
+        
+        # Get target count from market config
+        target_count = 25  # Default
+        try:
+            with open('config/markets.json', 'r', encoding='utf-8') as f:
+                markets_config = json.load(f)
+                for market in markets_config['markets']:
+                    if market['name'].lower() == industry.lower():
+                        target_count = market.get('target_count', 25)
+                        break
+        except Exception as e:
+            logger.warning(f"Could not load market config: {e}")
+        
+        leads = collector.collect_leads(industry, region, test_mode=test_mode, target_count=target_count)
+        
+        # Filter out already contacted leads
+        new_leads = lead_manager.filter_new_leads(leads)
+        
+        if not new_leads:
+            logger.warning("No new leads to contact. All leads have been contacted before.")
+            return {
+                'status': 'no_new_leads',
+                'message': 'All leads have been contacted before',
+                'stats': lead_manager.get_stats()
+            }
         
         # Save leads
         os.makedirs('data', exist_ok=True)
         with open('data/leads.json', 'w') as f:
-            json.dump(leads, f, indent=2)
+            json.dump(new_leads, f, indent=2)
         
         # Step 2: Site Analysis
         logger.info("Step 2: Analyzing websites...")
@@ -340,13 +368,18 @@ def run_pipeline_simple(industry, region, test_mode=False):
         logger.info("Step 7: Sending summary to consultant...")
         email_sender.send_summary_to_consultant(send_results, test_mode=test_mode)
         
+        # Mark leads as contacted
+        for lead in new_leads:
+            lead_manager.mark_contacted(lead['name'])
+        
         logger.info("Simple pipeline completed successfully!")
         return {
             "status": "success",
-            "leads_collected": len(leads),
+            "leads_collected": len(new_leads),
             "emails_sent": len(emails),
             "report_file": report_file,
-            "test_mode": test_mode
+            "test_mode": test_mode,
+            "lead_stats": lead_manager.get_stats()
         }
         
     except Exception as e:
@@ -362,8 +395,8 @@ def main():
     
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Vibe Scout - Digital Marketing Lead Generation Pipeline')
-    parser.add_argument('--industry', default='restaurant', help='Industry to search for (default: restaurant)')
-    parser.add_argument('--region', default='São Paulo', help='Region to search in (default: São Paulo)')
+    parser.add_argument('--industry', default='restaurantes', help='Industry to search for (default: restaurantes)')
+    parser.add_argument('--region', default='Rio de Janeiro', help='Region to search in (default: Rio de Janeiro)')
     parser.add_argument('--test', action='store_true', help='Run in test mode with mock data')
     parser.add_argument('--simple', action='store_true', help='Use simple pipeline instead of CrewAI')
     

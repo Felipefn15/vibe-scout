@@ -1,0 +1,2577 @@
+[
+  {
+    "name": "Restaurantes Teste 1",
+    "website": "https://restaurantesteste1.com",
+    "email": "test.restaurantesteste1@example.com",
+    "phone": "(21) 90001-0001",
+    "address": "Rua Restaurantes 1, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 1",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste1",
+          "followers": 37238,
+          "following": 541,
+          "posts_count": 49,
+          "engagement_rate": 1.14,
+          "avg_likes_per_post": 423,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 60,
+          "last_post_date": "2024-01-15",
+          "bio_length": 138,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 1",
+          "followers": 73080,
+          "likes": 59447,
+          "posts_count": 840,
+          "engagement_rate": 0.54,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 75.95034613294631
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 1",
+          "followers": 31779,
+          "employees": 950,
+          "posts_count": 110,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 96.01215954870744
+        }
+      },
+      "overall_social_score": 77.0,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 2",
+    "website": "https://restaurantesteste2.com",
+    "email": "test.restaurantesteste2@example.com",
+    "phone": "(21) 90002-0002",
+    "address": "Rua Restaurantes 2, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 2",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste2",
+          "followers": 43454,
+          "following": 1094,
+          "posts_count": 188,
+          "engagement_rate": 4.98,
+          "avg_likes_per_post": 2163,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 114,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 2",
+          "followers": 6160,
+          "likes": 2808,
+          "posts_count": 848,
+          "engagement_rate": 1.38,
+          "posting_frequency": "Daily",
+          "page_quality_score": 65,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 85.84070257585077
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 2",
+          "followers": 13276,
+          "employees": 823,
+          "posts_count": 46,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 85.71575753559151
+        }
+      },
+      "overall_social_score": 83.57,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 3",
+    "website": "https://restaurantesteste3.com",
+    "email": "test.restaurantesteste3@example.com",
+    "phone": "(21) 90003-0003",
+    "address": "Rua Restaurantes 3, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 3",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste3",
+          "followers": 10802,
+          "following": 1894,
+          "posts_count": 77,
+          "engagement_rate": 3.66,
+          "avg_likes_per_post": 395,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 85,
+          "last_post_date": "2024-01-15",
+          "bio_length": 134,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 3",
+          "followers": 15816,
+          "likes": 11628,
+          "posts_count": 622,
+          "engagement_rate": 0.84,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 60,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 75.0951158900209
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 3",
+          "followers": 44080,
+          "employees": 229,
+          "posts_count": 479,
+          "posting_frequency": "Monthly",
+          "company_size": "201-500 employees",
+          "industry": "Finance",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 82.42874864278522
+        }
+      },
+      "overall_social_score": 75.81,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 4",
+    "website": "https://restaurantesteste4.com",
+    "email": "test.restaurantesteste4@example.com",
+    "phone": "(21) 90004-0004",
+    "address": "Rua Restaurantes 4, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 4",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste4",
+          "followers": 30428,
+          "following": 1328,
+          "posts_count": 22,
+          "engagement_rate": 2.28,
+          "avg_likes_per_post": 694,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 70,
+          "last_post_date": "2024-01-15",
+          "bio_length": 141,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 4",
+          "followers": 55299,
+          "likes": 8977,
+          "posts_count": 705,
+          "engagement_rate": 1.45,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 85,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 77.83329457498763
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 4",
+          "followers": 36888,
+          "employees": 671,
+          "posts_count": 461,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Retail",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 75.28553301448045
+        }
+      },
+      "overall_social_score": 76.76,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 5",
+    "website": "https://restaurantesteste5.com",
+    "email": "test.restaurantesteste5@example.com",
+    "phone": "(21) 90005-0005",
+    "address": "Rua Restaurantes 5, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 5",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste5",
+          "followers": 24925,
+          "following": 1857,
+          "posts_count": 277,
+          "engagement_rate": 4.73,
+          "avg_likes_per_post": 1178,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 74,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 5",
+          "followers": 15252,
+          "likes": 11671,
+          "posts_count": 911,
+          "engagement_rate": 1.59,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 65.63347749875064
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 5",
+          "followers": 46741,
+          "employees": 152,
+          "posts_count": 280,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "51-200 employees",
+          "industry": "Retail",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 99.98313795696501
+        }
+      },
+      "overall_social_score": 91.66,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 6",
+    "website": "https://restaurantesteste6.com",
+    "email": "test.restaurantesteste6@example.com",
+    "phone": "(21) 90006-0006",
+    "address": "Rua Restaurantes 6, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 6",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste6",
+          "followers": 19043,
+          "following": 1427,
+          "posts_count": 340,
+          "engagement_rate": 3.16,
+          "avg_likes_per_post": 600,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 164,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 6",
+          "followers": 9641,
+          "likes": 8565,
+          "posts_count": 259,
+          "engagement_rate": 0.67,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 50,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 52.09730846405554
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 6",
+          "followers": 48936,
+          "employees": 849,
+          "posts_count": 454,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 68.52780142039059
+        }
+      },
+      "overall_social_score": 69.51,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 7",
+    "website": "https://restaurantesteste7.com",
+    "email": "test.restaurantesteste7@example.com",
+    "phone": "(21) 90007-0007",
+    "address": "Rua Restaurantes 7, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 7",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste7",
+          "followers": 16770,
+          "following": 558,
+          "posts_count": 83,
+          "engagement_rate": 3.42,
+          "avg_likes_per_post": 573,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 85,
+          "last_post_date": "2024-01-15",
+          "bio_length": 65,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 7",
+          "followers": 42798,
+          "likes": 6541,
+          "posts_count": 603,
+          "engagement_rate": 1.31,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 75.04550636355084
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 7",
+          "followers": 31758,
+          "employees": 578,
+          "posts_count": 418,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Retail",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 98.01408212094158
+        }
+      },
+      "overall_social_score": 86.0,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 8",
+    "website": "https://restaurantesteste8.com",
+    "email": "test.restaurantesteste8@example.com",
+    "phone": "(21) 90008-0008",
+    "address": "Rua Restaurantes 8, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 8",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste8",
+          "followers": 48510,
+          "following": 1662,
+          "posts_count": 449,
+          "engagement_rate": 2.7,
+          "avg_likes_per_post": 1309,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 182,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 8",
+          "followers": 8379,
+          "likes": 7135,
+          "posts_count": 403,
+          "engagement_rate": 2.1,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 65,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 56.94534241736453
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 8",
+          "followers": 38225,
+          "employees": 28,
+          "posts_count": 185,
+          "posting_frequency": "Monthly",
+          "company_size": "11-50 employees",
+          "industry": "Retail",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 89.41796525596423
+        }
+      },
+      "overall_social_score": 81.47,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 9",
+    "website": "https://restaurantesteste9.com",
+    "email": "test.restaurantesteste9@example.com",
+    "phone": "(21) 90009-0009",
+    "address": "Rua Restaurantes 9, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 9",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste9",
+          "followers": 17069,
+          "following": 536,
+          "posts_count": 255,
+          "engagement_rate": 4.53,
+          "avg_likes_per_post": 773,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 62,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 9",
+          "followers": 21628,
+          "likes": 14088,
+          "posts_count": 887,
+          "engagement_rate": 0.59,
+          "posting_frequency": "Daily",
+          "page_quality_score": 65,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 73.68820631128415
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 9",
+          "followers": 23758,
+          "employees": 963,
+          "posts_count": 349,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 98.11007475876397
+        }
+      },
+      "overall_social_score": 87.7,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 10",
+    "website": "https://restaurantesteste10.com",
+    "email": "test.restaurantesteste10@example.com",
+    "phone": "(21) 90010-0010",
+    "address": "Rua Restaurantes 10, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 10",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste10",
+          "followers": 39761,
+          "following": 1393,
+          "posts_count": 122,
+          "engagement_rate": 1.73,
+          "avg_likes_per_post": 689,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
+          "last_post_date": "2024-01-15",
+          "bio_length": 112,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 10",
+          "followers": 32706,
+          "likes": 21429,
+          "posts_count": 379,
+          "engagement_rate": 1.98,
+          "posting_frequency": "Daily",
+          "page_quality_score": 75,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 74.07838489781675
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 10",
+          "followers": 48673,
+          "employees": 634,
+          "posts_count": 228,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 89.95008876231937
+        }
+      },
+      "overall_social_score": 81.65,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 11",
+    "website": "https://restaurantesteste11.com",
+    "email": "test.restaurantesteste11@example.com",
+    "phone": "(21) 90011-0011",
+    "address": "Rua Restaurantes 11, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 11",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste11",
+          "followers": 35823,
+          "following": 1069,
+          "posts_count": 86,
+          "engagement_rate": 4.63,
+          "avg_likes_per_post": 1657,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 95,
+          "last_post_date": "2024-01-15",
+          "bio_length": 59,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 11",
+          "followers": 17804,
+          "likes": 5361,
+          "posts_count": 168,
+          "engagement_rate": 2.28,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 65,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 61.63391139597908
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 11",
+          "followers": 44607,
+          "employees": 743,
+          "posts_count": 30,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 65.81438850412793
+        }
+      },
+      "overall_social_score": 75.27,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 12",
+    "website": "https://restaurantesteste12.com",
+    "email": "test.restaurantesteste12@example.com",
+    "phone": "(21) 90012-0012",
+    "address": "Rua Restaurantes 12, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 12",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste12",
+          "followers": 22584,
+          "following": 1217,
+          "posts_count": 208,
+          "engagement_rate": 1.52,
+          "avg_likes_per_post": 343,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
+          "last_post_date": "2024-01-15",
+          "bio_length": 131,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 12",
+          "followers": 79073,
+          "likes": 19023,
+          "posts_count": 862,
+          "engagement_rate": 2.28,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 90,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 68.27623209109699
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 12",
+          "followers": 3182,
+          "employees": 688,
+          "posts_count": 65,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 93.51974736783221
+        }
+      },
+      "overall_social_score": 87.84,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 13",
+    "website": "https://restaurantesteste13.com",
+    "email": "test.restaurantesteste13@example.com",
+    "phone": "(21) 90013-0013",
+    "address": "Rua Restaurantes 13, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 13",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste13",
+          "followers": 40777,
+          "following": 199,
+          "posts_count": 170,
+          "engagement_rate": 3.26,
+          "avg_likes_per_post": 1331,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 99,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 13",
+          "followers": 64112,
+          "likes": 23793,
+          "posts_count": 979,
+          "engagement_rate": 2.47,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 90,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 76.08904611127886
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 13",
+          "followers": 37299,
+          "employees": 248,
+          "posts_count": 91,
+          "posting_frequency": "Monthly",
+          "company_size": "201-500 employees",
+          "industry": "Manufacturing",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 74.85716345934945
+        }
+      },
+      "overall_social_score": 84.95,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 14",
+    "website": "https://restaurantesteste14.com",
+    "email": "test.restaurantesteste14@example.com",
+    "phone": "(21) 90014-0014",
+    "address": "Rua Restaurantes 14, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 14",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste14",
+          "followers": 37415,
+          "following": 407,
+          "posts_count": 478,
+          "engagement_rate": 4.15,
+          "avg_likes_per_post": 1550,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 58,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 14",
+          "followers": 82177,
+          "likes": 66202,
+          "posts_count": 146,
+          "engagement_rate": 1.0,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 75,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 89.99440521905782
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 14",
+          "followers": 32107,
+          "employees": 150,
+          "posts_count": 372,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "51-200 employees",
+          "industry": "Finance",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 74.48919704042787
+        }
+      },
+      "overall_social_score": 83.16,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 15",
+    "website": "https://restaurantesteste15.com",
+    "email": "test.restaurantesteste15@example.com",
+    "phone": "(21) 90015-0015",
+    "address": "Rua Restaurantes 15, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 15",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste15",
+          "followers": 46075,
+          "following": 232,
+          "posts_count": 454,
+          "engagement_rate": 3.06,
+          "avg_likes_per_post": 1410,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 129,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 15",
+          "followers": 98024,
+          "likes": 24311,
+          "posts_count": 276,
+          "engagement_rate": 2.39,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 85,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 70.10217590598643
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 15",
+          "followers": 45899,
+          "employees": 404,
+          "posts_count": 494,
+          "posting_frequency": "Weekly",
+          "company_size": "201-500 employees",
+          "industry": "Retail",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 79.46209547300373
+        }
+      },
+      "overall_social_score": 84.82,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 16",
+    "website": "https://restaurantesteste16.com",
+    "email": "test.restaurantesteste16@example.com",
+    "phone": "(21) 90016-0016",
+    "address": "Rua Restaurantes 16, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 16",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste16",
+          "followers": 44872,
+          "following": 1460,
+          "posts_count": 337,
+          "engagement_rate": 4.11,
+          "avg_likes_per_post": 1843,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 134,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 16",
+          "followers": 57226,
+          "likes": 9866,
+          "posts_count": 228,
+          "engagement_rate": 1.55,
+          "posting_frequency": "Daily",
+          "page_quality_score": 85,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 56.35591754296151
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 16",
+          "followers": 19318,
+          "employees": 798,
+          "posts_count": 90,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Finance",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 85.2946257214764
+        }
+      },
+      "overall_social_score": 90.1,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 17",
+    "website": "https://restaurantesteste17.com",
+    "email": "test.restaurantesteste17@example.com",
+    "phone": "(21) 90017-0017",
+    "address": "Rua Restaurantes 17, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 17",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste17",
+          "followers": 8376,
+          "following": 351,
+          "posts_count": 418,
+          "engagement_rate": 3.01,
+          "avg_likes_per_post": 252,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
+          "last_post_date": "2024-01-15",
+          "bio_length": 92,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 17",
+          "followers": 60723,
+          "likes": 46182,
+          "posts_count": 195,
+          "engagement_rate": 1.13,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 91.42719046353562
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 17",
+          "followers": 23173,
+          "employees": 637,
+          "posts_count": 474,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Finance",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 75.6139031856537
+        }
+      },
+      "overall_social_score": 76.87,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 18",
+    "website": "https://restaurantesteste18.com",
+    "email": "test.restaurantesteste18@example.com",
+    "phone": "(21) 90018-0018",
+    "address": "Rua Restaurantes 18, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 18",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste18",
+          "followers": 42805,
+          "following": 1417,
+          "posts_count": 400,
+          "engagement_rate": 2.99,
+          "avg_likes_per_post": 1280,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 97,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 18",
+          "followers": 57945,
+          "likes": 45830,
+          "posts_count": 239,
+          "engagement_rate": 0.84,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 70,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 61.591883887352544
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 18",
+          "followers": 38525,
+          "employees": 781,
+          "posts_count": 408,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 61.15787365100495
+        }
+      },
+      "overall_social_score": 73.72,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 19",
+    "website": "https://restaurantesteste19.com",
+    "email": "test.restaurantesteste19@example.com",
+    "phone": "(21) 90019-0019",
+    "address": "Rua Restaurantes 19, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 19",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste19",
+          "followers": 31607,
+          "following": 1246,
+          "posts_count": 70,
+          "engagement_rate": 4.24,
+          "avg_likes_per_post": 1341,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 95,
+          "last_post_date": "2024-01-15",
+          "bio_length": 159,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 19",
+          "followers": 25597,
+          "likes": 9307,
+          "posts_count": 494,
+          "engagement_rate": 2.07,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 72.71603621764056
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 19",
+          "followers": 19236,
+          "employees": 398,
+          "posts_count": 162,
+          "posting_frequency": "Monthly",
+          "company_size": "201-500 employees",
+          "industry": "Healthcare",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 91.59479538131865
+        }
+      },
+      "overall_social_score": 87.2,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 20",
+    "website": "https://restaurantesteste20.com",
+    "email": "test.restaurantesteste20@example.com",
+    "phone": "(21) 90020-0020",
+    "address": "Rua Restaurantes 20, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 20",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste20",
+          "followers": 31655,
+          "following": 1630,
+          "posts_count": 339,
+          "engagement_rate": 4.52,
+          "avg_likes_per_post": 1430,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 67,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 20",
+          "followers": 42501,
+          "likes": 36498,
+          "posts_count": 807,
+          "engagement_rate": 1.99,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 80,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 87.35338170946414
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 20",
+          "followers": 38333,
+          "employees": 844,
+          "posts_count": 123,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Finance",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 86.1814035849471
+        }
+      },
+      "overall_social_score": 88.73,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 21",
+    "website": "https://restaurantesteste21.com",
+    "email": "test.restaurantesteste21@example.com",
+    "phone": "(21) 90021-0021",
+    "address": "Rua Restaurantes 21, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 21",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste21",
+          "followers": 12660,
+          "following": 385,
+          "posts_count": 143,
+          "engagement_rate": 2.39,
+          "avg_likes_per_post": 302,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
+          "last_post_date": "2024-01-15",
+          "bio_length": 181,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 21",
+          "followers": 42331,
+          "likes": 13375,
+          "posts_count": 607,
+          "engagement_rate": 1.34,
+          "posting_frequency": "Daily",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 64.91903256601826
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 21",
+          "followers": 26328,
+          "employees": 635,
+          "posts_count": 416,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 63.43025729174498
+        }
+      },
+      "overall_social_score": 72.81,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 22",
+    "website": "https://restaurantesteste22.com",
+    "email": "test.restaurantesteste22@example.com",
+    "phone": "(21) 90022-0022",
+    "address": "Rua Restaurantes 22, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 22",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste22",
+          "followers": 33201,
+          "following": 594,
+          "posts_count": 230,
+          "engagement_rate": 3.38,
+          "avg_likes_per_post": 1120,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 60,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 22",
+          "followers": 71734,
+          "likes": 12737,
+          "posts_count": 452,
+          "engagement_rate": 2.33,
+          "posting_frequency": "Daily",
+          "page_quality_score": 85,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 90.93631624480307
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 22",
+          "followers": 4379,
+          "employees": 679,
+          "posts_count": 99,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 76.86718377600386
+        }
+      },
+      "overall_social_score": 83.96,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 23",
+    "website": "https://restaurantesteste23.com",
+    "email": "test.restaurantesteste23@example.com",
+    "phone": "(21) 90023-0023",
+    "address": "Rua Restaurantes 23, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 23",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste23",
+          "followers": 43780,
+          "following": 1527,
+          "posts_count": 312,
+          "engagement_rate": 4.73,
+          "avg_likes_per_post": 2069,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 144,
+          "has_website_link": true,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 23",
+          "followers": 84280,
+          "likes": 31134,
+          "posts_count": 416,
+          "engagement_rate": 2.2,
+          "posting_frequency": "Daily",
+          "page_quality_score": 85,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 79.01880958968229
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 23",
+          "followers": 9989,
+          "employees": 78,
+          "posts_count": 251,
+          "posting_frequency": "Monthly",
+          "company_size": "51-200 employees",
+          "industry": "Retail",
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 67.9399775106137
+        }
+      },
+      "overall_social_score": 84.31,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 24",
+    "website": "https://restaurantesteste24.com",
+    "email": "test.restaurantesteste24@example.com",
+    "phone": "(21) 90024-0024",
+    "address": "Rua Restaurantes 24, Rio de Janeiro, RJ",
+    "source": "google_maps",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 24",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste24",
+          "followers": 6888,
+          "following": 1843,
+          "posts_count": 37,
+          "engagement_rate": 4.49,
+          "avg_likes_per_post": 309,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 80,
+          "last_post_date": "2024-01-15",
+          "bio_length": 86,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 24",
+          "followers": 84998,
+          "likes": 2136,
+          "posts_count": 642,
+          "engagement_rate": 2.6,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 100,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 88.12478107721384
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 24",
+          "followers": 45674,
+          "employees": 231,
+          "posts_count": 333,
+          "posting_frequency": "Weekly",
+          "company_size": "201-500 employees",
+          "industry": "Technology",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 74.01083096291032
+        }
+      },
+      "overall_social_score": 84.67,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Restaurantes Teste 25",
+    "website": "https://restaurantesteste25.com",
+    "email": "test.restaurantesteste25@example.com",
+    "phone": "(21) 90025-0025",
+    "address": "Rua Restaurantes 25, Rio de Janeiro, RJ",
+    "source": "google_search",
+    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": true,
+          "keywords": false,
+          "viewport": true,
+          "robots": false,
+          "og_tags": 4,
+          "twitter_tags": 2
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 3,
+            "h3": 5,
+            "h4": 2,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 11
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 7,
+          "alt_text_ratio": 0.875
+        },
+        "links": {
+          "total_links": 15,
+          "internal_links": 10,
+          "external_links": 5
+        },
+        "sitemap_found": true,
+        "total_score": 78.5
+      },
+      "overall_score": 77.0
+    },
+    "social_analysis": {
+      "business_name": "Restaurantes Teste 25",
+      "platforms": {
+        "instagram": {
+          "username": "restaurantesteste25",
+          "followers": 30719,
+          "following": 1682,
+          "posts_count": 298,
+          "engagement_rate": 4.33,
+          "avg_likes_per_post": 1329,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 161,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Restaurantes Teste 25",
+          "followers": 82306,
+          "likes": 47987,
+          "posts_count": 984,
+          "engagement_rate": 2.92,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 100,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 51.58818277778787
+        },
+        "linkedin": {
+          "company_name": "Restaurantes Teste 25",
+          "followers": 29763,
+          "employees": 339,
+          "posts_count": 56,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "201-500 employees",
+          "industry": "Finance",
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 80.60085666512498
+        }
+      },
+      "overall_social_score": 93.53,
+      "maturity_level": "Advanced"
+    }
+  }
+]
