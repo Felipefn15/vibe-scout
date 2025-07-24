@@ -58,6 +58,10 @@ class RateLimiter:
         self.requests.append(current_time)
         self.last_request_time = current_time
     
+    def wait(self):
+        """Alias for wait_if_needed for backward compatibility"""
+        return self.wait_if_needed()
+    
     def exponential_backoff(self, attempt: int, base_delay: float = 1.0, max_delay: float = 60.0) -> float:
         """Calculate exponential backoff delay"""
         delay = min(base_delay * (2 ** attempt), max_delay)
