@@ -5,7 +5,7 @@ from typing import Dict, List, Optional
 import os
 from dotenv import load_dotenv
 from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Email, To, Content, Personalization
+from sendgrid.helpers.mail import Mail, Email, To, Content, Personalization, Header
 
 load_dotenv()
 
@@ -28,6 +28,50 @@ class EmailSender:
         self.sent_emails = []
         self.failed_emails = []
     
+    def _add_email_headers(self, message: Mail, email_type: str, campaign_id: str = None, industry: str = None) -> None:
+        """Add custom headers for email organization and filtering"""
+        try:
+            # Add X-Mailer header to identify the system
+            message.add_header(Header("X-Mailer", "Vibe Scout v1.0"))
+            
+            # Add campaign type header
+            message.add_header(Header("X-Campaign-Type", email_type))
+            
+            # Add campaign ID if provided
+            if campaign_id:
+                message.add_header(Header("X-Campaign-ID", campaign_id))
+            
+            # Add industry tag
+            if industry:
+                message.add_header(Header("X-Industry", industry))
+            
+            # Add priority header for different email types
+            if email_type == "campaign_summary":
+                message.add_header(Header("X-Priority", "high"))
+                message.add_header(Header("X-Category", "reports"))
+            elif email_type == "lead_outreach":
+                message.add_header(Header("X-Priority", "normal"))
+                message.add_header(Header("X-Category", "prospecting"))
+            
+            # Add timestamp header
+            message.add_header(Header("X-Timestamp", str(int(time.time()))))
+            
+            # Add tags for email clients that support them
+            if email_type == "campaign_summary":
+                message.add_header(Header("X-Tags", "vibe-scout,report,campaign-summary"))
+            elif email_type == "lead_outreach":
+                message.add_header(Header("X-Tags", "vibe-scout,prospecting,lead-outreach"))
+            
+        except Exception as e:
+            logger.warning(f"Error adding email headers: {e}")
+    
+    def _generate_campaign_id(self, industry: str = None, region: str = None) -> str:
+        """Generate a unique campaign ID"""
+        timestamp = time.strftime('%Y%m%d_%H%M%S')
+        industry_code = industry[:3].upper() if industry else "GEN"
+        region_code = region[:3].upper() if region else "GEN"
+        return f"VS_{industry_code}_{region_code}_{timestamp}"
+    
     def send_personalized_email(self, email_data: Dict, recipient_email: str = None) -> Dict:
         """Send a personalized email to a lead"""
         try:
@@ -43,6 +87,13 @@ class EmailSender:
                 subject=email_data['subject'],
                 html_content=self._format_email_body(email_data['body'])
             )
+            
+            # Add custom headers for organization
+            campaign_id = self._generate_campaign_id(
+                industry=email_data.get('industry', 'restaurantes'),
+                region=email_data.get('region', 'Rio de Janeiro')
+            )
+            self._add_email_headers(message, "lead_outreach", campaign_id, email_data.get('industry'))
             
             # Add personalization (simplified)
             personalization = Personalization()
@@ -140,15 +191,36 @@ class EmailSender:
         <body>
             <div class="header">
                 <h1>Vibe Scout</h1>
-                <p>Especialistas em Marketing Digital</p>
+                <p>Especialistas em Desenvolvimento de Software</p>
             </div>
             <div class="content">
                 {body.replace(chr(10), '<br>')}
                 <br><br>
                 <a href="mailto:{self.consultant_email}" class="cta-button">Responder Agora</a>
             </div>
+            <div class="signature">
+                <hr style="border: 1px solid #ddd; margin: 30px 0;">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 18px;">Felipe França</h3>
+                        <p style="margin: 5px 0; color: #666; font-size: 14px;">Desenvolvedor Full Stack</p>
+                        <p style="margin: 5px 0; color: #666; font-size: 14px;">Especialista em Web e Mobile</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <h4 style="margin: 0; color: #2c3e50; font-size: 16px; font-weight: bold;">TECHNOLOGIE FELIPE FRANCA</h4>
+                        <p style="margin: 5px 0; color: #666; font-size: 12px;">Transformando Negócios Digitais</p>
+                    </div>
+                </div>
+                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                    <p style="margin: 0; font-size: 13px; color: #666;">
+                        <strong>Contato:</strong> {self.consultant_email}<br>
+                        <strong>Especialidades:</strong> Desenvolvimento Web, Aplicações Mobile, Full Stack, APIs<br>
+                        <strong>Serviços:</strong> Desenvolvimento de Software, Consultoria Técnica, Manutenção de Sistemas
+                    </p>
+                </div>
+            </div>
             <div class="footer">
-                <p>Este email foi enviado pelo sistema Vibe Scout.</p>
+                <p>Este email foi enviado pelo sistema Vibe Scout da TECHNOLOGIE FELIPE FRANCA.</p>
                 <p>Para cancelar o recebimento, responda com "CANCELAR" no assunto.</p>
             </div>
         </body>
@@ -309,6 +381,13 @@ class EmailSender:
                     subject=summary_subject,
                     html_content=summary_body
                 )
+                
+                # Add custom headers for report organization
+                campaign_id = self._generate_campaign_id(
+                    industry=campaign_results.get('industry', 'restaurantes'),
+                    region=campaign_results.get('region', 'Rio de Janeiro')
+                )
+                self._add_email_headers(message, "campaign_summary", campaign_id, campaign_results.get('industry'))
                 
                 response = self.client.send(message)
                 

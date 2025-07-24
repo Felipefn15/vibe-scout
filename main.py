@@ -352,7 +352,18 @@ def run_pipeline_simple(industry, region, test_mode=False):
         logger.info("Step 5: Sending emails...")
         from mailer.send_emails import EmailSender
         email_sender = EmailSender()
+        
+        # Add industry and region info to emails
+        for email in emails:
+            email['industry'] = industry
+            email['region'] = region
+        
         send_results = email_sender.send_bulk_emails(emails, test_mode=test_mode)
+        
+        # Add campaign metadata to results
+        send_results['industry'] = industry
+        send_results['region'] = region
+        send_results['campaign_date'] = time.strftime('%Y-%m-%d %H:%M:%S')
         
         # Save campaign results
         with open('data/campaign_results.json', 'w') as f:

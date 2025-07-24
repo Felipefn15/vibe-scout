@@ -133,9 +133,25 @@ class EmailGenerator:
         """Call Groq API to generate email content with rate limiting"""
         try:
             prompt = f"""
-            You are a digital marketing consultant writing personalized outreach emails to business owners.
+            You are Felipe França, a software developer and full stack specialist from TECHNOLOGIE FELIPE FRANCA, writing personalized outreach emails to business owners.
             
             {context}
+            
+            Focus on software development services:
+            - Web development and optimization
+            - Mobile app development
+            - System modernization
+            - Performance improvements
+            - New features and functionality development
+            
+            Always end your emails with this signature:
+            
+            Atenciosamente,
+            
+            Felipe França
+            Desenvolvedor Full Stack
+            TECHNOLOGIE FELIPE FRANCA
+            Transformando Negócios Digitais
             
             Respond only with valid JSON in this exact format:
             {{
@@ -189,20 +205,24 @@ class EmailGenerator:
             "subject": "Oportunidade de Melhoria Digital para seu Negócio",
             "body": """Olá!
 
-Identificamos que seu site tem potencial para melhorias significativas em performance e SEO. 
+Identificamos que seu site tem potencial para melhorias significativas em performance e funcionalidades. 
 
-Como especialistas em marketing digital, podemos ajudar você a:
-• Melhorar a velocidade do seu site
-• Otimizar para mecanismos de busca
-• Aumentar sua presença nas redes sociais
-• Gerar mais leads e vendas
+Como especialistas em desenvolvimento de software, podemos ajudar você a:
+• Melhorar a velocidade e performance do seu site
+• Desenvolver novas funcionalidades e recursos
+• Criar aplicações mobile para seu negócio
+• Otimizar e modernizar seus sistemas
 
-Gostaria de agendar uma conversa gratuita para discutir como podemos impulsionar seus resultados digitais?
+Gostaria de agendar uma conversa gratuita para discutir como podemos impulsionar sua presença digital?
 
 Aguardo seu retorno!
 
 Atenciosamente,
-Consultor de Marketing Digital""",
+
+Felipe França
+Desenvolvedor Full Stack
+TECHNOLOGIE FELIPE FRANCA
+Transformando Negócios Digitais""",
             "personalization_score": 60
         }
     
@@ -232,18 +252,22 @@ Consultor de Marketing Digital""",
 
 Analisamos {issues_text} e identificamos oportunidades significativas de melhoria.
 
-Como consultores especializados em marketing digital, podemos ajudar você a:
-• Otimizar a performance do seu site
-• Melhorar o posicionamento nos mecanismos de busca
-• Fortalecer sua presença nas redes sociais
-• Aumentar conversões e vendas
+Como especialistas em desenvolvimento de software, podemos ajudar você a:
+• Otimizar a performance e velocidade do seu site
+• Desenvolver novas funcionalidades e recursos
+• Criar aplicações mobile para seu negócio
+• Modernizar e otimizar seus sistemas
 
-Gostaria de agendar uma conversa gratuita para discutir como podemos impulsionar seus resultados?
+Gostaria de agendar uma conversa gratuita para discutir como podemos impulsionar sua presença digital?
 
 Aguardo seu contato!
 
 Atenciosamente,
-Consultor de Marketing Digital""",
+
+Felipe França
+Desenvolvedor Full Stack
+TECHNOLOGIE FELIPE FRANCA
+Transformando Negócios Digitais""",
             'personalization_score': 75,
             'generation_status': 'mock'
         }

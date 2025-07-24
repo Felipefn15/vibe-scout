@@ -61,44 +61,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste1",
-          "followers": 37238,
-          "following": 541,
-          "posts_count": 49,
-          "engagement_rate": 1.14,
-          "avg_likes_per_post": 423,
-          "posting_frequency": "Low (weekly posts)",
-          "profile_quality_score": 60,
+          "followers": 4666,
+          "following": 166,
+          "posts_count": 261,
+          "engagement_rate": 3.43,
+          "avg_likes_per_post": 159,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 70,
           "last_post_date": "2024-01-15",
-          "bio_length": 138,
-          "has_website_link": true,
+          "bio_length": 127,
+          "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 1",
-          "followers": 73080,
-          "likes": 59447,
-          "posts_count": 840,
-          "engagement_rate": 0.54,
+          "followers": 48669,
+          "likes": 29719,
+          "posts_count": 560,
+          "engagement_rate": 0.68,
           "posting_frequency": "Weekly",
-          "page_quality_score": 75,
+          "page_quality_score": 65,
           "has_website": true,
-          "has_contact_info": true,
-          "response_rate": 75.95034613294631
+          "has_contact_info": false,
+          "response_rate": 63.31677278763189
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 1",
-          "followers": 31779,
-          "employees": 950,
-          "posts_count": 110,
-          "posting_frequency": "Monthly",
+          "followers": 19121,
+          "employees": 910,
+          "posts_count": 271,
+          "posting_frequency": "Weekly",
           "company_size": "500+ employees",
-          "industry": "Manufacturing",
-          "has_website": true,
+          "industry": "Finance",
+          "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 96.01215954870744
+          "profile_completeness": 66.2094970527553
         }
       },
-      "overall_social_score": 77.0,
+      "overall_social_score": 67.07,
       "maturity_level": "Intermediate"
     }
   },
@@ -164,45 +164,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste2",
-          "followers": 43454,
-          "following": 1094,
-          "posts_count": 188,
-          "engagement_rate": 4.98,
-          "avg_likes_per_post": 2163,
+          "followers": 20743,
+          "following": 195,
+          "posts_count": 278,
+          "engagement_rate": 3.49,
+          "avg_likes_per_post": 723,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 114,
+          "bio_length": 179,
           "has_website_link": true,
-          "has_business_category": true
+          "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 2",
-          "followers": 6160,
-          "likes": 2808,
-          "posts_count": 848,
-          "engagement_rate": 1.38,
-          "posting_frequency": "Daily",
-          "page_quality_score": 65,
+          "followers": 98799,
+          "likes": 20790,
+          "posts_count": 440,
+          "engagement_rate": 0.54,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 70,
           "has_website": true,
-          "has_contact_info": true,
-          "response_rate": 85.84070257585077
+          "has_contact_info": false,
+          "response_rate": 53.80878359922887
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 2",
-          "followers": 13276,
-          "employees": 823,
-          "posts_count": 46,
-          "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
-          "industry": "Technology",
+          "followers": 44490,
+          "employees": 407,
+          "posts_count": 295,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "201-500 employees",
+          "industry": "Healthcare",
           "has_website": true,
           "has_job_postings": false,
-          "profile_completeness": 85.71575753559151
+          "profile_completeness": 69.95045010058277
         }
       },
-      "overall_social_score": 83.57,
-      "maturity_level": "Advanced"
+      "overall_social_score": 76.65,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -267,45 +267,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste3",
-          "followers": 10802,
-          "following": 1894,
-          "posts_count": 77,
-          "engagement_rate": 3.66,
-          "avg_likes_per_post": 395,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 85,
+          "followers": 48551,
+          "following": 1159,
+          "posts_count": 181,
+          "engagement_rate": 3.8,
+          "avg_likes_per_post": 1843,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 134,
-          "has_website_link": true,
+          "bio_length": 150,
+          "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 3",
-          "followers": 15816,
-          "likes": 11628,
-          "posts_count": 622,
-          "engagement_rate": 0.84,
+          "followers": 45004,
+          "likes": 29605,
+          "posts_count": 161,
+          "engagement_rate": 2.01,
           "posting_frequency": "Weekly",
-          "page_quality_score": 60,
+          "page_quality_score": 70,
           "has_website": true,
           "has_contact_info": true,
-          "response_rate": 75.0951158900209
+          "response_rate": 83.20609783586221
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 3",
-          "followers": 44080,
-          "employees": 229,
-          "posts_count": 479,
-          "posting_frequency": "Monthly",
-          "company_size": "201-500 employees",
-          "industry": "Finance",
+          "followers": 35531,
+          "employees": 719,
+          "posts_count": 125,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
           "has_website": true,
           "has_job_postings": false,
-          "profile_completeness": 82.42874864278522
+          "profile_completeness": 82.98930099313381
         }
       },
-      "overall_social_score": 75.81,
-      "maturity_level": "Intermediate"
+      "overall_social_score": 81.0,
+      "maturity_level": "Advanced"
     }
   },
   {
@@ -370,45 +370,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste4",
-          "followers": 30428,
-          "following": 1328,
-          "posts_count": 22,
-          "engagement_rate": 2.28,
-          "avg_likes_per_post": 694,
-          "posting_frequency": "Low (weekly posts)",
-          "profile_quality_score": 70,
+          "followers": 46649,
+          "following": 966,
+          "posts_count": 418,
+          "engagement_rate": 2.22,
+          "avg_likes_per_post": 1035,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 141,
-          "has_website_link": true,
-          "has_business_category": true
+          "bio_length": 115,
+          "has_website_link": false,
+          "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 4",
-          "followers": 55299,
-          "likes": 8977,
-          "posts_count": 705,
-          "engagement_rate": 1.45,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 85,
-          "has_website": true,
+          "followers": 25503,
+          "likes": 17606,
+          "posts_count": 876,
+          "engagement_rate": 2.5,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 90,
+          "has_website": false,
           "has_contact_info": false,
-          "response_rate": 77.83329457498763
+          "response_rate": 79.88259969609643
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 4",
-          "followers": 36888,
-          "employees": 671,
-          "posts_count": 461,
+          "followers": 13114,
+          "employees": 942,
+          "posts_count": 218,
           "posting_frequency": "Weekly",
           "company_size": "500+ employees",
-          "industry": "Retail",
+          "industry": "Healthcare",
           "has_website": true,
-          "has_job_postings": false,
-          "profile_completeness": 75.28553301448045
+          "has_job_postings": true,
+          "profile_completeness": 85.6852022305385
         }
       },
-      "overall_social_score": 76.76,
-      "maturity_level": "Intermediate"
+      "overall_social_score": 85.23,
+      "maturity_level": "Advanced"
     }
   },
   {
@@ -473,44 +473,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste5",
-          "followers": 24925,
-          "following": 1857,
-          "posts_count": 277,
-          "engagement_rate": 4.73,
-          "avg_likes_per_post": 1178,
+          "followers": 19048,
+          "following": 1442,
+          "posts_count": 483,
+          "engagement_rate": 4.53,
+          "avg_likes_per_post": 863,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 100,
           "last_post_date": "2024-01-15",
-          "bio_length": 74,
-          "has_website_link": true,
-          "has_business_category": false
+          "bio_length": 173,
+          "has_website_link": false,
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 5",
-          "followers": 15252,
-          "likes": 11671,
-          "posts_count": 911,
-          "engagement_rate": 1.59,
+          "followers": 86819,
+          "likes": 31172,
+          "posts_count": 656,
+          "engagement_rate": 2.42,
           "posting_frequency": "Weekly",
-          "page_quality_score": 75,
-          "has_website": true,
+          "page_quality_score": 90,
+          "has_website": false,
           "has_contact_info": true,
-          "response_rate": 65.63347749875064
+          "response_rate": 90.38519640637833
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 5",
-          "followers": 46741,
-          "employees": 152,
-          "posts_count": 280,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "51-200 employees",
-          "industry": "Retail",
-          "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 99.98313795696501
+          "followers": 9880,
+          "employees": 551,
+          "posts_count": 367,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 60.10962190877548
         }
       },
-      "overall_social_score": 91.66,
+      "overall_social_score": 83.37,
       "maturity_level": "Advanced"
     }
   },
@@ -576,44 +576,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste6",
-          "followers": 19043,
-          "following": 1427,
-          "posts_count": 340,
-          "engagement_rate": 3.16,
-          "avg_likes_per_post": 600,
+          "followers": 4152,
+          "following": 159,
+          "posts_count": 154,
+          "engagement_rate": 4.81,
+          "avg_likes_per_post": 199,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 164,
+          "bio_length": 105,
           "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 6",
-          "followers": 9641,
-          "likes": 8565,
-          "posts_count": 259,
-          "engagement_rate": 0.67,
+          "followers": 15161,
+          "likes": 13068,
+          "posts_count": 370,
+          "engagement_rate": 2.09,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 50,
-          "has_website": true,
+          "page_quality_score": 70,
+          "has_website": false,
           "has_contact_info": true,
-          "response_rate": 52.09730846405554
+          "response_rate": 82.98705164264038
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 6",
-          "followers": 48936,
-          "employees": 849,
-          "posts_count": 454,
-          "posting_frequency": "Weekly",
+          "followers": 16598,
+          "employees": 889,
+          "posts_count": 141,
+          "posting_frequency": "Monthly",
           "company_size": "500+ employees",
-          "industry": "Manufacturing",
+          "industry": "Retail",
           "has_website": true,
-          "has_job_postings": false,
-          "profile_completeness": 68.52780142039059
+          "has_job_postings": true,
+          "profile_completeness": 60.71934851901004
         }
       },
-      "overall_social_score": 69.51,
+      "overall_social_score": 70.24,
       "maturity_level": "Intermediate"
     }
   },
@@ -679,44 +679,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste7",
-          "followers": 16770,
-          "following": 558,
-          "posts_count": 83,
-          "engagement_rate": 3.42,
-          "avg_likes_per_post": 573,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 85,
+          "followers": 47359,
+          "following": 1053,
+          "posts_count": 485,
+          "engagement_rate": 3.99,
+          "avg_likes_per_post": 1889,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 65,
+          "bio_length": 107,
           "has_website_link": true,
-          "has_business_category": true
+          "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 7",
-          "followers": 42798,
-          "likes": 6541,
-          "posts_count": 603,
-          "engagement_rate": 1.31,
-          "posting_frequency": "2-3 times/week",
-          "page_quality_score": 75,
+          "followers": 87032,
+          "likes": 31708,
+          "posts_count": 701,
+          "engagement_rate": 2.06,
+          "posting_frequency": "Daily",
+          "page_quality_score": 90,
           "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 75.04550636355084
+          "has_contact_info": true,
+          "response_rate": 59.613018183126506
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 7",
-          "followers": 31758,
-          "employees": 578,
-          "posts_count": 418,
-          "posting_frequency": "2-3 times/week",
+          "followers": 29277,
+          "employees": 761,
+          "posts_count": 123,
+          "posting_frequency": "Monthly",
           "company_size": "500+ employees",
-          "industry": "Retail",
+          "industry": "Healthcare",
           "has_website": true,
           "has_job_postings": false,
-          "profile_completeness": 98.01408212094158
+          "profile_completeness": 86.0852919680466
         }
       },
-      "overall_social_score": 86.0,
+      "overall_social_score": 88.7,
       "maturity_level": "Advanced"
     }
   },
@@ -782,45 +782,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste8",
-          "followers": 48510,
-          "following": 1662,
-          "posts_count": 449,
-          "engagement_rate": 2.7,
-          "avg_likes_per_post": 1309,
+          "followers": 43651,
+          "following": 1245,
+          "posts_count": 159,
+          "engagement_rate": 3.99,
+          "avg_likes_per_post": 1739,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 182,
+          "bio_length": 136,
           "has_website_link": false,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 8",
-          "followers": 8379,
-          "likes": 7135,
-          "posts_count": 403,
-          "engagement_rate": 2.1,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 65,
+          "followers": 1851,
+          "likes": 1278,
+          "posts_count": 502,
+          "engagement_rate": 0.8,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 50,
           "has_website": false,
           "has_contact_info": true,
-          "response_rate": 56.94534241736453
+          "response_rate": 68.96537436128288
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 8",
-          "followers": 38225,
-          "employees": 28,
-          "posts_count": 185,
-          "posting_frequency": "Monthly",
-          "company_size": "11-50 employees",
-          "industry": "Retail",
+          "followers": 3925,
+          "employees": 164,
+          "posts_count": 353,
+          "posting_frequency": "Weekly",
+          "company_size": "51-200 employees",
+          "industry": "Manufacturing",
           "has_website": false,
-          "has_job_postings": false,
-          "profile_completeness": 89.41796525596423
+          "has_job_postings": true,
+          "profile_completeness": 82.258697327676
         }
       },
-      "overall_social_score": 81.47,
-      "maturity_level": "Advanced"
+      "overall_social_score": 74.09,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -885,44 +885,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste9",
-          "followers": 17069,
-          "following": 536,
-          "posts_count": 255,
-          "engagement_rate": 4.53,
-          "avg_likes_per_post": 773,
+          "followers": 34435,
+          "following": 901,
+          "posts_count": 340,
+          "engagement_rate": 2.65,
+          "avg_likes_per_post": 913,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 62,
+          "bio_length": 60,
           "has_website_link": true,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 9",
-          "followers": 21628,
-          "likes": 14088,
-          "posts_count": 887,
-          "engagement_rate": 0.59,
-          "posting_frequency": "Daily",
-          "page_quality_score": 65,
-          "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 73.68820631128415
+          "followers": 63192,
+          "likes": 48303,
+          "posts_count": 507,
+          "engagement_rate": 2.97,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 100,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 66.970300539795
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 9",
-          "followers": 23758,
-          "employees": 963,
-          "posts_count": 349,
-          "posting_frequency": "Weekly",
+          "followers": 12643,
+          "employees": 900,
+          "posts_count": 277,
+          "posting_frequency": "2-3 times/week",
           "company_size": "500+ employees",
-          "industry": "Healthcare",
+          "industry": "Finance",
           "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 98.11007475876397
+          "profile_completeness": 74.0393205360402
         }
       },
-      "overall_social_score": 87.7,
+      "overall_social_score": 88.01,
       "maturity_level": "Advanced"
     }
   },
@@ -988,44 +988,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste10",
-          "followers": 39761,
-          "following": 1393,
-          "posts_count": 122,
-          "engagement_rate": 1.73,
-          "avg_likes_per_post": 689,
+          "followers": 25481,
+          "following": 96,
+          "posts_count": 127,
+          "engagement_rate": 3.54,
+          "avg_likes_per_post": 901,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 80,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 112,
-          "has_website_link": false,
-          "has_business_category": true
+          "bio_length": 146,
+          "has_website_link": true,
+          "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 10",
-          "followers": 32706,
-          "likes": 21429,
-          "posts_count": 379,
-          "engagement_rate": 1.98,
+          "followers": 62791,
+          "likes": 6660,
+          "posts_count": 979,
+          "engagement_rate": 0.86,
           "posting_frequency": "Daily",
           "page_quality_score": 75,
           "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 74.07838489781675
+          "has_contact_info": true,
+          "response_rate": 80.2334696022084
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 10",
-          "followers": 48673,
-          "employees": 634,
-          "posts_count": 228,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
-          "industry": "Manufacturing",
+          "followers": 34465,
+          "employees": 87,
+          "posts_count": 200,
+          "posting_frequency": "Weekly",
+          "company_size": "51-200 employees",
+          "industry": "Technology",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 89.95008876231937
+          "profile_completeness": 97.4566047968357
         }
       },
-      "overall_social_score": 81.65,
+      "overall_social_score": 87.49,
       "maturity_level": "Advanced"
     }
   },
@@ -1091,45 +1091,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste11",
-          "followers": 35823,
-          "following": 1069,
-          "posts_count": 86,
-          "engagement_rate": 4.63,
-          "avg_likes_per_post": 1657,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 95,
+          "followers": 23214,
+          "following": 453,
+          "posts_count": 401,
+          "engagement_rate": 3.76,
+          "avg_likes_per_post": 873,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 59,
+          "bio_length": 102,
           "has_website_link": true,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 11",
-          "followers": 17804,
-          "likes": 5361,
-          "posts_count": 168,
-          "engagement_rate": 2.28,
+          "followers": 74614,
+          "likes": 54133,
+          "posts_count": 673,
+          "engagement_rate": 1.58,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 65,
+          "page_quality_score": 90,
           "has_website": true,
           "has_contact_info": false,
-          "response_rate": 61.63391139597908
+          "response_rate": 54.70219138440477
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 11",
-          "followers": 44607,
-          "employees": 743,
-          "posts_count": 30,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
-          "industry": "Healthcare",
+          "followers": 41980,
+          "employees": 344,
+          "posts_count": 249,
+          "posting_frequency": "Monthly",
+          "company_size": "201-500 employees",
+          "industry": "Finance",
           "has_website": true,
           "has_job_postings": true,
-          "profile_completeness": 65.81438850412793
+          "profile_completeness": 90.70915283426675
         }
       },
-      "overall_social_score": 75.27,
-      "maturity_level": "Intermediate"
+      "overall_social_score": 90.24,
+      "maturity_level": "Advanced"
     }
   },
   {
@@ -1194,44 +1194,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste12",
-          "followers": 22584,
-          "following": 1217,
-          "posts_count": 208,
-          "engagement_rate": 1.52,
-          "avg_likes_per_post": 343,
+          "followers": 6391,
+          "following": 192,
+          "posts_count": 230,
+          "engagement_rate": 2.85,
+          "avg_likes_per_post": 181,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 131,
+          "bio_length": 76,
           "has_website_link": true,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 12",
-          "followers": 79073,
-          "likes": 19023,
-          "posts_count": 862,
-          "engagement_rate": 2.28,
+          "followers": 89137,
+          "likes": 4918,
+          "posts_count": 790,
+          "engagement_rate": 2.89,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 90,
-          "has_website": false,
+          "page_quality_score": 100,
+          "has_website": true,
           "has_contact_info": false,
-          "response_rate": 68.27623209109699
+          "response_rate": 92.46187820069068
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 12",
-          "followers": 3182,
-          "employees": 688,
-          "posts_count": 65,
+          "followers": 30862,
+          "employees": 234,
+          "posts_count": 327,
           "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
+          "company_size": "201-500 employees",
           "industry": "Technology",
           "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 93.51974736783221
+          "profile_completeness": 96.23596043333907
         }
       },
-      "overall_social_score": 87.84,
+      "overall_social_score": 92.08,
       "maturity_level": "Advanced"
     }
   },
@@ -1297,45 +1297,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste13",
-          "followers": 40777,
-          "following": 199,
-          "posts_count": 170,
-          "engagement_rate": 3.26,
-          "avg_likes_per_post": 1331,
+          "followers": 38194,
+          "following": 1158,
+          "posts_count": 221,
+          "engagement_rate": 2.37,
+          "avg_likes_per_post": 904,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 99,
-          "has_website_link": true,
+          "bio_length": 116,
+          "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 13",
-          "followers": 64112,
-          "likes": 23793,
-          "posts_count": 979,
-          "engagement_rate": 2.47,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 90,
+          "followers": 24756,
+          "likes": 16563,
+          "posts_count": 76,
+          "engagement_rate": 2.72,
+          "posting_frequency": "Daily",
+          "page_quality_score": 75,
           "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 76.08904611127886
+          "has_contact_info": true,
+          "response_rate": 66.0245316478387
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 13",
-          "followers": 37299,
-          "employees": 248,
-          "posts_count": 91,
+          "followers": 1285,
+          "employees": 519,
+          "posts_count": 252,
           "posting_frequency": "Monthly",
-          "company_size": "201-500 employees",
+          "company_size": "500+ employees",
           "industry": "Manufacturing",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 74.85716345934945
+          "profile_completeness": 66.7619489623576
         }
       },
-      "overall_social_score": 84.95,
-      "maturity_level": "Advanced"
+      "overall_social_score": 73.92,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -1400,45 +1400,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste14",
-          "followers": 37415,
-          "following": 407,
-          "posts_count": 478,
-          "engagement_rate": 4.15,
-          "avg_likes_per_post": 1550,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "followers": 46832,
+          "following": 866,
+          "posts_count": 46,
+          "engagement_rate": 2.9,
+          "avg_likes_per_post": 1357,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 58,
-          "has_website_link": true,
+          "bio_length": 137,
+          "has_website_link": false,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 14",
-          "followers": 82177,
-          "likes": 66202,
-          "posts_count": 146,
-          "engagement_rate": 1.0,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 75,
+          "followers": 34425,
+          "likes": 26882,
+          "posts_count": 185,
+          "engagement_rate": 1.8,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 70,
           "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 89.99440521905782
+          "has_contact_info": true,
+          "response_rate": 81.03457093867408
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 14",
-          "followers": 32107,
-          "employees": 150,
+          "followers": 8489,
+          "employees": 820,
           "posts_count": 372,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "51-200 employees",
-          "industry": "Finance",
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
           "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 74.48919704042787
+          "has_job_postings": false,
+          "profile_completeness": 88.15460426601787
         }
       },
-      "overall_social_score": 83.16,
-      "maturity_level": "Advanced"
+      "overall_social_score": 79.38,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -1503,45 +1503,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste15",
-          "followers": 46075,
-          "following": 232,
-          "posts_count": 454,
-          "engagement_rate": 3.06,
-          "avg_likes_per_post": 1410,
+          "followers": 46257,
+          "following": 505,
+          "posts_count": 400,
+          "engagement_rate": 2.82,
+          "avg_likes_per_post": 1306,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 129,
+          "bio_length": 54,
           "has_website_link": true,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 15",
-          "followers": 98024,
-          "likes": 24311,
-          "posts_count": 276,
-          "engagement_rate": 2.39,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 85,
+          "followers": 27547,
+          "likes": 9543,
+          "posts_count": 774,
+          "engagement_rate": 0.85,
+          "posting_frequency": "Daily",
+          "page_quality_score": 65,
           "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 70.10217590598643
+          "has_contact_info": true,
+          "response_rate": 62.19298492786233
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 15",
-          "followers": 45899,
-          "employees": 404,
-          "posts_count": 494,
-          "posting_frequency": "Weekly",
-          "company_size": "201-500 employees",
-          "industry": "Retail",
+          "followers": 46913,
+          "employees": 881,
+          "posts_count": 166,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Manufacturing",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 79.46209547300373
+          "profile_completeness": 73.51424144219988
         }
       },
-      "overall_social_score": 84.82,
-      "maturity_level": "Advanced"
+      "overall_social_score": 76.17,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -1606,45 +1606,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste16",
-          "followers": 44872,
-          "following": 1460,
-          "posts_count": 337,
-          "engagement_rate": 4.11,
-          "avg_likes_per_post": 1843,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "followers": 909,
+          "following": 456,
+          "posts_count": 17,
+          "engagement_rate": 3.64,
+          "avg_likes_per_post": 33,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 45,
           "last_post_date": "2024-01-15",
-          "bio_length": 134,
+          "bio_length": 92,
           "has_website_link": false,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 16",
-          "followers": 57226,
-          "likes": 9866,
-          "posts_count": 228,
-          "engagement_rate": 1.55,
-          "posting_frequency": "Daily",
-          "page_quality_score": 85,
-          "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 56.35591754296151
+          "followers": 54699,
+          "likes": 47839,
+          "posts_count": 69,
+          "engagement_rate": 2.09,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 75,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 58.48699653053612
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 16",
-          "followers": 19318,
-          "employees": 798,
-          "posts_count": 90,
+          "followers": 16123,
+          "employees": 697,
+          "posts_count": 39,
           "posting_frequency": "2-3 times/week",
           "company_size": "500+ employees",
-          "industry": "Finance",
-          "has_website": true,
+          "industry": "Retail",
+          "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 85.2946257214764
+          "profile_completeness": 79.88930217814348
         }
       },
-      "overall_social_score": 90.1,
-      "maturity_level": "Advanced"
+      "overall_social_score": 66.63,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -1709,44 +1709,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste17",
-          "followers": 8376,
-          "following": 351,
-          "posts_count": 418,
-          "engagement_rate": 3.01,
-          "avg_likes_per_post": 252,
+          "followers": 9560,
+          "following": 1073,
+          "posts_count": 108,
+          "engagement_rate": 1.13,
+          "avg_likes_per_post": 108,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 80,
+          "profile_quality_score": 60,
           "last_post_date": "2024-01-15",
-          "bio_length": 92,
+          "bio_length": 53,
           "has_website_link": true,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 17",
-          "followers": 60723,
-          "likes": 46182,
-          "posts_count": 195,
-          "engagement_rate": 1.13,
-          "posting_frequency": "2-3 times/week",
-          "page_quality_score": 75,
+          "followers": 70080,
+          "likes": 45115,
+          "posts_count": 672,
+          "engagement_rate": 1.56,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 90,
           "has_website": true,
           "has_contact_info": false,
-          "response_rate": 91.42719046353562
+          "response_rate": 94.03247460881329
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 17",
-          "followers": 23173,
-          "employees": 637,
-          "posts_count": 474,
+          "followers": 49165,
+          "employees": 470,
+          "posts_count": 415,
           "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
-          "industry": "Finance",
+          "company_size": "201-500 employees",
+          "industry": "Technology",
           "has_website": false,
-          "has_job_postings": false,
-          "profile_completeness": 75.6139031856537
+          "has_job_postings": true,
+          "profile_completeness": 66.6744687926309
         }
       },
-      "overall_social_score": 76.87,
+      "overall_social_score": 72.22,
       "maturity_level": "Intermediate"
     }
   },
@@ -1812,45 +1812,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste18",
-          "followers": 42805,
-          "following": 1417,
-          "posts_count": 400,
-          "engagement_rate": 2.99,
-          "avg_likes_per_post": 1280,
+          "followers": 47659,
+          "following": 1817,
+          "posts_count": 392,
+          "engagement_rate": 4.49,
+          "avg_likes_per_post": 2137,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
+          "profile_quality_score": 100,
           "last_post_date": "2024-01-15",
-          "bio_length": 97,
+          "bio_length": 72,
           "has_website_link": false,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 18",
-          "followers": 57945,
-          "likes": 45830,
-          "posts_count": 239,
-          "engagement_rate": 0.84,
+          "followers": 82043,
+          "likes": 20815,
+          "posts_count": 757,
+          "engagement_rate": 1.6,
           "posting_frequency": "Weekly",
-          "page_quality_score": 70,
+          "page_quality_score": 90,
           "has_website": false,
-          "has_contact_info": true,
-          "response_rate": 61.591883887352544
+          "has_contact_info": false,
+          "response_rate": 59.83671939871129
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 18",
-          "followers": 38525,
-          "employees": 781,
-          "posts_count": 408,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
-          "industry": "Manufacturing",
-          "has_website": false,
+          "followers": 20170,
+          "employees": 126,
+          "posts_count": 490,
+          "posting_frequency": "Monthly",
+          "company_size": "51-200 employees",
+          "industry": "Healthcare",
+          "has_website": true,
           "has_job_postings": false,
-          "profile_completeness": 61.15787365100495
+          "profile_completeness": 90.68331131030476
         }
       },
-      "overall_social_score": 73.72,
-      "maturity_level": "Intermediate"
+      "overall_social_score": 93.56,
+      "maturity_level": "Advanced"
     }
   },
   {
@@ -1915,45 +1915,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste19",
-          "followers": 31607,
-          "following": 1246,
-          "posts_count": 70,
-          "engagement_rate": 4.24,
-          "avg_likes_per_post": 1341,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 95,
+          "followers": 15360,
+          "following": 1179,
+          "posts_count": 33,
+          "engagement_rate": 2.45,
+          "avg_likes_per_post": 376,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 70,
           "last_post_date": "2024-01-15",
-          "bio_length": 159,
-          "has_website_link": false,
+          "bio_length": 138,
+          "has_website_link": true,
           "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 19",
-          "followers": 25597,
-          "likes": 9307,
-          "posts_count": 494,
-          "engagement_rate": 2.07,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 75,
+          "followers": 49030,
+          "likes": 3760,
+          "posts_count": 67,
+          "engagement_rate": 1.77,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 65,
           "has_website": true,
-          "has_contact_info": true,
-          "response_rate": 72.71603621764056
+          "has_contact_info": false,
+          "response_rate": 85.07726571715597
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 19",
-          "followers": 19236,
-          "employees": 398,
-          "posts_count": 162,
-          "posting_frequency": "Monthly",
+          "followers": 33418,
+          "employees": 457,
+          "posts_count": 420,
+          "posting_frequency": "2-3 times/week",
           "company_size": "201-500 employees",
-          "industry": "Healthcare",
+          "industry": "Technology",
           "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 91.59479538131865
+          "profile_completeness": 82.46491228968418
         }
       },
-      "overall_social_score": 87.2,
-      "maturity_level": "Advanced"
+      "overall_social_score": 72.49,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -2018,44 +2018,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste20",
-          "followers": 31655,
-          "following": 1630,
-          "posts_count": 339,
-          "engagement_rate": 4.52,
-          "avg_likes_per_post": 1430,
+          "followers": 6862,
+          "following": 101,
+          "posts_count": 450,
+          "engagement_rate": 4.85,
+          "avg_likes_per_post": 332,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 67,
+          "bio_length": 83,
           "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 20",
-          "followers": 42501,
-          "likes": 36498,
-          "posts_count": 807,
-          "engagement_rate": 1.99,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 80,
-          "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 87.35338170946414
+          "followers": 49791,
+          "likes": 10513,
+          "posts_count": 752,
+          "engagement_rate": 2.82,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 90,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 52.369401243574956
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 20",
-          "followers": 38333,
-          "employees": 844,
-          "posts_count": 123,
+          "followers": 17272,
+          "employees": 975,
+          "posts_count": 163,
           "posting_frequency": "2-3 times/week",
           "company_size": "500+ employees",
           "industry": "Finance",
-          "has_website": true,
-          "has_job_postings": false,
-          "profile_completeness": 86.1814035849471
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 67.1752690902932
         }
       },
-      "overall_social_score": 88.73,
+      "overall_social_score": 82.39,
       "maturity_level": "Advanced"
     }
   },
@@ -2121,44 +2121,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste21",
-          "followers": 12660,
-          "following": 385,
-          "posts_count": 143,
-          "engagement_rate": 2.39,
-          "avg_likes_per_post": 302,
+          "followers": 48503,
+          "following": 1405,
+          "posts_count": 239,
+          "engagement_rate": 3.54,
+          "avg_likes_per_post": 1717,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 80,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 181,
-          "has_website_link": false,
-          "has_business_category": true
+          "bio_length": 89,
+          "has_website_link": true,
+          "has_business_category": false
         },
         "facebook": {
           "page_name": "Restaurantes Teste 21",
-          "followers": 42331,
-          "likes": 13375,
-          "posts_count": 607,
-          "engagement_rate": 1.34,
-          "posting_frequency": "Daily",
-          "page_quality_score": 75,
-          "has_website": true,
+          "followers": 8016,
+          "likes": 2345,
+          "posts_count": 645,
+          "engagement_rate": 2.06,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 70,
+          "has_website": false,
           "has_contact_info": false,
-          "response_rate": 64.91903256601826
+          "response_rate": 89.76459292170208
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 21",
-          "followers": 26328,
-          "employees": 635,
-          "posts_count": 416,
-          "posting_frequency": "Weekly",
+          "followers": 38759,
+          "employees": 876,
+          "posts_count": 429,
+          "posting_frequency": "2-3 times/week",
           "company_size": "500+ employees",
-          "industry": "Technology",
-          "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 63.43025729174498
+          "industry": "Manufacturing",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 74.10741401175872
         }
       },
-      "overall_social_score": 72.81,
+      "overall_social_score": 78.04,
       "maturity_level": "Intermediate"
     }
   },
@@ -2224,45 +2224,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste22",
-          "followers": 33201,
-          "following": 594,
-          "posts_count": 230,
-          "engagement_rate": 3.38,
-          "avg_likes_per_post": 1120,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
+          "followers": 46217,
+          "following": 1176,
+          "posts_count": 45,
+          "engagement_rate": 3.33,
+          "avg_likes_per_post": 1539,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 60,
-          "has_website_link": true,
-          "has_business_category": false
+          "bio_length": 122,
+          "has_website_link": false,
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 22",
-          "followers": 71734,
-          "likes": 12737,
-          "posts_count": 452,
-          "engagement_rate": 2.33,
-          "posting_frequency": "Daily",
-          "page_quality_score": 85,
-          "has_website": false,
-          "has_contact_info": true,
-          "response_rate": 90.93631624480307
+          "followers": 17653,
+          "likes": 6958,
+          "posts_count": 56,
+          "engagement_rate": 1.34,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 55,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 90.24448518271679
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 22",
-          "followers": 4379,
-          "employees": 679,
-          "posts_count": 99,
-          "posting_frequency": "Monthly",
+          "followers": 17564,
+          "employees": 626,
+          "posts_count": 256,
+          "posting_frequency": "2-3 times/week",
           "company_size": "500+ employees",
-          "industry": "Technology",
-          "has_website": true,
+          "industry": "Finance",
+          "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 76.86718377600386
+          "profile_completeness": 60.282548898154225
         }
       },
-      "overall_social_score": 83.96,
-      "maturity_level": "Advanced"
+      "overall_social_score": 65.09,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -2327,44 +2327,44 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste23",
-          "followers": 43780,
-          "following": 1527,
-          "posts_count": 312,
-          "engagement_rate": 4.73,
-          "avg_likes_per_post": 2069,
+          "followers": 40790,
+          "following": 1580,
+          "posts_count": 494,
+          "engagement_rate": 2.56,
+          "avg_likes_per_post": 1044,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 144,
+          "bio_length": 186,
           "has_website_link": true,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 23",
-          "followers": 84280,
-          "likes": 31134,
-          "posts_count": 416,
-          "engagement_rate": 2.2,
-          "posting_frequency": "Daily",
-          "page_quality_score": 85,
-          "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 79.01880958968229
+          "followers": 40590,
+          "likes": 1366,
+          "posts_count": 671,
+          "engagement_rate": 2.69,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 90,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 84.38855601835846
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 23",
-          "followers": 9989,
-          "employees": 78,
-          "posts_count": 251,
+          "followers": 4809,
+          "employees": 184,
+          "posts_count": 416,
           "posting_frequency": "Monthly",
           "company_size": "51-200 employees",
-          "industry": "Retail",
+          "industry": "Finance",
           "has_website": true,
-          "has_job_postings": true,
-          "profile_completeness": 67.9399775106137
+          "has_job_postings": false,
+          "profile_completeness": 87.81119782033005
         }
       },
-      "overall_social_score": 84.31,
+      "overall_social_score": 89.27,
       "maturity_level": "Advanced"
     }
   },
@@ -2430,45 +2430,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste24",
-          "followers": 6888,
-          "following": 1843,
-          "posts_count": 37,
-          "engagement_rate": 4.49,
-          "avg_likes_per_post": 309,
-          "posting_frequency": "Low (weekly posts)",
-          "profile_quality_score": 80,
+          "followers": 8585,
+          "following": 1186,
+          "posts_count": 305,
+          "engagement_rate": 4.37,
+          "avg_likes_per_post": 375,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
-          "bio_length": 86,
+          "bio_length": 169,
           "has_website_link": false,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 24",
-          "followers": 84998,
-          "likes": 2136,
-          "posts_count": 642,
-          "engagement_rate": 2.6,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 100,
+          "followers": 24312,
+          "likes": 8505,
+          "posts_count": 239,
+          "engagement_rate": 1.72,
+          "posting_frequency": "Daily",
+          "page_quality_score": 75,
           "has_website": false,
           "has_contact_info": true,
-          "response_rate": 88.12478107721384
+          "response_rate": 76.61472205820559
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 24",
-          "followers": 45674,
-          "employees": 231,
-          "posts_count": 333,
-          "posting_frequency": "Weekly",
-          "company_size": "201-500 employees",
-          "industry": "Technology",
-          "has_website": false,
+          "followers": 13631,
+          "employees": 989,
+          "posts_count": 75,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "500+ employees",
+          "industry": "Finance",
+          "has_website": true,
           "has_job_postings": false,
-          "profile_completeness": 74.01083096291032
+          "profile_completeness": 64.97594888472733
         }
       },
-      "overall_social_score": 84.67,
-      "maturity_level": "Advanced"
+      "overall_social_score": 76.66,
+      "maturity_level": "Intermediate"
     }
   },
   {
@@ -2533,45 +2533,45 @@
       "platforms": {
         "instagram": {
           "username": "restaurantesteste25",
-          "followers": 30719,
-          "following": 1682,
-          "posts_count": 298,
-          "engagement_rate": 4.33,
-          "avg_likes_per_post": 1329,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "followers": 16893,
+          "following": 270,
+          "posts_count": 70,
+          "engagement_rate": 4.05,
+          "avg_likes_per_post": 683,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 95,
           "last_post_date": "2024-01-15",
-          "bio_length": 161,
+          "bio_length": 189,
           "has_website_link": false,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
           "page_name": "Restaurantes Teste 25",
-          "followers": 82306,
-          "likes": 47987,
-          "posts_count": 984,
-          "engagement_rate": 2.92,
+          "followers": 6056,
+          "likes": 1453,
+          "posts_count": 454,
+          "engagement_rate": 1.69,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 100,
+          "page_quality_score": 65,
           "has_website": true,
-          "has_contact_info": true,
-          "response_rate": 51.58818277778787
+          "has_contact_info": false,
+          "response_rate": 80.46988461837168
         },
         "linkedin": {
           "company_name": "Restaurantes Teste 25",
-          "followers": 29763,
-          "employees": 339,
-          "posts_count": 56,
+          "followers": 41144,
+          "employees": 608,
+          "posts_count": 422,
           "posting_frequency": "2-3 times/week",
-          "company_size": "201-500 employees",
-          "industry": "Finance",
-          "has_website": true,
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 80.60085666512498
+          "profile_completeness": 60.61903717129483
         }
       },
-      "overall_social_score": 93.53,
-      "maturity_level": "Advanced"
+      "overall_social_score": 73.54,
+      "maturity_level": "Intermediate"
     }
   }
 ]
