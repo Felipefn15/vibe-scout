@@ -1,98 +1,56 @@
 [
   {
-    "name": "Restaurante Rio de Janeiro",
-    "instagram_handle": "@restaurante_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram"
+    "name": "Advogado no Rio de Janeiro / Escritório de Advocacia",
+    "website": "https://advogadoriodejaneiro.com/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   },
   {
-    "name": "Premium restaurante Rio de Janeiro",
-    "instagram_handle": "@premium_restaurante",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram"
+    "name": "Escritório de Advocacia | Garcia Advogados | Especialistas",
+    "website": "https://advogadorj.com/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   },
   {
-    "name": "Restaurantes Rio de Janeiro",
-    "instagram_handle": "@restaurantes_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram"
+    "name": "Basilio Advogados",
+    "website": "https://basilioadvogados.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   },
   {
-    "name": "Premium restaurantes Rio de Janeiro",
-    "instagram_handle": "@premium_restaurantes",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram"
+    "name": "Bermudes Advogados",
+    "website": "https://bermudes.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   },
   {
-    "name": "Gastronomia Rio de Janeiro",
-    "instagram_handle": "@gastronomia_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram"
+    "name": "Salomão Advogados",
+    "website": "https://salomaoadv.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   },
   {
-    "name": "Premium gastronomia Rio de Janeiro",
-    "instagram_handle": "@premium_gastronomia",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram"
-  },
-  {
-    "name": "Cantina Rio de Janeiro",
-    "website": "https://restaurantes2.com.br",
-    "email": "contato@restaurantes2.com.br",
-    "phone": "(21) 90002-0002",
-    "address": "Rua Restaurantes 2, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Pizzaria Rio de Janeiro",
-    "website": "https://restaurantes3.com.br",
-    "email": "contato@restaurantes3.com.br",
-    "phone": "(21) 90003-0003",
-    "address": "Rua Restaurantes 3, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Churrascaria Rio de Janeiro",
-    "website": "https://restaurantes4.com.br",
-    "email": "contato@restaurantes4.com.br",
-    "phone": "(21) 90004-0004",
-    "address": "Rua Restaurantes 4, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Sushi Bar Rio de Janeiro",
-    "website": "https://restaurantes5.com.br",
-    "email": "contato@restaurantes5.com.br",
-    "phone": "(21) 90005-0005",
-    "address": "Rua Restaurantes 5, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Caf\u00e9 Rio de Janeiro",
-    "website": "https://restaurantes6.com.br",
-    "email": "contato@restaurantes6.com.br",
-    "phone": "(21) 90006-0006",
-    "address": "Rua Restaurantes 6, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Bistr\u00f4 Rio de Janeiro",
-    "website": "https://restaurantes7.com.br",
-    "email": "contato@restaurantes7.com.br",
-    "phone": "(21) 90007-0007",
-    "address": "Rua Restaurantes 7, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
+    "name": "Martins Regina Escritório de Advocacia",
+    "website": "https://escritoriodeadvocaciarj.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright"
   }
 ]

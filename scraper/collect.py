@@ -10,8 +10,7 @@ from dotenv import load_dotenv
 import re
 import random
 from playwright.sync_api import sync_playwright
-import googlemaps
-from requests_html import HTMLSession
+import urllib.parse
 
 load_dotenv()
 
@@ -34,23 +33,6 @@ class LeadCollector:
         })
         self.request_delay = int(os.getenv('REQUEST_DELAY', 3))
         
-        # Initialize Google Maps API client
-        self.google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY')
-        if self.google_maps_api_key and self.google_maps_api_key != 'your_google_maps_api_key_here':
-            try:
-                self.gmaps = googlemaps.Client(key=self.google_maps_api_key)
-                logger.info("Google Maps API initialized")
-            except ValueError:
-                self.gmaps = None
-                logger.warning("Invalid Google Maps API key - using fallback methods")
-        else:
-            self.gmaps = None
-            logger.warning("Google Maps API key not found - using fallback methods")
-        
-        # Initialize Google Custom Search API
-        self.google_search_api_key = os.getenv('GOOGLE_SEARCH_API_KEY')
-        self.google_search_engine_id = os.getenv('GOOGLE_SEARCH_ENGINE_ID')
-        
         # Rotate user agents
         self.user_agents = [
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -58,132 +40,155 @@ class LeadCollector:
             'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15'
         ]
-        
-        # Initialize HTML session for requests-html
-        self.html_session = HTMLSession()
     
     def _get_random_user_agent(self):
         """Get a random user agent"""
         return random.choice(self.user_agents)
     
-    def search_google_places_api(self, query: str, region: str) -> List[Dict]:
-        """Search using Google Places API (most reliable)"""
+    def search_google_maps_with_playwright(self, query: str, region: str) -> List[Dict]:
+        """Search Google Maps using Playwright with stealth techniques"""
         leads = []
         
-        if not self.gmaps:
-            logger.warning("Google Maps API not available")
-            return leads
-        
         try:
-            # Get coordinates for the region
-            geocode_result = self.gmaps.geocode(f"{region}, Brazil")
-            if not geocode_result:
-                logger.warning(f"Could not geocode region: {region}")
-                return leads
+            logger.info(f"Searching Google Maps with Playwright for: {query} in {region}")
             
-            location = geocode_result[0]['geometry']['location']
-            lat, lng = location['lat'], location['lng']
-            
-            logger.info(f"Searching Google Places API for: {query} in {region}")
-            
-            # Search for places
-            places_result = self.gmaps.places_nearby(
-                location=(lat, lng),
-                radius=50000,  # 50km radius
-                keyword=query,
-                type='establishment'
-            )
-            
-            for place in places_result.get('results', []):
+            with sync_playwright() as p:
+                # Launch browser with stealth options
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-blink-features=AutomationControlled',
+                        '--disable-dev-shm-usage',
+                        '--disable-web-security',
+                        '--disable-features=VizDisplayCompositor',
+                        '--disable-extensions',
+                        '--disable-plugins',
+                        '--disable-images',
+                        '--disable-javascript',
+                        '--disable-gpu'
+                    ]
+                )
+                
+                context = browser.new_context(
+                    user_agent=self._get_random_user_agent(),
+                    viewport={'width': 1280, 'height': 720},
+                    locale='pt-BR',
+                    timezone_id='America/Sao_Paulo'
+                )
+                
+                # Add stealth scripts
+                context.add_init_script("""
+                    Object.defineProperty(navigator, 'webdriver', {
+                        get: () => undefined,
+                    });
+                    Object.defineProperty(navigator, 'plugins', {
+                        get: () => [1, 2, 3, 4, 5],
+                    });
+                    Object.defineProperty(navigator, 'languages', {
+                        get: () => ['pt-BR', 'pt', 'en'],
+                    });
+                """)
+                
+                page = context.new_page()
+                
+                # Random delay to simulate human behavior
+                time.sleep(random.uniform(2, 4))
+                
+                # Navigate to Google Maps
+                search_query = f"{query} {region}"
+                encoded_query = urllib.parse.quote(search_query)
+                maps_url = f"https://www.google.com/maps/search/{encoded_query}"
+                
+                logger.info(f"Navigating to: {maps_url}")
+                page.goto(maps_url, wait_until='networkidle', timeout=30000)
+                
+                # Wait for results to load
+                page.wait_for_timeout(5000)
+                
+                # Try to find business listings
                 try:
-                    name = place.get('name', '')
-                    address = place.get('vicinity', '')
-                    place_id = place.get('place_id', '')
+                    # Look for business cards
+                    business_cards = page.query_selector_all('[data-result-index]')
+                    logger.info(f"Found {len(business_cards)} business cards")
                     
-                    if self._is_valid_business(name, address):
-                        # Get detailed information
-                        place_details = self.gmaps.place(place_id, fields=['formatted_phone_number', 'website', 'formatted_address'])
-                        details = place_details.get('result', {})
-                        
-                        lead = {
-                            'name': name,
-                            'address': details.get('formatted_address', address),
-                            'phone': details.get('formatted_phone_number', ''),
-                            'website': details.get('website', ''),
-                            'source': 'google_places_api'
-                        }
-                        leads.append(lead)
-                        
+                    for i, card in enumerate(business_cards[:15]):
+                        try:
+                            # Extract business name
+                            name_elem = card.query_selector('h3, [role="heading"], .fontHeadlineSmall')
+                            if not name_elem:
+                                continue
+                            
+                            name = name_elem.inner_text().strip()
+                            
+                            # Extract address
+                            address_elem = card.query_selector('[data-item-id*="address"], .fontBodyMedium')
+                            address = address_elem.inner_text().strip() if address_elem else ''
+                            
+                            # Extract phone
+                            phone_elem = card.query_selector('[data-item-id*="phone"], [data-tooltip*="phone"]')
+                            phone = phone_elem.inner_text().strip() if phone_elem else ''
+                            
+                            # Extract website
+                            website_elem = card.query_selector('a[href*="http"]')
+                            website = website_elem.get_attribute('href') if website_elem else ''
+                            
+                            if self._is_valid_business(name, address):
+                                lead = {
+                                    'name': name,
+                                    'address': address,
+                                    'phone': phone,
+                                    'website': website,
+                                    'source': 'google_maps_playwright'
+                                }
+                                leads.append(lead)
+                                logger.info(f"Found business: {name}")
+                                
+                        except Exception as e:
+                            logger.warning(f"Error parsing business card {i}: {e}")
+                            continue
+                            
                 except Exception as e:
-                    logger.warning(f"Error processing place: {e}")
-                    continue
-            
-            # Add delay to respect API limits
-            time.sleep(1)
-            
+                    logger.warning(f"Error finding business cards: {e}")
+                
+                # If no business cards found, try alternative selectors
+                if not leads:
+                    logger.info("Trying alternative selectors...")
+                    try:
+                        # Look for any clickable elements that might be businesses
+                        clickable_elements = page.query_selector_all('a[href*="place"], [role="button"]')
+                        
+                        for elem in clickable_elements[:10]:
+                            try:
+                                name = elem.inner_text().strip()
+                                if len(name) > 3 and self._is_valid_business(name):
+                                    lead = {
+                                        'name': name,
+                                        'address': '',
+                                        'phone': '',
+                                        'website': '',
+                                        'source': 'google_maps_playwright_alt'
+                                    }
+                                    leads.append(lead)
+                                    logger.info(f"Found business (alt): {name}")
+                            except:
+                                continue
+                    except Exception as e:
+                        logger.warning(f"Error with alternative selectors: {e}")
+                
+                browser.close()
+                
         except Exception as e:
-            logger.error(f"Error in Google Places API search: {e}")
+            logger.error(f"Error in Google Maps Playwright search: {e}")
         
         return leads
     
-    def search_google_custom_search_api(self, query: str, region: str) -> List[Dict]:
-        """Search using Google Custom Search API"""
-        leads = []
-        
-        if not self.google_search_api_key or not self.google_search_engine_id:
-            logger.warning("Google Custom Search API not configured")
-            return leads
-        
-        try:
-            logger.info(f"Searching Google Custom Search API for: {query} in {region}")
-            
-            search_url = "https://www.googleapis.com/customsearch/v1"
-            params = {
-                'key': self.google_search_api_key,
-                'cx': self.google_search_engine_id,
-                'q': f"{query} {region}",
-                'num': 10,
-                'gl': 'br',
-                'lr': 'lang_pt'
-            }
-            
-            response = self.session.get(search_url, params=params, timeout=30)
-            response.raise_for_status()
-            
-            data = response.json()
-            
-            for item in data.get('items', []):
-                try:
-                    name = item.get('title', '')
-                    website = item.get('link', '')
-                    description = item.get('snippet', '')
-                    
-                    if self._is_valid_business(name, description):
-                        lead = {
-                            'name': name,
-                            'website': website,
-                            'description': description,
-                            'source': 'google_custom_search'
-                        }
-                        leads.append(lead)
-                        
-                except Exception as e:
-                    logger.warning(f"Error processing search result: {e}")
-                    continue
-            
-            time.sleep(1)
-            
-        except Exception as e:
-            logger.error(f"Error in Google Custom Search API: {e}")
-        
-        return leads
-    
-    def search_with_playwright(self, query: str, region: str, search_type: str = 'google') -> List[Dict]:
-        """Search using Playwright with stealth techniques"""
+    def search_google_with_playwright(self, query: str, region: str) -> List[Dict]:
+        """Search Google using Playwright with stealth techniques"""
         leads = []
         
         try:
-            logger.info(f"Searching {search_type} with Playwright for: {query} in {region}")
+            logger.info(f"Searching Google with Playwright for: {query} in {region}")
             
             with sync_playwright() as p:
                 # Launch browser with stealth options
@@ -218,150 +223,264 @@ class LeadCollector:
                 page = context.new_page()
                 
                 # Random delay to simulate human behavior
-                time.sleep(random.uniform(1, 3))
+                time.sleep(random.uniform(2, 4))
                 
-                if search_type == 'google':
-                    search_url = f"https://www.google.com/search?q={query}+{region}&num=20&hl=pt-BR&gl=br"
-                    page.goto(search_url)
-                    
-                    # Wait for results to load
-                    page.wait_for_selector('div.g', timeout=10000)
-                    
-                    # Extract results
-                    results = page.query_selector_all('div.g')
-                    
-                    for result in results[:15]:
-                        try:
-                            title_elem = result.query_selector('h3')
-                            link_elem = result.query_selector('a')
-                            snippet_elem = result.query_selector('div.VwiC3b')
-                            
-                            if title_elem and link_elem:
-                                name = title_elem.inner_text().strip()
-                                website = link_elem.get_attribute('href', '')
-                                description = snippet_elem.inner_text().strip() if snippet_elem else ''
-                                
-                                if self._is_valid_business(name, description):
-                                    lead = {
-                                        'name': name,
-                                        'website': website,
-                                        'description': description,
-                                        'source': 'google_playwright'
-                                    }
-                                    leads.append(lead)
-                                    
-                        except Exception as e:
-                            logger.warning(f"Error parsing Playwright result: {e}")
-                            continue
+                # Navigate to Google Search
+                search_query = f"{query} {region}"
+                encoded_query = urllib.parse.quote(search_query)
+                search_url = f"https://www.google.com/search?q={encoded_query}&num=20&hl=pt-BR&gl=br"
                 
-                elif search_type == 'bing':
-                    search_url = f"https://www.bing.com/search?q={query}+{region}&cc=BR&setlang=pt-BR"
-                    page.goto(search_url)
-                    
-                    # Wait for results
-                    page.wait_for_selector('li.b_algo', timeout=10000)
-                    
-                    results = page.query_selector_all('li.b_algo')
-                    
-                    for result in results[:10]:
-                        try:
-                            title_elem = result.query_selector('h2')
-                            link_elem = result.query_selector('a')
-                            snippet_elem = result.query_selector('p')
+                logger.info(f"Navigating to: {search_url}")
+                page.goto(search_url, wait_until='networkidle', timeout=30000)
+                
+                # Wait for results to load
+                page.wait_for_timeout(3000)
+                
+                # Try multiple selectors for search results
+                selectors = [
+                    'div.g',
+                    'div[data-sokoban-container]',
+                    'div.yuRUbf',
+                    'div.rc'
+                ]
+                
+                results = []
+                for selector in selectors:
+                    try:
+                        results = page.query_selector_all(selector)
+                        if results:
+                            logger.info(f"Found {len(results)} results with selector: {selector}")
+                            break
+                    except:
+                        continue
+                
+                for result in results[:15]:
+                    try:
+                        # Try multiple selectors for title
+                        title_selectors = ['h3', 'a[data-ved]', '.LC20lb']
+                        title_elem = None
+                        for selector in title_selectors:
+                            title_elem = result.query_selector(selector)
+                            if title_elem:
+                                break
+                        
+                        # Try multiple selectors for link
+                        link_selectors = ['a[href]', '.WlydOe']
+                        link_elem = None
+                        for selector in link_selectors:
+                            link_elem = result.query_selector(selector)
+                            if link_elem:
+                                break
+                        
+                        # Try multiple selectors for snippet
+                        snippet_selectors = ['.VwiC3b', '.aCOpRe', '.IsZvec']
+                        snippet_elem = None
+                        for selector in snippet_selectors:
+                            snippet_elem = result.query_selector(selector)
+                            if snippet_elem:
+                                break
+                        
+                        if title_elem and link_elem:
+                            name = title_elem.inner_text().strip()
+                            website = link_elem.get_attribute('href')
+                            description = snippet_elem.inner_text().strip() if snippet_elem else ''
                             
-                            if title_elem and link_elem:
-                                name = title_elem.inner_text().strip()
-                                website = link_elem.get_attribute('href', '')
-                                description = snippet_elem.inner_text().strip() if snippet_elem else ''
+                            if self._is_valid_business(name, description):
+                                lead = {
+                                    'name': name,
+                                    'website': website,
+                                    'description': description,
+                                    'source': 'google_playwright'
+                                }
+                                leads.append(lead)
+                                logger.info(f"Found business: {name}")
                                 
-                                if self._is_valid_business(name, description):
-                                    lead = {
-                                        'name': name,
-                                        'website': website,
-                                        'description': description,
-                                        'source': 'bing_playwright'
-                                    }
-                                    leads.append(lead)
-                                    
-                        except Exception as e:
-                            logger.warning(f"Error parsing Bing result: {e}")
-                            continue
+                    except Exception as e:
+                        logger.warning(f"Error parsing search result: {e}")
+                        continue
                 
                 browser.close()
                 
         except Exception as e:
-            logger.error(f"Error in Playwright search: {e}")
+            logger.error(f"Error in Google Playwright search: {e}")
         
         return leads
     
-    def search_yellow_pages_api(self, query: str, region: str) -> List[Dict]:
-        """Search Yellow Pages using requests-html (more reliable)"""
+    def search_bing_with_playwright(self, query: str, region: str) -> List[Dict]:
+        """Search Bing using Playwright"""
         leads = []
         
         try:
-            # Try different Yellow Pages URLs with requests-html
-            yellow_pages_urls = [
-                f"https://www.telelistas.net/busca/{query}/{region}",
-                f"https://www.guiatelefone.com.br/busca/{query}/{region}"
-            ]
+            logger.info(f"Searching Bing with Playwright for: {query} in {region}")
             
-            for url in yellow_pages_urls:
-                try:
-                    logger.info(f"Searching Yellow Pages: {url}")
-                    
-                    # Use requests-html for better JavaScript support
-                    response = self.html_session.get(url, timeout=30)
-                    response.html.render(timeout=30)
-                    
-                    # Try different selectors for business listings
-                    business_listings = response.html.find('div.listing, div.business-listing, div.result-item, div.company-card')
-                    
-                    for listing in business_listings[:5]:
-                        try:
-                            name_elem = listing.find('h3, a.business-name, div.company-name', first=True)
-                            phone_elem = listing.find('span.phone, div.phone-number', first=True)
-                            address_elem = listing.find('span.address, div.address', first=True)
-                            
-                            if name_elem:
-                                name = name_elem.text.strip()
-                                phone = phone_elem.text.strip() if phone_elem else ''
-                                address = address_elem.text.strip() if address_elem else ''
-                                
-                                if self._is_valid_business(name, address):
-                                    lead = {
-                                        'name': name,
-                                        'phone': phone,
-                                        'address': address,
-                                        'source': 'yellow_pages_api'
-                                    }
-                                    leads.append(lead)
-                                    
-                        except Exception as e:
-                            logger.warning(f"Error parsing Yellow Pages listing: {e}")
-                            continue
-                    
-                    # If we found results, break
-                    if leads:
-                        break
+            with sync_playwright() as p:
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-blink-features=AutomationControlled',
+                        '--disable-dev-shm-usage'
+                    ]
+                )
+                
+                context = browser.new_context(
+                    user_agent=self._get_random_user_agent(),
+                    viewport={'width': 1280, 'height': 720},
+                    locale='pt-BR'
+                )
+                
+                page = context.new_page()
+                time.sleep(random.uniform(2, 4))
+                
+                search_query = f"{query} {region}"
+                encoded_query = urllib.parse.quote(search_query)
+                search_url = f"https://www.bing.com/search?q={encoded_query}&cc=BR&setlang=pt-BR"
+                
+                page.goto(search_url, wait_until='networkidle', timeout=30000)
+                page.wait_for_timeout(3000)
+                
+                # Look for search results
+                results = page.query_selector_all('li.b_algo')
+                
+                for result in results[:10]:
+                    try:
+                        title_elem = result.query_selector('h2')
+                        link_elem = result.query_selector('a')
+                        snippet_elem = result.query_selector('p')
                         
-                except Exception as e:
-                    logger.warning(f"Error with Yellow Pages URL {url}: {e}")
-                    continue
-            
-            time.sleep(self.request_delay + random.uniform(1, 3))
-            
+                        if title_elem and link_elem:
+                            name = title_elem.inner_text().strip()
+                            website = link_elem.get_attribute('href')
+                            description = snippet_elem.inner_text().strip() if snippet_elem else ''
+                            
+                            if self._is_valid_business(name, description):
+                                lead = {
+                                    'name': name,
+                                    'website': website,
+                                    'description': description,
+                                    'source': 'bing_playwright'
+                                }
+                                leads.append(lead)
+                                logger.info(f"Found business: {name}")
+                                
+                    except Exception as e:
+                        logger.warning(f"Error parsing Bing result: {e}")
+                        continue
+                
+                browser.close()
+                
         except Exception as e:
-            logger.error(f"Error in Yellow Pages API search: {e}")
+            logger.error(f"Error in Bing Playwright search: {e}")
+        
+        return leads
+    
+    def search_yellow_pages_with_playwright(self, query: str, region: str) -> List[Dict]:
+        """Search Yellow Pages using Playwright"""
+        leads = []
+        
+        try:
+            logger.info(f"Searching Yellow Pages with Playwright for: {query} in {region}")
+            
+            with sync_playwright() as p:
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-blink-features=AutomationControlled',
+                        '--disable-dev-shm-usage'
+                    ]
+                )
+                
+                context = browser.new_context(
+                    user_agent=self._get_random_user_agent(),
+                    viewport={'width': 1280, 'height': 720},
+                    locale='pt-BR'
+                )
+                
+                page = context.new_page()
+                time.sleep(random.uniform(2, 4))
+                
+                # Try different Yellow Pages sites
+                yellow_pages_urls = [
+                    f"https://www.telelistas.net/busca/{query}/{region}",
+                    f"https://www.guiatelefone.com.br/busca/{query}/{region}",
+                    f"https://www.paginasamarelas.com.br/busca/{query}/{region}"
+                ]
+                
+                for url in yellow_pages_urls:
+                    try:
+                        logger.info(f"Trying Yellow Pages URL: {url}")
+                        page.goto(url, wait_until='networkidle', timeout=30000)
+                        page.wait_for_timeout(3000)
+                        
+                        # Try different selectors for business listings
+                        selectors = [
+                            'div.listing',
+                            'div.business-listing', 
+                            'div.result-item',
+                            'div.company-card',
+                            'li.result-item',
+                            '.business-name'
+                        ]
+                        
+                        listings = []
+                        for selector in selectors:
+                            try:
+                                listings = page.query_selector_all(selector)
+                                if listings:
+                                    logger.info(f"Found {len(listings)} listings with selector: {selector}")
+                                    break
+                            except:
+                                continue
+                        
+                        for listing in listings[:5]:
+                            try:
+                                # Try to extract business information
+                                name_elem = listing.query_selector('h3, a.business-name, div.company-name, .business-name')
+                                phone_elem = listing.query_selector('span.phone, div.phone-number, .phone')
+                                address_elem = listing.query_selector('span.address, div.address, .address')
+                                
+                                if name_elem:
+                                    name = name_elem.inner_text().strip()
+                                    phone = phone_elem.inner_text().strip() if phone_elem else ''
+                                    address = address_elem.inner_text().strip() if address_elem else ''
+                                    
+                                    if self._is_valid_business(name, address):
+                                        lead = {
+                                            'name': name,
+                                            'phone': phone,
+                                            'address': address,
+                                            'source': 'yellow_pages_playwright'
+                                        }
+                                        leads.append(lead)
+                                        logger.info(f"Found business: {name}")
+                                        
+                            except Exception as e:
+                                logger.warning(f"Error parsing Yellow Pages listing: {e}")
+                                continue
+                        
+                        # If we found results, break
+                        if leads:
+                            break
+                            
+                    except Exception as e:
+                        logger.warning(f"Error with Yellow Pages URL {url}: {e}")
+                        continue
+                
+                browser.close()
+                
+        except Exception as e:
+            logger.error(f"Error in Yellow Pages Playwright search: {e}")
         
         return leads
     
     def collect_leads(self, industry: str, region: str, test_mode: bool = False, target_count: int = 25) -> List[Dict]:
-        """Collect leads from multiple sources with priority to APIs"""
+        """Collect leads from multiple sources using Playwright"""
         all_leads = []
         
         if test_mode:
             logger.info("Running in test mode - using limited data collection")
-            target_count = min(target_count, 5)
+            target_count = min(target_count, 10)
         
         # Generate search keywords based on industry
         keywords = self._generate_search_keywords(industry)
@@ -370,37 +489,37 @@ class LeadCollector:
         logger.info(f"Using keywords: {keywords}")
         
         for keyword in keywords[:3]:  # Use top 3 keywords to avoid rate limits
-            # Priority 1: Google Places API (most reliable)
-            if self.gmaps:
-                places_leads = self.search_google_places_api(keyword, region)
-                all_leads.extend(places_leads)
-                logger.info(f"Found {len(places_leads)} leads from Google Places API")
-            
-            # Priority 2: Google Custom Search API
-            if self.google_search_api_key:
-                custom_search_leads = self.search_google_custom_search_api(keyword, region)
-                all_leads.extend(custom_search_leads)
-                logger.info(f"Found {len(custom_search_leads)} leads from Google Custom Search API")
-            
-            # Priority 3: Playwright with Google (fallback)
-            if len(all_leads) < target_count // 2:
-                google_playwright_leads = self.search_with_playwright(keyword, region, 'google')
-                all_leads.extend(google_playwright_leads)
-                logger.info(f"Found {len(google_playwright_leads)} leads from Google Playwright")
-            
-            # Priority 4: Playwright with Bing (fallback)
-            if len(all_leads) < target_count // 2:
-                bing_playwright_leads = self.search_with_playwright(keyword, region, 'bing')
-                all_leads.extend(bing_playwright_leads)
-                logger.info(f"Found {len(bing_playwright_leads)} leads from Bing Playwright")
-            
-            # Priority 5: Yellow Pages API
-            yellow_leads = self.search_yellow_pages_api(keyword, region)
-            all_leads.extend(yellow_leads)
-            logger.info(f"Found {len(yellow_leads)} leads from Yellow Pages API")
+            # Priority 1: Google Maps (most reliable for local businesses)
+            maps_leads = self.search_google_maps_with_playwright(keyword, region)
+            all_leads.extend(maps_leads)
+            logger.info(f"Found {len(maps_leads)} leads from Google Maps")
             
             # Add delay between searches
             time.sleep(self.request_delay + random.uniform(2, 5))
+            
+            # Priority 2: Google Search
+            if len(all_leads) < target_count // 2:
+                google_leads = self.search_google_with_playwright(keyword, region)
+                all_leads.extend(google_leads)
+                logger.info(f"Found {len(google_leads)} leads from Google Search")
+                
+                time.sleep(self.request_delay + random.uniform(2, 5))
+            
+            # Priority 3: Bing Search
+            if len(all_leads) < target_count // 2:
+                bing_leads = self.search_bing_with_playwright(keyword, region)
+                all_leads.extend(bing_leads)
+                logger.info(f"Found {len(bing_leads)} leads from Bing Search")
+                
+                time.sleep(self.request_delay + random.uniform(2, 5))
+            
+            # Priority 4: Yellow Pages
+            yellow_leads = self.search_yellow_pages_with_playwright(keyword, region)
+            all_leads.extend(yellow_leads)
+            logger.info(f"Found {len(yellow_leads)} leads from Yellow Pages")
+            
+            # Add delay between keywords
+            time.sleep(self.request_delay + random.uniform(3, 7))
         
         # Remove duplicates based on name and clean data
         unique_leads = self._deduplicate_and_clean_leads(all_leads)
@@ -448,36 +567,91 @@ class LeadCollector:
         
         return keywords
     
+    def _load_lead_filters(self):
+        """Load lead filtering configuration"""
+        try:
+            with open('config/lead_filters.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.warning(f"Could not load lead filters config: {e}")
+            return {
+                "invalid_keywords": [],
+                "invalid_domains": [],
+                "valid_business_patterns": [],
+                "minimum_name_length": 3
+            }
+    
     def _is_valid_business(self, name: str, description: str = "") -> bool:
         """Check if a result is a valid business"""
-        # Filter out obvious non-business results
-        invalid_keywords = [
-            'wikipedia', 'wiki', 'youtube', 'facebook', 'instagram', 'twitter',
-            'linkedin', 'google', 'maps', 'search', 'resultado', 'resultados',
-            'página', 'página inicial', 'home', 'início', 'sobre', 'contato',
-            'política', 'termos', 'privacidade', 'cookies', 'anúncio', 'anúncios',
-            'busca', 'pesquisa', 'encontrar', 'localizar', 'direções', 'rota'
-        ]
+        filters = self._load_lead_filters()
         
         name_lower = name.lower()
         desc_lower = description.lower()
         
-        # Check for invalid keywords
-        for keyword in invalid_keywords:
+        # Check for invalid keywords in name or description
+        for keyword in filters.get('invalid_keywords', []):
             if keyword in name_lower or keyword in desc_lower:
+                logger.info(f"Filtered out lead '{name}' due to invalid keyword: {keyword}")
                 return False
         
         # Check for minimum name length
-        if len(name.strip()) < 3:
+        if len(name.strip()) < filters.get('minimum_name_length', 3):
+            logger.info(f"Filtered out lead '{name}' due to short name")
             return False
         
         # Check for obvious non-business patterns
         if re.search(r'^\d+$', name.strip()):  # Just numbers
+            logger.info(f"Filtered out lead '{name}' due to numeric only name")
             return False
         
         # Check for search result patterns
         if re.search(r'resultado|busca|pesquisa|encontrar', name_lower):
+            logger.info(f"Filtered out lead '{name}' due to search result pattern")
             return False
+        
+        # Check for question patterns
+        if re.search(r'\?|como|quando|onde|quem|por que|porque', name_lower):
+            logger.info(f"Filtered out lead '{name}' due to question pattern")
+            return False
+        
+        # Check for list/ranking patterns
+        if re.search(r'melhores|top|ranking|lista|primeiro|segundo|terceiro', name_lower):
+            logger.info(f"Filtered out lead '{name}' due to list/ranking pattern")
+            return False
+        
+        # Check for educational/informational patterns
+        if re.search(r'curso|aula|tutorial|guia|manual|aprenda|estude', name_lower):
+            logger.info(f"Filtered out lead '{name}' due to educational pattern")
+            return False
+        
+        return True
+    
+    def _is_valid_website(self, website: str) -> bool:
+        """Check if a website is from a valid business domain"""
+        if not website:
+            return True  # Empty website is acceptable
+        
+        # Invalid domains that should be filtered out
+        invalid_domains = [
+            'wikipedia.org', 'wikipedia.com', 'wikimedia.org',
+            'youtube.com', 'youtu.be', 'facebook.com', 'fb.com',
+            'instagram.com', 'twitter.com', 'x.com', 'linkedin.com',
+            'google.com', 'google.com.br', 'maps.google.com',
+            'glassdoor.com', 'glassdoor.com.br', 'indeed.com',
+            'monster.com', 'vagas.com', 'empregos.com',
+            'estacio.br', 'estacio.edu.br', 'universidade',
+            'blogspot.com', 'wordpress.com', 'medium.com',
+            'reddit.com', 'quora.com', 'stackoverflow.com',
+            'jusbrasil.com.br', 'salario.com.br', 'guia.com.br',
+            'telelistas.net', 'guiatelefone.com.br', 'paginasamarelas.com.br'
+        ]
+        
+        website_lower = website.lower()
+        
+        # Check if website contains any invalid domains
+        for domain in invalid_domains:
+            if domain in website_lower:
+                return False
         
         return True
     
@@ -488,17 +662,18 @@ class LeadCollector:
         
         for lead in leads:
             name = lead.get('name', '').strip()
+            website = lead.get('website', '')
             
             # Skip if no name or already seen
             if not name or name in seen_names:
                 continue
             
             # Clean and validate the lead
-            if self._is_valid_business(name, lead.get('description', '')):
+            if self._is_valid_business(name, lead.get('description', '')) and self._is_valid_website(website):
                 # Clean the lead data
                 clean_lead = {
                     'name': name,
-                    'website': lead.get('website', ''),
+                    'website': website,
                     'email': lead.get('email', ''),
                     'phone': lead.get('phone', ''),
                     'address': lead.get('address', ''),
@@ -508,6 +683,9 @@ class LeadCollector:
                 
                 unique_leads.append(clean_lead)
                 seen_names.add(name)
+                logger.info(f"Validated lead: {name}")
+            else:
+                logger.info(f"Filtered out invalid lead: {name}")
         
         return unique_leads
 

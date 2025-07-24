@@ -32,8 +32,8 @@ class SiteAnalyzer:
             try:
                 subprocess.run(['lighthouse', '--version'], capture_output=True, check=True)
             except (subprocess.CalledProcessError, FileNotFoundError):
-                logger.warning("Lighthouse CLI not found. Using mock data.")
-                return self._get_mock_lighthouse_data(url)
+                logger.warning("Lighthouse CLI not found. Using empty data.")
+                return self._get_empty_lighthouse_data(url)
             
             # Run Lighthouse in headless mode
             cmd = [
@@ -53,11 +53,11 @@ class SiteAnalyzer:
                 return self._parse_lighthouse_results(lighthouse_data)
             else:
                 logger.error(f"Lighthouse failed: {result.stderr}")
-                return self._get_mock_lighthouse_data(url)
+                return self._get_empty_lighthouse_data(url)
                 
         except Exception as e:
             logger.error(f"Error running Lighthouse: {e}")
-            return self._get_mock_lighthouse_data(url)
+            return self._get_empty_lighthouse_data(url)
     
     def _parse_lighthouse_results(self, data: Dict) -> Dict:
         """Parse Lighthouse results and extract key metrics"""
@@ -77,7 +77,22 @@ class SiteAnalyzer:
             }
         except Exception as e:
             logger.error(f"Error parsing Lighthouse results: {e}")
-            return self._get_mock_lighthouse_data("")
+            return self._get_empty_lighthouse_data("")
+    
+    def _get_empty_lighthouse_data(self, url: str) -> Dict:
+        """Return empty Lighthouse data when CLI is not available"""
+        return {
+            'performance_score': 0.0,
+            'accessibility_score': 0.0,
+            'best_practices_score': 0.0,
+            'seo_score': 0.0,
+            'first_contentful_paint': 0,
+            'largest_contentful_paint': 0,
+            'cumulative_layout_shift': 0.0,
+            'total_blocking_time': 0,
+            'speed_index': 0,
+            'status': 'no_data'
+        }
     
     def _get_mock_lighthouse_data(self, url: str) -> Dict:
         """Return mock Lighthouse data for testing"""
@@ -129,7 +144,7 @@ class SiteAnalyzer:
             
         except Exception as e:
             logger.error(f"Error analyzing SEO: {e}")
-            return self._get_mock_seo_data()
+            return self._get_empty_seo_data()
     
     def _analyze_meta_tags(self, soup: BeautifulSoup) -> Dict:
         """Analyze meta tags for SEO"""
@@ -269,6 +284,38 @@ class SiteAnalyzer:
         if sitemap: score += 10
         
         return min(score, 100)
+    
+    def _get_empty_seo_data(self) -> Dict:
+        """Return empty SEO data when analysis fails"""
+        return {
+            'meta_tags': {
+                'title': False,
+                'description': False,
+                'keywords': False,
+                'viewport': False,
+                'robots': False,
+                'og_tags': 0,
+                'twitter_tags': 0
+            },
+            'headings': {
+                'counts': {'h1': 0, 'h2': 0, 'h3': 0, 'h4': 0, 'h5': 0, 'h6': 0},
+                'has_proper_hierarchy': False,
+                'total_headings': 0
+            },
+            'images': {
+                'total_images': 0,
+                'images_with_alt': 0,
+                'alt_text_ratio': 0.0
+            },
+            'links': {
+                'total_links': 0,
+                'internal_links': 0,
+                'external_links': 0
+            },
+            'sitemap_found': False,
+            'total_score': 0.0,
+            'status': 'no_data'
+        }
     
     def _get_mock_seo_data(self) -> Dict:
         """Return mock SEO data for testing"""

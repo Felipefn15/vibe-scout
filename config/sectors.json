@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Advocacia",
+    "keywords": ["advocacia", "advogados", "escritório de advocacia", "advocacia especializada"],
+    "description": "Escritórios de advocacia e consultoria jurídica"
+  },
+  {
+    "name": "Restaurantes",
+    "keywords": ["restaurante", "pizzaria", "churrascaria", "lanchonete", "bar"],
+    "description": "Restaurantes, pizzarias e estabelecimentos gastronômicos"
+  },
+  {
+    "name": "Farmácias",
+    "keywords": ["farmácia", "drogaria", "farmacia", "farmácia popular"],
+    "description": "Farmácias e drogarias"
+  },
+  {
+    "name": "Clínicas",
+    "keywords": ["clínica", "consultório", "clinica", "médico", "dentista"],
+    "description": "Clínicas médicas e consultórios"
+  },
+  {
+    "name": "Academias",
+    "keywords": ["academia", "ginástica", "fitness", "crossfit", "personal trainer"],
+    "description": "Academias e centros de fitness"
+  },
+  {
+    "name": "Salões de Beleza",
+    "keywords": ["salão de beleza", "salao de beleza", "estética", "cabeleireiro", "manicure"],
+    "description": "Salões de beleza e estética"
+  },
+  {
+    "name": "Imobiliárias",
+    "keywords": ["imobiliária", "imobiliaria", "imóveis", "imoveis", "corretor"],
+    "description": "Imobiliárias e corretores de imóveis"
+  },
+  {
+    "name": "Consultorias",
+    "keywords": ["consultoria", "assessoria", "empresarial", "gestão", "gestao"],
+    "description": "Consultorias empresariais e assessorias"
+  },
+  {
+    "name": "Padarias",
+    "keywords": ["padaria", "panificadora", "confeitaria", "doceria"],
+    "description": "Padarias e confeitarias"
+  },
+  {
+    "name": "Lojas",
+    "keywords": ["loja", "comércio", "comercio", "varejo", "boutique"],
+    "description": "Lojas e comércio varejista"
+  },
+  {
+    "name": "Escolas",
+    "keywords": ["escola", "colégio", "colegio", "instituição de ensino", "instituicao de ensino"],
+    "description": "Escolas e instituições de ensino"
+  },
+  {
+    "name": "Oficinas",
+    "keywords": ["oficina", "mecânica", "mecanica", "auto center", "funilaria"],
+    "description": "Oficinas mecânicas e auto centers"
+  },
+  {
+    "name": "Pet Shops",
+    "keywords": ["pet shop", "veterinário", "veterinario", "banho e tosa"],
+    "description": "Pet shops e clínicas veterinárias"
+  },
+  {
+    "name": "Lavanderias",
+    "keywords": ["lavanderia", "lavagem", "dry clean", "tinturaria"],
+    "description": "Lavanderias e serviços de limpeza"
+  },
+  {
+    "name": "Fotógrafos",
+    "keywords": ["fotógrafo", "fotografo", "estúdio fotográfico", "estudio fotografico"],
+    "description": "Fotógrafos e estúdios fotográficos"
+  }
+] 

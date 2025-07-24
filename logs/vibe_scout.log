@@ -1657,3 +1657,309 @@ context.is-instance[_NotSpecified]
 2025-07-23 21:47:38,118 - scraper.collect - WARNING - Error with Yellow Pages URL https://www.paginasamarelas.com.br/busca/restaurantes restaurantes/Rio de Janeiro: HTTPSConnectionPool(host='www.paginasamarelas.com.br', port=443): Max retries exceeded with url: /busca/restaurantes%20restaurantes/Rio%20de%20Janeiro (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102c86ad0>: Failed to resolve 'www.paginasamarelas.com.br' ([Errno 8] nodename nor servname provided, or not known)"))
 2025-07-23 21:47:38,118 - scraper.collect - INFO - Searching Yellow Pages: https://www.telelistas.net/busca/restaurantes restaurantes/Rio de Janeiro
 2025-07-23 21:47:38,333 - scraper.collect - INFO - Searching Yellow Pages: https://www.guiatelefone.com.br/busca/restaurantes restaurantes/Rio de Janeiro
+2025-07-23 21:56:26,187 - __main__ - INFO - Starting simple Vibe Scout pipeline for advocacias in Rio de Janeiro
+2025-07-23 21:56:26,190 - utils.lead_manager - INFO - Loaded 0 contacted leads
+2025-07-23 21:56:26,191 - utils.lead_manager - INFO - Loaded 0 blacklisted leads
+2025-07-23 21:56:26,191 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:56:26,430 - scraper.collect - INFO - Collecting leads for advocacias in Rio de Janeiro
+2025-07-23 21:56:26,430 - scraper.collect - INFO - Using keywords: ['advocacias', 'advocacias advocacias', 'melhor advocacias', 'advocacias perto de mim', 'advocacias próximo', 'empresa advocacias', 'negócio advocacias']
+2025-07-23 21:56:26,430 - scraper.collect - INFO - Searching Google Maps with Playwright for: advocacias in Rio de Janeiro
+2025-07-23 21:56:29,592 - scraper.collect - INFO - Navigating to: https://www.google.com/maps/search/advocacias%20Rio%20de%20Janeiro
+2025-07-23 21:56:59,636 - scraper.collect - ERROR - Error in Google Maps Playwright search: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/maps/search/advocacias%20Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:56:59,636 - scraper.collect - INFO - Found 0 leads from Google Maps
+2025-07-23 21:57:05,022 - scraper.collect - INFO - Searching Google with Playwright for: advocacias in Rio de Janeiro
+2025-07-23 21:57:08,801 - scraper.collect - INFO - Navigating to: https://www.google.com/search?q=advocacias%20Rio%20de%20Janeiro&num=20&hl=pt-BR&gl=br
+2025-07-23 21:57:15,983 - scraper.collect - INFO - Found 22 results with selector: div.yuRUbf
+2025-07-23 21:57:16,002 - scraper.collect - INFO - Found business: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 21:57:16,015 - scraper.collect - INFO - Found business: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 21:57:16,027 - scraper.collect - INFO - Found business: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 21:57:16,041 - scraper.collect - INFO - Found business: Advogado: Estado do RJ - Salário
+2025-07-23 21:57:16,067 - scraper.collect - INFO - Found business: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 21:57:16,078 - scraper.collect - INFO - Found business: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 21:57:16,090 - scraper.collect - INFO - Found business: Basilio Advogados
+2025-07-23 21:57:16,103 - scraper.collect - INFO - Found business: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 21:57:16,114 - scraper.collect - INFO - Found business: Bermudes Advogados
+2025-07-23 21:57:16,126 - scraper.collect - INFO - Found business: Salomão Advogados
+2025-07-23 21:57:16,138 - scraper.collect - INFO - Found business: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 21:57:16,149 - scraper.collect - INFO - Found business: BRZ Advogados
+2025-07-23 21:57:16,160 - scraper.collect - INFO - Found business: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 21:57:16,172 - scraper.collect - INFO - Found business: Rio de Janeiro | Locations
+2025-07-23 21:57:16,262 - scraper.collect - INFO - Found 14 leads from Google Search
+2025-07-23 21:57:22,102 - scraper.collect - INFO - Searching Yellow Pages with Playwright for: advocacias in Rio de Janeiro
+2025-07-23 21:57:25,310 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.telelistas.net/busca/advocacias/Rio de Janeiro
+2025-07-23 21:57:30,311 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.guiatelefone.com.br/busca/advocacias/Rio de Janeiro
+2025-07-23 21:57:36,657 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.paginasamarelas.com.br/busca/advocacias/Rio de Janeiro
+2025-07-23 21:57:36,673 - scraper.collect - WARNING - Error with Yellow Pages URL https://www.paginasamarelas.com.br/busca/advocacias/Rio de Janeiro: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.paginasamarelas.com.br/busca/advocacias/Rio%20de%20Janeiro
+Call log:
+  - navigating to "https://www.paginasamarelas.com.br/busca/advocacias/Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:57:36,709 - scraper.collect - INFO - Found 0 leads from Yellow Pages
+2025-07-23 21:57:43,733 - scraper.collect - INFO - Searching Google Maps with Playwright for: advocacias advocacias in Rio de Janeiro
+2025-07-23 21:57:46,616 - scraper.collect - INFO - Navigating to: https://www.google.com/maps/search/advocacias%20advocacias%20Rio%20de%20Janeiro
+2025-07-23 21:58:16,701 - scraper.collect - ERROR - Error in Google Maps Playwright search: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/maps/search/advocacias%20advocacias%20Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:58:16,702 - scraper.collect - INFO - Found 0 leads from Google Maps
+2025-07-23 21:58:23,056 - scraper.collect - INFO - Searching Yellow Pages with Playwright for: advocacias advocacias in Rio de Janeiro
+2025-07-23 21:58:26,945 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.telelistas.net/busca/advocacias advocacias/Rio de Janeiro
+2025-07-23 21:58:32,249 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.guiatelefone.com.br/busca/advocacias advocacias/Rio de Janeiro
+2025-07-23 21:58:38,410 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.paginasamarelas.com.br/busca/advocacias advocacias/Rio de Janeiro
+2025-07-23 21:58:38,417 - scraper.collect - WARNING - Error with Yellow Pages URL https://www.paginasamarelas.com.br/busca/advocacias advocacias/Rio de Janeiro: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.paginasamarelas.com.br/busca/advocacias%20advocacias/Rio%20de%20Janeiro
+Call log:
+  - navigating to "https://www.paginasamarelas.com.br/busca/advocacias%20advocacias/Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:58:38,442 - scraper.collect - INFO - Found 0 leads from Yellow Pages
+2025-07-23 21:58:47,149 - scraper.collect - INFO - Searching Google Maps with Playwright for: melhor advocacias in Rio de Janeiro
+2025-07-23 21:58:51,457 - scraper.collect - INFO - Navigating to: https://www.google.com/maps/search/melhor%20advocacias%20Rio%20de%20Janeiro
+2025-07-23 21:59:21,595 - scraper.collect - ERROR - Error in Google Maps Playwright search: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.google.com/maps/search/melhor%20advocacias%20Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:59:21,595 - scraper.collect - INFO - Found 0 leads from Google Maps
+2025-07-23 21:59:27,554 - scraper.collect - INFO - Searching Yellow Pages with Playwright for: melhor advocacias in Rio de Janeiro
+2025-07-23 21:59:30,394 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.telelistas.net/busca/melhor advocacias/Rio de Janeiro
+2025-07-23 21:59:35,694 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.guiatelefone.com.br/busca/melhor advocacias/Rio de Janeiro
+2025-07-23 21:59:41,852 - scraper.collect - INFO - Trying Yellow Pages URL: https://www.paginasamarelas.com.br/busca/melhor advocacias/Rio de Janeiro
+2025-07-23 21:59:41,858 - scraper.collect - WARNING - Error with Yellow Pages URL https://www.paginasamarelas.com.br/busca/melhor advocacias/Rio de Janeiro: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.paginasamarelas.com.br/busca/melhor%20advocacias/Rio%20de%20Janeiro
+Call log:
+  - navigating to "https://www.paginasamarelas.com.br/busca/melhor%20advocacias/Rio%20de%20Janeiro", waiting until "networkidle"
+
+2025-07-23 21:59:41,893 - scraper.collect - INFO - Found 0 leads from Yellow Pages
+2025-07-23 21:59:47,914 - scraper.collect - INFO - Collected 14 unique leads from 14 total results
+2025-07-23 21:59:47,916 - utils.lead_manager - INFO - Filtered 0 already contacted/blacklisted leads
+2025-07-23 21:59:47,917 - utils.lead_manager - INFO - Found 14 new leads to contact
+2025-07-23 21:59:47,920 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:59:47,926 - analysis.site_seo - INFO - Starting site analysis for 14 leads
+2025-07-23 21:59:47,926 - analysis.site_seo - INFO - Analyzing website: https://www.jusbrasil.com.br/advogados/rj-rio-de-janeiro/
+2025-07-23 21:59:47,926 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.jusbrasil.com.br/advogados/rj-rio-de-janeiro/
+2025-07-23 21:59:47,935 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:59:47,935 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.jusbrasil.com.br/advogados/rj-rio-de-janeiro/
+2025-07-23 21:59:49,974 - analysis.site_seo - INFO - Analyzing website: https://www.glassdoor.com.br/Explorar/melhores-jur%C3%ADdico-empresas-rio-de-janeiro_IS.9,17_ISEC10001_IL.27,41_IM998.htm
+2025-07-23 21:59:49,974 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.glassdoor.com.br/Explorar/melhores-jur%C3%ADdico-empresas-rio-de-janeiro_IS.9,17_ISEC10001_IL.27,41_IM998.htm
+2025-07-23 21:59:49,986 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:59:49,987 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.glassdoor.com.br/Explorar/melhores-jur%C3%ADdico-empresas-rio-de-janeiro_IS.9,17_ISEC10001_IL.27,41_IM998.htm
+2025-07-23 21:59:52,517 - analysis.site_seo - INFO - Analyzing website: https://matriculas.estacio.br/blog/como-consultar-a-oab-de-um-advogado-passo-a-passo/
+2025-07-23 21:59:52,517 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://matriculas.estacio.br/blog/como-consultar-a-oab-de-um-advogado-passo-a-passo/
+2025-07-23 21:59:52,526 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:59:52,526 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://matriculas.estacio.br/blog/como-consultar-a-oab-de-um-advogado-passo-a-passo/
+2025-07-23 21:59:58,868 - analysis.site_seo - INFO - Analyzing website: https://www.salario.com.br/profissao/advogado-cbo-241005/rj/#:~:text=R%24%206.618%2C63%2Fm%C3%AAs&text=Um%20Advogado%20trabalhando%20no%20estado,trabalho%20de%2041%20horas%20semanais.
+2025-07-23 21:59:58,869 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.salario.com.br/profissao/advogado-cbo-241005/rj/#:~:text=R%24%206.618%2C63%2Fm%C3%AAs&text=Um%20Advogado%20trabalhando%20no%20estado,trabalho%20de%2041%20horas%20semanais.
+2025-07-23 21:59:58,884 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:59:58,885 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.salario.com.br/profissao/advogado-cbo-241005/rj/#:~:text=R%24%206.618%2C63%2Fm%C3%AAs&text=Um%20Advogado%20trabalhando%20no%20estado,trabalho%20de%2041%20horas%20semanais.
+2025-07-23 22:00:00,950 - analysis.site_seo - INFO - Analyzing website: https://advogadoriodejaneiro.com/
+2025-07-23 22:00:00,951 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://advogadoriodejaneiro.com/
+2025-07-23 22:00:00,964 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:00,964 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://advogadoriodejaneiro.com/
+2025-07-23 22:00:04,343 - analysis.site_seo - INFO - Analyzing website: https://advogadorj.com/
+2025-07-23 22:00:04,343 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://advogadorj.com/
+2025-07-23 22:00:04,347 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:04,347 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://advogadorj.com/
+2025-07-23 22:00:11,448 - analysis.site_seo - INFO - Analyzing website: https://basilioadvogados.com.br/
+2025-07-23 22:00:11,449 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://basilioadvogados.com.br/
+2025-07-23 22:00:11,452 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:11,452 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://basilioadvogados.com.br/
+2025-07-23 22:00:15,451 - analysis.site_seo - INFO - Analyzing website: https://www.oabrj.org.br/
+2025-07-23 22:00:15,451 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.oabrj.org.br/
+2025-07-23 22:00:15,455 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:15,455 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.oabrj.org.br/
+2025-07-23 22:00:18,152 - analysis.site_seo - INFO - Analyzing website: https://bermudes.com.br/
+2025-07-23 22:00:18,153 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://bermudes.com.br/
+2025-07-23 22:00:18,156 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:18,156 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://bermudes.com.br/
+2025-07-23 22:00:19,655 - analysis.site_seo - INFO - Analyzing website: https://salomaoadv.com.br/
+2025-07-23 22:00:19,656 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://salomaoadv.com.br/
+2025-07-23 22:00:19,660 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:19,660 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://salomaoadv.com.br/
+2025-07-23 22:00:24,836 - analysis.site_seo - INFO - Analyzing website: https://escritoriodeadvocaciarj.com.br/
+2025-07-23 22:00:24,838 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://escritoriodeadvocaciarj.com.br/
+2025-07-23 22:00:24,845 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:24,845 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://escritoriodeadvocaciarj.com.br/
+2025-07-23 22:00:32,306 - analysis.site_seo - INFO - Analyzing website: https://brzadvogados.com.br/
+2025-07-23 22:00:32,306 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://brzadvogados.com.br/
+2025-07-23 22:00:32,310 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:32,311 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://brzadvogados.com.br/
+2025-07-23 22:00:36,198 - analysis.site_seo - INFO - Analyzing website: https://www.jusbrasil.com.br/advogados/rj/
+2025-07-23 22:00:36,198 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.jusbrasil.com.br/advogados/rj/
+2025-07-23 22:00:36,202 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:36,203 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.jusbrasil.com.br/advogados/rj/
+2025-07-23 22:00:38,235 - analysis.site_seo - INFO - Analyzing website: https://www.tauilchequer.com.br/pt/about-us/locations/rio-de-janeiro-tc
+2025-07-23 22:00:38,236 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://www.tauilchequer.com.br/pt/about-us/locations/rio-de-janeiro-tc
+2025-07-23 22:00:38,243 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 22:00:38,244 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://www.tauilchequer.com.br/pt/about-us/locations/rio-de-janeiro-tc
+2025-07-23 22:00:41,065 - analysis.site_seo - INFO - Completed site analysis for 14 leads
+2025-07-23 22:00:41,068 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 22:00:41,071 - analysis.social - INFO - Starting social media analysis for 14 leads
+2025-07-23 22:00:41,072 - analysis.social - INFO - Analyzing social media for: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:00:41,072 - analysis.social - INFO - Analyzing social presence for: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:00:41,072 - analysis.social - INFO - Analyzing Instagram profile: @advogadoespecializadoderiodejaneiro(rj)
+2025-07-23 22:00:41,072 - analysis.social - INFO - Analyzing Facebook page: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:00:41,072 - analysis.social - INFO - Analyzing LinkedIn company: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:00:42,078 - analysis.social - INFO - Analyzing social media for: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:00:42,078 - analysis.social - INFO - Analyzing social presence for: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:00:42,078 - analysis.social - INFO - Analyzing Instagram profile: @asmelhoresempresasdosetordejurídico–riodejaneiro-glassdoor
+2025-07-23 22:00:42,078 - analysis.social - INFO - Analyzing Facebook page: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:00:42,078 - analysis.social - INFO - Analyzing LinkedIn company: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:00:43,083 - analysis.social - INFO - Analyzing social media for: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:00:43,083 - analysis.social - INFO - Analyzing social presence for: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:00:43,083 - analysis.social - INFO - Analyzing Instagram profile: @comoconsultaraoabdeumadvogado?passoapasso-estácio
+2025-07-23 22:00:43,083 - analysis.social - INFO - Analyzing Facebook page: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:00:43,084 - analysis.social - INFO - Analyzing LinkedIn company: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:00:44,089 - analysis.social - INFO - Analyzing social media for: Advogado: Estado do RJ - Salário
+2025-07-23 22:00:44,089 - analysis.social - INFO - Analyzing social presence for: Advogado: Estado do RJ - Salário
+2025-07-23 22:00:44,089 - analysis.social - INFO - Analyzing Instagram profile: @advogado:estadodorj-salário
+2025-07-23 22:00:44,089 - analysis.social - INFO - Analyzing Facebook page: Advogado: Estado do RJ - Salário
+2025-07-23 22:00:44,089 - analysis.social - INFO - Analyzing LinkedIn company: Advogado: Estado do RJ - Salário
+2025-07-23 22:00:45,091 - analysis.social - INFO - Analyzing social media for: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:00:45,091 - analysis.social - INFO - Analyzing social presence for: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:00:45,091 - analysis.social - INFO - Analyzing Instagram profile: @advogadonoriodejaneiro/escritóriodeadvocacia...
+2025-07-23 22:00:45,091 - analysis.social - INFO - Analyzing Facebook page: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:00:45,091 - analysis.social - INFO - Analyzing LinkedIn company: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:00:46,096 - analysis.social - INFO - Analyzing social media for: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:00:46,096 - analysis.social - INFO - Analyzing social presence for: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:00:46,096 - analysis.social - INFO - Analyzing Instagram profile: @escritóriodeadvocacia|garciaadvogados|especialistas
+2025-07-23 22:00:46,096 - analysis.social - INFO - Analyzing Facebook page: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:00:46,096 - analysis.social - INFO - Analyzing LinkedIn company: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:00:47,101 - analysis.social - INFO - Analyzing social media for: Basilio Advogados
+2025-07-23 22:00:47,101 - analysis.social - INFO - Analyzing social presence for: Basilio Advogados
+2025-07-23 22:00:47,101 - analysis.social - INFO - Analyzing Instagram profile: @basilioadvogados
+2025-07-23 22:00:47,101 - analysis.social - INFO - Analyzing Facebook page: Basilio Advogados
+2025-07-23 22:00:47,101 - analysis.social - INFO - Analyzing LinkedIn company: Basilio Advogados
+2025-07-23 22:00:48,101 - analysis.social - INFO - Analyzing social media for: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:00:48,102 - analysis.social - INFO - Analyzing social presence for: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:00:48,102 - analysis.social - INFO - Analyzing Instagram profile: @oabrj|defendendodireitos,garantindojustiça
+2025-07-23 22:00:48,102 - analysis.social - INFO - Analyzing Facebook page: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:00:48,102 - analysis.social - INFO - Analyzing LinkedIn company: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:00:49,102 - analysis.social - INFO - Analyzing social media for: Bermudes Advogados
+2025-07-23 22:00:49,104 - analysis.social - INFO - Analyzing social presence for: Bermudes Advogados
+2025-07-23 22:00:49,104 - analysis.social - INFO - Analyzing Instagram profile: @bermudesadvogados
+2025-07-23 22:00:49,104 - analysis.social - INFO - Analyzing Facebook page: Bermudes Advogados
+2025-07-23 22:00:49,104 - analysis.social - INFO - Analyzing LinkedIn company: Bermudes Advogados
+2025-07-23 22:00:50,104 - analysis.social - INFO - Analyzing social media for: Salomão Advogados
+2025-07-23 22:00:50,104 - analysis.social - INFO - Analyzing social presence for: Salomão Advogados
+2025-07-23 22:00:50,104 - analysis.social - INFO - Analyzing Instagram profile: @salomãoadvogados
+2025-07-23 22:00:50,104 - analysis.social - INFO - Analyzing Facebook page: Salomão Advogados
+2025-07-23 22:00:50,105 - analysis.social - INFO - Analyzing LinkedIn company: Salomão Advogados
+2025-07-23 22:00:51,110 - analysis.social - INFO - Analyzing social media for: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:00:51,110 - analysis.social - INFO - Analyzing social presence for: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:00:51,110 - analysis.social - INFO - Analyzing Instagram profile: @martinsreginaescritóriodeadvocacia–riodejaneiro–rj...
+2025-07-23 22:00:51,110 - analysis.social - INFO - Analyzing Facebook page: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:00:51,110 - analysis.social - INFO - Analyzing LinkedIn company: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:00:52,110 - analysis.social - INFO - Analyzing social media for: BRZ Advogados
+2025-07-23 22:00:52,111 - analysis.social - INFO - Analyzing social presence for: BRZ Advogados
+2025-07-23 22:00:52,111 - analysis.social - INFO - Analyzing Instagram profile: @brzadvogados
+2025-07-23 22:00:52,111 - analysis.social - INFO - Analyzing Facebook page: BRZ Advogados
+2025-07-23 22:00:52,111 - analysis.social - INFO - Analyzing LinkedIn company: BRZ Advogados
+2025-07-23 22:00:53,116 - analysis.social - INFO - Analyzing social media for: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:00:53,116 - analysis.social - INFO - Analyzing social presence for: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:00:53,116 - analysis.social - INFO - Analyzing Instagram profile: @advogadoespecializadonoriodejaneiro(estado)
+2025-07-23 22:00:53,116 - analysis.social - INFO - Analyzing Facebook page: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:00:53,116 - analysis.social - INFO - Analyzing LinkedIn company: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:00:54,120 - analysis.social - INFO - Analyzing social media for: Rio de Janeiro | Locations
+2025-07-23 22:00:54,121 - analysis.social - INFO - Analyzing social presence for: Rio de Janeiro | Locations
+2025-07-23 22:00:54,121 - analysis.social - INFO - Analyzing Instagram profile: @riodejaneiro|locations
+2025-07-23 22:00:54,121 - analysis.social - INFO - Analyzing Facebook page: Rio de Janeiro | Locations
+2025-07-23 22:00:54,121 - analysis.social - INFO - Analyzing LinkedIn company: Rio de Janeiro | Locations
+2025-07-23 22:00:55,126 - analysis.social - INFO - Completed social media analysis for 14 leads
+2025-07-23 22:00:55,129 - __main__ - INFO - Step 4: Generating emails...
+2025-07-23 22:00:55,462 - llm.generate_email - INFO - Generating personalized email for: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:00:56,831 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:00:56,835 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:00:56,835 - llm.generate_email - INFO - Generated email for Advogado especializado de Rio de Janeiro (RJ) (1/14)
+2025-07-23 22:00:56,835 - llm.generate_email - INFO - Generating personalized email for: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:00:57,829 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:00:57,831 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:00:57,831 - llm.generate_email - INFO - Generated email for As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor (2/14)
+2025-07-23 22:00:57,831 - llm.generate_email - INFO - Generating personalized email for: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:00:59,072 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:00:59,075 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:00:59,075 - llm.generate_email - INFO - Generated email for Como consultar a OAB de um advogado? Passo a passo - Estácio (3/14)
+2025-07-23 22:00:59,075 - llm.generate_email - INFO - Generating personalized email for: Advogado: Estado do RJ - Salário
+2025-07-23 22:00:59,971 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:00:59,972 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:00:59,972 - llm.generate_email - INFO - Generated email for Advogado: Estado do RJ - Salário (4/14)
+2025-07-23 22:00:59,972 - llm.generate_email - INFO - Generating personalized email for: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:01:00,906 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:00,907 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:00,907 - llm.generate_email - INFO - Generated email for Advogado no Rio de Janeiro / Escritório de Advocacia ... (5/14)
+2025-07-23 22:01:00,907 - llm.generate_email - INFO - Generating personalized email for: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:01:03,583 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:03,584 - llm.generate_email - INFO - Generated email for Escritório de Advocacia | Garcia Advogados | Especialistas (6/14)
+2025-07-23 22:01:03,584 - llm.generate_email - INFO - Generating personalized email for: Basilio Advogados
+2025-07-23 22:01:04,535 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:04,537 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:04,537 - llm.generate_email - INFO - Generated email for Basilio Advogados (7/14)
+2025-07-23 22:01:04,537 - llm.generate_email - INFO - Generating personalized email for: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:01:05,390 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:05,392 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:05,392 - llm.generate_email - INFO - Generated email for OABRJ | Defendendo direitos, garantindo Justiça (8/14)
+2025-07-23 22:01:05,392 - llm.generate_email - INFO - Generating personalized email for: Bermudes Advogados
+2025-07-23 22:01:06,061 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:06,062 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 5.000000 seconds
+2025-07-23 22:01:12,970 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:12,974 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:12,974 - llm.generate_email - INFO - Generated email for Bermudes Advogados (9/14)
+2025-07-23 22:01:12,974 - llm.generate_email - INFO - Generating personalized email for: Salomão Advogados
+2025-07-23 22:01:13,035 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:13,036 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2025-07-23 22:01:20,792 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:20,796 - llm.generate_email - INFO - Generated email for Salomão Advogados (10/14)
+2025-07-23 22:01:20,796 - utils.rate_limiter - INFO - Waiting 6.39 seconds between batches...
+2025-07-23 22:01:27,186 - llm.generate_email - INFO - Generating personalized email for: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:01:27,307 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:27,308 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-07-23 22:01:30,432 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:30,434 - llm.generate_email - INFO - Generated email for Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ... (11/14)
+2025-07-23 22:01:30,434 - llm.generate_email - INFO - Generating personalized email for: BRZ Advogados
+2025-07-23 22:01:30,491 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:30,492 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+2025-07-23 22:01:37,344 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:37,350 - llm.generate_email - INFO - Generated email for BRZ Advogados (12/14)
+2025-07-23 22:01:37,350 - llm.generate_email - INFO - Generating personalized email for: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:01:37,397 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:37,398 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 7.000000 seconds
+2025-07-23 22:01:45,220 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:45,221 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:45,221 - llm.generate_email - INFO - Generated email for Advogado especializado no Rio de Janeiro (Estado) (13/14)
+2025-07-23 22:01:45,221 - llm.generate_email - INFO - Generating personalized email for: Rio de Janeiro | Locations
+2025-07-23 22:01:45,272 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-07-23 22:01:45,273 - groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 8.000000 seconds
+2025-07-23 22:01:54,370 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-23 22:01:54,376 - llm.generate_email - WARNING - Failed to parse JSON response, using fallback
+2025-07-23 22:01:54,376 - llm.generate_email - INFO - Generated email for Rio de Janeiro | Locations (14/14)
+2025-07-23 22:01:54,377 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 22:01:54,446 - mailer.send_emails - INFO - Starting bulk email send for 14 emails
+2025-07-23 22:01:54,446 - mailer.send_emails - INFO - Sending email to: Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:02:00,145 - mailer.send_emails - INFO - Email sent successfully to Advogado especializado de Rio de Janeiro (RJ)
+2025-07-23 22:02:02,151 - mailer.send_emails - INFO - Sending email to: As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:02:04,124 - mailer.send_emails - INFO - Email sent successfully to As melhores empresas do setor de Jurídico – Rio de Janeiro - Glassdoor
+2025-07-23 22:02:06,126 - mailer.send_emails - INFO - Sending email to: Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:02:08,188 - mailer.send_emails - INFO - Email sent successfully to Como consultar a OAB de um advogado? Passo a passo - Estácio
+2025-07-23 22:02:10,193 - mailer.send_emails - INFO - Sending email to: Advogado: Estado do RJ - Salário
+2025-07-23 22:02:16,894 - mailer.send_emails - INFO - Email sent successfully to Advogado: Estado do RJ - Salário
+2025-07-23 22:02:18,899 - mailer.send_emails - INFO - Sending email to: Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:02:20,558 - mailer.send_emails - INFO - Email sent successfully to Advogado no Rio de Janeiro / Escritório de Advocacia ...
+2025-07-23 22:02:22,563 - mailer.send_emails - INFO - Sending email to: Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:02:24,135 - mailer.send_emails - INFO - Email sent successfully to Escritório de Advocacia | Garcia Advogados | Especialistas
+2025-07-23 22:02:26,136 - mailer.send_emails - INFO - Sending email to: Basilio Advogados
+2025-07-23 22:02:27,788 - mailer.send_emails - INFO - Email sent successfully to Basilio Advogados
+2025-07-23 22:02:29,793 - mailer.send_emails - INFO - Sending email to: OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:02:31,431 - mailer.send_emails - INFO - Email sent successfully to OABRJ | Defendendo direitos, garantindo Justiça
+2025-07-23 22:02:33,436 - mailer.send_emails - INFO - Sending email to: Bermudes Advogados
+2025-07-23 22:02:35,086 - mailer.send_emails - INFO - Email sent successfully to Bermudes Advogados
+2025-07-23 22:02:37,091 - mailer.send_emails - INFO - Sending email to: Salomão Advogados
+2025-07-23 22:02:38,725 - mailer.send_emails - INFO - Email sent successfully to Salomão Advogados
+2025-07-23 22:02:40,728 - mailer.send_emails - INFO - Progress: 10/14 emails processed
+2025-07-23 22:02:40,728 - mailer.send_emails - INFO - Sending email to: Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:02:42,362 - mailer.send_emails - INFO - Email sent successfully to Martins Regina Escritório de Advocacia – Rio de Janeiro – RJ ...
+2025-07-23 22:02:44,362 - mailer.send_emails - INFO - Sending email to: BRZ Advogados
+2025-07-23 22:02:45,964 - mailer.send_emails - INFO - Email sent successfully to BRZ Advogados
+2025-07-23 22:02:47,966 - mailer.send_emails - INFO - Sending email to: Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:02:50,789 - mailer.send_emails - INFO - Email sent successfully to Advogado especializado no Rio de Janeiro (Estado)
+2025-07-23 22:02:52,791 - mailer.send_emails - INFO - Sending email to: Rio de Janeiro | Locations
+2025-07-23 22:02:54,385 - mailer.send_emails - INFO - Email sent successfully to Rio de Janeiro | Locations
+2025-07-23 22:02:54,385 - mailer.send_emails - INFO - Bulk email send completed. Sent: 14, Failed: 0
+2025-07-23 22:02:54,386 - __main__ - ERROR - Error in simple pipeline: name 'time' is not defined

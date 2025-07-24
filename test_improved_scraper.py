@@ -42,67 +42,51 @@ def test_scraper():
     print(f"- Target count: {target_count}")
     print()
     
-    # Check API availability
-    print("API Status:")
-    print(f"- Google Maps API: {'✅ Available' if collector.gmaps else '❌ Not configured'}")
-    print(f"- Google Custom Search API: {'✅ Available' if collector.google_search_api_key else '❌ Not configured'}")
-    print(f"- Playwright: ✅ Available")
-    print(f"- Requests-HTML: ✅ Available")
+    # Check scraping methods availability
+    print("Scraping Methods Status:")
+    print(f"- Google Maps Playwright: ✅ Available")
+    print(f"- Google Search Playwright: ✅ Available")
+    print(f"- Bing Search Playwright: ✅ Available")
+    print(f"- Yellow Pages Playwright: ✅ Available")
     print()
     
     # Test individual methods
     print("Testing individual scraping methods:")
     
-    # Test Google Places API
-    if collector.gmaps:
-        print("\n1. Testing Google Places API...")
-        try:
-            places_leads = collector.search_google_places_api(industry, region)
-            print(f"   Found {len(places_leads)} leads")
-            for lead in places_leads[:2]:
-                print(f"   - {lead['name']} ({lead['source']})")
-        except Exception as e:
-            print(f"   Error: {e}")
-    else:
-        print("\n1. Google Places API: Skipped (not configured)")
-    
-    # Test Google Custom Search API
-    if collector.google_search_api_key:
-        print("\n2. Testing Google Custom Search API...")
-        try:
-            search_leads = collector.search_google_custom_search_api(industry, region)
-            print(f"   Found {len(search_leads)} leads")
-            for lead in search_leads[:2]:
-                print(f"   - {lead['name']} ({lead['source']})")
-        except Exception as e:
-            print(f"   Error: {e}")
-    else:
-        print("\n2. Google Custom Search API: Skipped (not configured)")
-    
-    # Test Playwright with Google
-    print("\n3. Testing Playwright with Google...")
+    # Test Google Maps with Playwright
+    print("\n1. Testing Google Maps with Playwright...")
     try:
-        google_playwright_leads = collector.search_with_playwright(industry, region, 'google')
-        print(f"   Found {len(google_playwright_leads)} leads")
-        for lead in google_playwright_leads[:2]:
+        maps_leads = collector.search_google_maps_with_playwright(industry, region)
+        print(f"   Found {len(maps_leads)} leads")
+        for lead in maps_leads[:2]:
             print(f"   - {lead['name']} ({lead['source']})")
     except Exception as e:
         print(f"   Error: {e}")
     
-    # Test Playwright with Bing
-    print("\n4. Testing Playwright with Bing...")
+    # Test Google Search with Playwright
+    print("\n2. Testing Google Search with Playwright...")
     try:
-        bing_playwright_leads = collector.search_with_playwright(industry, region, 'bing')
-        print(f"   Found {len(bing_playwright_leads)} leads")
-        for lead in bing_playwright_leads[:2]:
+        google_leads = collector.search_google_with_playwright(industry, region)
+        print(f"   Found {len(google_leads)} leads")
+        for lead in google_leads[:2]:
             print(f"   - {lead['name']} ({lead['source']})")
     except Exception as e:
         print(f"   Error: {e}")
     
-    # Test Yellow Pages API
-    print("\n5. Testing Yellow Pages API...")
+    # Test Bing with Playwright
+    print("\n3. Testing Bing with Playwright...")
     try:
-        yellow_leads = collector.search_yellow_pages_api(industry, region)
+        bing_leads = collector.search_bing_with_playwright(industry, region)
+        print(f"   Found {len(bing_leads)} leads")
+        for lead in bing_leads[:2]:
+            print(f"   - {lead['name']} ({lead['source']})")
+    except Exception as e:
+        print(f"   Error: {e}")
+    
+    # Test Yellow Pages with Playwright
+    print("\n4. Testing Yellow Pages with Playwright...")
+    try:
+        yellow_leads = collector.search_yellow_pages_with_playwright(industry, region)
         print(f"   Found {len(yellow_leads)} leads")
         for lead in yellow_leads[:2]:
             print(f"   - {lead['name']} ({lead['source']})")

@@ -30,7 +30,7 @@ class EmailGenerator:
             logger.info(f"Generating personalized email for: {lead_data['name']}")
             
             if not self.client:
-                return self._generate_mock_email(lead_data, analysis_data, social_data)
+                return self._generate_empty_email(lead_data, analysis_data, social_data)
             
             # Prepare context for the LLM
             context = self._prepare_context(lead_data, analysis_data, social_data)
@@ -48,7 +48,7 @@ class EmailGenerator:
             
         except Exception as e:
             logger.error(f"Error generating email for {lead_data['name']}: {e}")
-            return self._generate_mock_email(lead_data, analysis_data, social_data)
+            return self._generate_empty_email(lead_data, analysis_data, social_data)
     
     def _prepare_context(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> str:
         """Prepare context information for the LLM"""
@@ -224,6 +224,38 @@ Desenvolvedor Full Stack
 TECHNOLOGIE FELIPE FRANCA
 Transformando Negócios Digitais""",
             "personalization_score": 60
+        }
+    
+    def _generate_empty_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
+        """Generate empty email when API is not available"""
+        
+        business_name = lead_data.get('name', 'Empresa')
+        
+        return {
+            'lead_name': business_name,
+            'subject': f'Oportunidade de Melhoria Digital para {business_name}',
+            'body': f"""Olá {business_name}!
+
+Identificamos que seu site tem potencial para melhorias significativas em performance e funcionalidades. 
+
+Como especialistas em desenvolvimento de software, podemos ajudar você a:
+• Melhorar a velocidade e performance do seu site
+• Desenvolver novas funcionalidades e recursos
+• Criar aplicações mobile para seu negócio
+• Otimizar e modernizar seus sistemas
+
+Gostaria de agendar uma conversa gratuita para discutir como podemos impulsionar sua presença digital?
+
+Aguardo seu retorno!
+
+Atenciosamente,
+
+Felipe França
+Desenvolvedor Full Stack
+TECHNOLOGIE FELIPE FRANCA
+Transformando Negócios Digitais""",
+            'personalization_score': 60,
+            'generation_status': 'no_api'
         }
     
     def _generate_mock_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:

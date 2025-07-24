@@ -1,433 +1,218 @@
 [
   {
-    "name": "Restaurante Rio de Janeiro",
-    "instagram_handle": "@restaurante_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram",
-    "site_analysis": null,
+    "name": "Advogado especializado de Rio de Janeiro (RJ)",
+    "website": "https://www.jusbrasil.com.br/advogados/rj-rio-de-janeiro/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 4,
+            "h3": 1,
+            "h4": 0,
+            "h5": 1,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 7
+        },
+        "images": {
+          "total_images": 0,
+          "images_with_alt": 0,
+          "alt_text_ratio": 1
+        },
+        "links": {
+          "total_links": 75,
+          "internal_links": 33,
+          "external_links": 42
+        },
+        "sitemap_found": false,
+        "total_score": 70
+      },
+      "overall_score": 72.75
+    },
     "social_analysis": {
-      "business_name": "Restaurante Rio de Janeiro",
+      "business_name": "Advogado especializado de Rio de Janeiro (RJ)",
       "platforms": {
         "instagram": {
-          "username": "restauranteriodejaneiro",
-          "followers": 47591,
-          "following": 1660,
-          "posts_count": 364,
-          "engagement_rate": 2.16,
-          "avg_likes_per_post": 1029,
+          "username": "advogadoespecializadoderiodejaneiro(rj)",
+          "followers": 44113,
+          "following": 1261,
+          "posts_count": 343,
+          "engagement_rate": 1.55,
+          "avg_likes_per_post": 681,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 119,
+          "bio_length": 134,
           "has_website_link": false,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
-          "page_name": "Restaurante Rio de Janeiro",
-          "followers": 33412,
-          "likes": 6668,
-          "posts_count": 116,
-          "engagement_rate": 2.03,
+          "page_name": "Advogado especializado de Rio de Janeiro (RJ)",
+          "followers": 79952,
+          "likes": 41654,
+          "posts_count": 77,
+          "engagement_rate": 2.87,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 85,
+          "has_website": true,
+          "has_contact_info": false,
+          "response_rate": 86.5636799928478
+        },
+        "linkedin": {
+          "company_name": "Advogado especializado de Rio de Janeiro (RJ)",
+          "followers": 19779,
+          "employees": 17,
+          "posts_count": 494,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 70,
-          "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 84.3135036137444
-        },
-        "linkedin": {
-          "company_name": "Restaurante Rio de Janeiro",
-          "followers": 35897,
-          "employees": 160,
-          "posts_count": 492,
-          "posting_frequency": "Monthly",
-          "company_size": "51-200 employees",
-          "industry": "Healthcare",
+          "company_size": "11-50 employees",
+          "industry": "Retail",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 81.92493568171767
+          "profile_completeness": 95.08610919613966
         }
       },
-      "overall_social_score": 77.31,
-      "maturity_level": "Intermediate"
+      "overall_social_score": 86.7,
+      "maturity_level": "Advanced"
     }
   },
   {
-    "name": "Premium restaurante Rio de Janeiro",
-    "instagram_handle": "@premium_restaurante",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram",
-    "site_analysis": null,
+    "name": "As melhores empresas do setor de Jur\u00eddico \u2013 Rio de Janeiro - Glassdoor",
+    "website": "https://www.glassdoor.com.br/Explorar/melhores-jur%C3%ADdico-empresas-rio-de-janeiro_IS.9,17_ISEC10001_IL.27,41_IM998.htm",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 1,
+            "h3": 2,
+            "h4": 0,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 4
+        },
+        "images": {
+          "total_images": 10,
+          "images_with_alt": 10,
+          "alt_text_ratio": 1.0
+        },
+        "links": {
+          "total_links": 69,
+          "internal_links": 54,
+          "external_links": 15
+        },
+        "sitemap_found": false,
+        "total_score": 60
+      },
+      "overall_score": 67.75
+    },
     "social_analysis": {
-      "business_name": "Premium restaurante Rio de Janeiro",
+      "business_name": "As melhores empresas do setor de Jur\u00eddico \u2013 Rio de Janeiro - Glassdoor",
       "platforms": {
         "instagram": {
-          "username": "premiumrestauranteriodejaneiro",
-          "followers": 10147,
-          "following": 1742,
-          "posts_count": 45,
-          "engagement_rate": 3.97,
-          "avg_likes_per_post": 403,
-          "posting_frequency": "Low (weekly posts)",
+          "username": "asmelhoresempresasdosetordejur\u00eddico\u2013riodejaneiro-glassdoor",
+          "followers": 43978,
+          "following": 318,
+          "posts_count": 197,
+          "engagement_rate": 1.8,
+          "avg_likes_per_post": 790,
+          "posting_frequency": "High (daily posts)",
           "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 171,
-          "has_website_link": false,
-          "has_business_category": false
-        },
-        "facebook": {
-          "page_name": "Premium restaurante Rio de Janeiro",
-          "followers": 87700,
-          "likes": 73472,
-          "posts_count": 786,
-          "engagement_rate": 0.6,
-          "posting_frequency": "Daily",
-          "page_quality_score": 75,
-          "has_website": false,
-          "has_contact_info": false,
-          "response_rate": 67.25181158146594
-        },
-        "linkedin": {
-          "company_name": "Premium restaurante Rio de Janeiro",
-          "followers": 11416,
-          "employees": 888,
-          "posts_count": 331,
-          "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
-          "industry": "Technology",
-          "has_website": true,
-          "has_job_postings": true,
-          "profile_completeness": 72.27403259552753
-        }
-      },
-      "overall_social_score": 75.76,
-      "maturity_level": "Intermediate"
-    }
-  },
-  {
-    "name": "Restaurantes Rio de Janeiro",
-    "instagram_handle": "@restaurantes_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram",
-    "site_analysis": null,
-    "social_analysis": {
-      "business_name": "Restaurantes Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "restaurantesriodejaneiro",
-          "followers": 12021,
-          "following": 1171,
-          "posts_count": 332,
-          "engagement_rate": 2.9,
-          "avg_likes_per_post": 348,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
-          "last_post_date": "2024-01-15",
-          "bio_length": 69,
+          "bio_length": 150,
           "has_website_link": true,
-          "has_business_category": false
+          "has_business_category": true
         },
         "facebook": {
-          "page_name": "Restaurantes Rio de Janeiro",
-          "followers": 75257,
-          "likes": 8618,
-          "posts_count": 593,
-          "engagement_rate": 1.75,
+          "page_name": "As melhores empresas do setor de Jur\u00eddico \u2013 Rio de Janeiro - Glassdoor",
+          "followers": 39036,
+          "likes": 18502,
+          "posts_count": 694,
+          "engagement_rate": 2.69,
           "posting_frequency": "2-3 times/week",
           "page_quality_score": 90,
           "has_website": false,
           "has_contact_info": false,
-          "response_rate": 77.68046953872584
+          "response_rate": 54.368522436850704
         },
         "linkedin": {
-          "company_name": "Restaurantes Rio de Janeiro",
-          "followers": 39552,
-          "employees": 839,
-          "posts_count": 190,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
-          "industry": "Manufacturing",
-          "has_website": true,
-          "has_job_postings": true,
-          "profile_completeness": 80.36727009381391
-        }
-      },
-      "overall_social_score": 86.79,
-      "maturity_level": "Advanced"
-    }
-  },
-  {
-    "name": "Premium restaurantes Rio de Janeiro",
-    "instagram_handle": "@premium_restaurantes",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram",
-    "site_analysis": null,
-    "social_analysis": {
-      "business_name": "Premium restaurantes Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "premiumrestaurantesriodejaneiro",
-          "followers": 39087,
-          "following": 1673,
-          "posts_count": 62,
-          "engagement_rate": 4.21,
-          "avg_likes_per_post": 1647,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 95,
-          "last_post_date": "2024-01-15",
-          "bio_length": 64,
-          "has_website_link": true,
-          "has_business_category": true
-        },
-        "facebook": {
-          "page_name": "Premium restaurantes Rio de Janeiro",
-          "followers": 20225,
-          "likes": 4746,
-          "posts_count": 832,
-          "engagement_rate": 2.02,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 80,
-          "has_website": false,
-          "has_contact_info": true,
-          "response_rate": 90.40209603886652
-        },
-        "linkedin": {
-          "company_name": "Premium restaurantes Rio de Janeiro",
-          "followers": 19871,
-          "employees": 78,
-          "posts_count": 66,
+          "company_name": "As melhores empresas do setor de Jur\u00eddico \u2013 Rio de Janeiro - Glassdoor",
+          "followers": 37221,
+          "employees": 742,
+          "posts_count": 185,
           "posting_frequency": "Monthly",
-          "company_size": "51-200 employees",
+          "company_size": "500+ employees",
           "industry": "Healthcare",
-          "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 85.34034893399011
-        }
-      },
-      "overall_social_score": 86.78,
-      "maturity_level": "Advanced"
-    }
-  },
-  {
-    "name": "Gastronomia Rio de Janeiro",
-    "instagram_handle": "@gastronomia_rio de janeiro",
-    "followers": "1.2k",
-    "posts_count": 45,
-    "source": "instagram",
-    "site_analysis": null,
-    "social_analysis": {
-      "business_name": "Gastronomia Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "gastronomiariodejaneiro",
-          "followers": 7466,
-          "following": 1525,
-          "posts_count": 287,
-          "engagement_rate": 4.8,
-          "avg_likes_per_post": 358,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
-          "last_post_date": "2024-01-15",
-          "bio_length": 65,
-          "has_website_link": true,
-          "has_business_category": true
-        },
-        "facebook": {
-          "page_name": "Gastronomia Rio de Janeiro",
-          "followers": 12412,
-          "likes": 2787,
-          "posts_count": 568,
-          "engagement_rate": 0.51,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 60,
-          "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 82.8211280195103
-        },
-        "linkedin": {
-          "company_name": "Gastronomia Rio de Janeiro",
-          "followers": 6277,
-          "employees": 753,
-          "posts_count": 429,
-          "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
-          "industry": "Manufacturing",
           "has_website": false,
           "has_job_postings": false,
-          "profile_completeness": 69.59102643814191
+          "profile_completeness": 95.5675431826439
         }
       },
-      "overall_social_score": 73.2,
-      "maturity_level": "Intermediate"
-    }
-  },
-  {
-    "name": "Premium gastronomia Rio de Janeiro",
-    "instagram_handle": "@premium_gastronomia",
-    "followers": "3.5k",
-    "posts_count": 120,
-    "source": "instagram",
-    "site_analysis": null,
-    "social_analysis": {
-      "business_name": "Premium gastronomia Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "premiumgastronomiariodejaneiro",
-          "followers": 6240,
-          "following": 309,
-          "posts_count": 417,
-          "engagement_rate": 1.46,
-          "avg_likes_per_post": 91,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 60,
-          "last_post_date": "2024-01-15",
-          "bio_length": 168,
-          "has_website_link": true,
-          "has_business_category": false
-        },
-        "facebook": {
-          "page_name": "Premium gastronomia Rio de Janeiro",
-          "followers": 76844,
-          "likes": 35880,
-          "posts_count": 472,
-          "engagement_rate": 0.85,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 70,
-          "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 73.18672058931368
-        },
-        "linkedin": {
-          "company_name": "Premium gastronomia Rio de Janeiro",
-          "followers": 46202,
-          "employees": 408,
-          "posts_count": 163,
-          "posting_frequency": "Monthly",
-          "company_size": "201-500 employees",
-          "industry": "Healthcare",
-          "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 79.31262176016915
-        }
-      },
-      "overall_social_score": 69.77,
-      "maturity_level": "Intermediate"
-    }
-  },
-  {
-    "name": "Cantina Rio de Janeiro",
-    "website": "https://restaurantes2.com.br",
-    "email": "contato@restaurantes2.com.br",
-    "phone": "(21) 90002-0002",
-    "address": "Rua Restaurantes 2, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
-    "site_analysis": {
-      "lighthouse": {
-        "performance_score": 75.5,
-        "accessibility_score": 82.3,
-        "best_practices_score": 78.9,
-        "seo_score": 71.2,
-        "first_contentful_paint": 1200,
-        "largest_contentful_paint": 2500,
-        "cumulative_layout_shift": 0.05,
-        "total_blocking_time": 150,
-        "speed_index": 1800
-      },
-      "seo": {
-        "meta_tags": {
-          "title": true,
-          "description": true,
-          "keywords": false,
-          "viewport": true,
-          "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
-        },
-        "headings": {
-          "counts": {
-            "h1": 1,
-            "h2": 3,
-            "h3": 5,
-            "h4": 2,
-            "h5": 0,
-            "h6": 0
-          },
-          "has_proper_hierarchy": true,
-          "total_headings": 11
-        },
-        "images": {
-          "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
-        },
-        "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
-        },
-        "sitemap_found": true,
-        "total_score": 78.5
-      },
-      "overall_score": 77.0
-    },
-    "social_analysis": {
-      "business_name": "Cantina Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "cantinariodejaneiro",
-          "followers": 13864,
-          "following": 689,
-          "posts_count": 112,
-          "engagement_rate": 3.63,
-          "avg_likes_per_post": 502,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 90,
-          "last_post_date": "2024-01-15",
-          "bio_length": 186,
-          "has_website_link": false,
-          "has_business_category": false
-        },
-        "facebook": {
-          "page_name": "Cantina Rio de Janeiro",
-          "followers": 51503,
-          "likes": 23477,
-          "posts_count": 704,
-          "engagement_rate": 2.96,
-          "posting_frequency": "Weekly",
-          "page_quality_score": 100,
-          "has_website": false,
-          "has_contact_info": true,
-          "response_rate": 73.72145241759236
-        },
-        "linkedin": {
-          "company_name": "Cantina Rio de Janeiro",
-          "followers": 11226,
-          "employees": 258,
-          "posts_count": 457,
-          "posting_frequency": "Monthly",
-          "company_size": "201-500 employees",
-          "industry": "Manufacturing",
-          "has_website": false,
-          "has_job_postings": true,
-          "profile_completeness": 83.90840788866932
-        }
-      },
-      "overall_social_score": 91.3,
+      "overall_social_score": 88.52,
       "maturity_level": "Advanced"
     }
   },
   {
-    "name": "Pizzaria Rio de Janeiro",
-    "website": "https://restaurantes3.com.br",
-    "email": "contato@restaurantes3.com.br",
-    "phone": "(21) 90003-0003",
-    "address": "Rua Restaurantes 3, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "name": "Como consultar a OAB de um advogado? Passo a passo - Est\u00e1cio",
+    "website": "https://matriculas.estacio.br/blog/como-consultar-a-oab-de-um-advogado-passo-a-passo/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
     "site_analysis": {
       "lighthouse": {
         "performance_score": 75.5,
@@ -443,197 +228,94 @@
       "seo": {
         "meta_tags": {
           "title": true,
-          "description": true,
+          "description": false,
           "keywords": false,
-          "viewport": true,
+          "viewport": false,
           "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
+          "og_tags": 0,
+          "twitter_tags": 0
         },
         "headings": {
           "counts": {
             "h1": 1,
-            "h2": 3,
-            "h3": 5,
-            "h4": 2,
+            "h2": 8,
+            "h3": 9,
+            "h4": 0,
             "h5": 0,
             "h6": 0
           },
           "has_proper_hierarchy": true,
-          "total_headings": 11
+          "total_headings": 18
         },
         "images": {
-          "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
+          "total_images": 13,
+          "images_with_alt": 8,
+          "alt_text_ratio": 0.6153846153846154
         },
         "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
+          "total_links": 41,
+          "internal_links": 17,
+          "external_links": 24
         },
-        "sitemap_found": true,
-        "total_score": 78.5
+        "sitemap_found": false,
+        "total_score": 50
       },
-      "overall_score": 77.0
+      "overall_score": 62.75
     },
     "social_analysis": {
-      "business_name": "Pizzaria Rio de Janeiro",
+      "business_name": "Como consultar a OAB de um advogado? Passo a passo - Est\u00e1cio",
       "platforms": {
         "instagram": {
-          "username": "pizzariariodejaneiro",
-          "followers": 17884,
-          "following": 1859,
-          "posts_count": 93,
-          "engagement_rate": 3.89,
-          "avg_likes_per_post": 695,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 85,
+          "username": "comoconsultaraoabdeumadvogado?passoapasso-est\u00e1cio",
+          "followers": 42473,
+          "following": 1131,
+          "posts_count": 118,
+          "engagement_rate": 1.64,
+          "avg_likes_per_post": 696,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 186,
-          "has_website_link": false,
+          "bio_length": 100,
+          "has_website_link": true,
           "has_business_category": true
         },
         "facebook": {
-          "page_name": "Pizzaria Rio de Janeiro",
-          "followers": 9065,
-          "likes": 7417,
-          "posts_count": 586,
-          "engagement_rate": 2.34,
-          "posting_frequency": "Daily",
-          "page_quality_score": 70,
-          "has_website": false,
+          "page_name": "Como consultar a OAB de um advogado? Passo a passo - Est\u00e1cio",
+          "followers": 93969,
+          "likes": 41426,
+          "posts_count": 767,
+          "engagement_rate": 2.21,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 90,
+          "has_website": true,
           "has_contact_info": false,
-          "response_rate": 84.65219135208937
+          "response_rate": 60.14340191222688
         },
         "linkedin": {
-          "company_name": "Pizzaria Rio de Janeiro",
-          "followers": 35337,
-          "employees": 939,
-          "posts_count": 435,
-          "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
+          "company_name": "Como consultar a OAB de um advogado? Passo a passo - Est\u00e1cio",
+          "followers": 19991,
+          "employees": 423,
+          "posts_count": 305,
+          "posting_frequency": "Weekly",
+          "company_size": "201-500 employees",
           "industry": "Technology",
-          "has_website": false,
-          "has_job_postings": false,
-          "profile_completeness": 65.93669820016306
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 78.07760559175547
         }
       },
-      "overall_social_score": 73.65,
-      "maturity_level": "Intermediate"
-    }
-  },
-  {
-    "name": "Churrascaria Rio de Janeiro",
-    "website": "https://restaurantes4.com.br",
-    "email": "contato@restaurantes4.com.br",
-    "phone": "(21) 90004-0004",
-    "address": "Rua Restaurantes 4, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
-    "site_analysis": {
-      "lighthouse": {
-        "performance_score": 75.5,
-        "accessibility_score": 82.3,
-        "best_practices_score": 78.9,
-        "seo_score": 71.2,
-        "first_contentful_paint": 1200,
-        "largest_contentful_paint": 2500,
-        "cumulative_layout_shift": 0.05,
-        "total_blocking_time": 150,
-        "speed_index": 1800
-      },
-      "seo": {
-        "meta_tags": {
-          "title": true,
-          "description": true,
-          "keywords": false,
-          "viewport": true,
-          "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
-        },
-        "headings": {
-          "counts": {
-            "h1": 1,
-            "h2": 3,
-            "h3": 5,
-            "h4": 2,
-            "h5": 0,
-            "h6": 0
-          },
-          "has_proper_hierarchy": true,
-          "total_headings": 11
-        },
-        "images": {
-          "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
-        },
-        "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
-        },
-        "sitemap_found": true,
-        "total_score": 78.5
-      },
-      "overall_score": 77.0
-    },
-    "social_analysis": {
-      "business_name": "Churrascaria Rio de Janeiro",
-      "platforms": {
-        "instagram": {
-          "username": "churrascariariodejaneiro",
-          "followers": 31862,
-          "following": 1936,
-          "posts_count": 359,
-          "engagement_rate": 4.66,
-          "avg_likes_per_post": 1483,
-          "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
-          "last_post_date": "2024-01-15",
-          "bio_length": 79,
-          "has_website_link": true,
-          "has_business_category": true
-        },
-        "facebook": {
-          "page_name": "Churrascaria Rio de Janeiro",
-          "followers": 2108,
-          "likes": 1863,
-          "posts_count": 209,
-          "engagement_rate": 3.0,
-          "posting_frequency": "Daily",
-          "page_quality_score": 70,
-          "has_website": true,
-          "has_contact_info": true,
-          "response_rate": 69.34892121875201
-        },
-        "linkedin": {
-          "company_name": "Churrascaria Rio de Janeiro",
-          "followers": 45850,
-          "employees": 476,
-          "posts_count": 38,
-          "posting_frequency": "2-3 times/week",
-          "company_size": "201-500 employees",
-          "industry": "Healthcare",
-          "has_website": true,
-          "has_job_postings": false,
-          "profile_completeness": 90.93974019594728
-        }
-      },
-      "overall_social_score": 86.98,
+      "overall_social_score": 82.69,
       "maturity_level": "Advanced"
     }
   },
   {
-    "name": "Sushi Bar Rio de Janeiro",
-    "website": "https://restaurantes5.com.br",
-    "email": "contato@restaurantes5.com.br",
-    "phone": "(21) 90005-0005",
-    "address": "Rua Restaurantes 5, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "name": "Advogado: Estado do RJ - Sal\u00e1rio",
+    "website": "https://www.salario.com.br/profissao/advogado-cbo-241005/rj/#:~:text=R%24%206.618%2C63%2Fm%C3%AAs&text=Um%20Advogado%20trabalhando%20no%20estado,trabalho%20de%2041%20horas%20semanais.",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
     "site_analysis": {
       "lighthouse": {
         "performance_score": 75.5,
@@ -649,94 +331,94 @@
       "seo": {
         "meta_tags": {
           "title": true,
-          "description": true,
+          "description": false,
           "keywords": false,
-          "viewport": true,
+          "viewport": false,
           "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
+          "og_tags": 0,
+          "twitter_tags": 0
         },
         "headings": {
           "counts": {
             "h1": 1,
-            "h2": 3,
-            "h3": 5,
-            "h4": 2,
+            "h2": 13,
+            "h3": 12,
+            "h4": 7,
             "h5": 0,
             "h6": 0
           },
           "has_proper_hierarchy": true,
-          "total_headings": 11
+          "total_headings": 33
         },
         "images": {
-          "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
+          "total_images": 10,
+          "images_with_alt": 10,
+          "alt_text_ratio": 1.0
         },
         "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
+          "total_links": 184,
+          "internal_links": 11,
+          "external_links": 173
         },
         "sitemap_found": true,
-        "total_score": 78.5
+        "total_score": 80
       },
-      "overall_score": 77.0
+      "overall_score": 77.75
     },
     "social_analysis": {
-      "business_name": "Sushi Bar Rio de Janeiro",
+      "business_name": "Advogado: Estado do RJ - Sal\u00e1rio",
       "platforms": {
         "instagram": {
-          "username": "sushibarriodejaneiro",
-          "followers": 23748,
-          "following": 1239,
-          "posts_count": 289,
-          "engagement_rate": 4.68,
-          "avg_likes_per_post": 1112,
+          "username": "advogado:estadodorj-sal\u00e1rio",
+          "followers": 24950,
+          "following": 896,
+          "posts_count": 500,
+          "engagement_rate": 3.06,
+          "avg_likes_per_post": 762,
           "posting_frequency": "High (daily posts)",
-          "profile_quality_score": 100,
+          "profile_quality_score": 90,
           "last_post_date": "2024-01-15",
           "bio_length": 155,
           "has_website_link": false,
           "has_business_category": false
         },
         "facebook": {
-          "page_name": "Sushi Bar Rio de Janeiro",
-          "followers": 6927,
-          "likes": 2522,
-          "posts_count": 478,
-          "engagement_rate": 1.9,
-          "posting_frequency": "2-3 times/week",
-          "page_quality_score": 65,
+          "page_name": "Advogado: Estado do RJ - Sal\u00e1rio",
+          "followers": 7028,
+          "likes": 2040,
+          "posts_count": 209,
+          "engagement_rate": 0.76,
+          "posting_frequency": "Daily",
+          "page_quality_score": 50,
           "has_website": false,
-          "has_contact_info": true,
-          "response_rate": 83.7077770556256
+          "has_contact_info": false,
+          "response_rate": 84.90255152022615
         },
         "linkedin": {
-          "company_name": "Sushi Bar Rio de Janeiro",
-          "followers": 3164,
-          "employees": 219,
-          "posts_count": 165,
+          "company_name": "Advogado: Estado do RJ - Sal\u00e1rio",
+          "followers": 43212,
+          "employees": 355,
+          "posts_count": 231,
           "posting_frequency": "Monthly",
           "company_size": "201-500 employees",
-          "industry": "Technology",
+          "industry": "Finance",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 71.98168587802454
+          "profile_completeness": 77.83372457384766
         }
       },
-      "overall_social_score": 78.99,
+      "overall_social_score": 72.61,
       "maturity_level": "Intermediate"
     }
   },
   {
-    "name": "Caf\u00e9 Rio de Janeiro",
-    "website": "https://restaurantes6.com.br",
-    "email": "contato@restaurantes6.com.br",
-    "phone": "(21) 90006-0006",
-    "address": "Rua Restaurantes 6, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "name": "Advogado no Rio de Janeiro / Escrit\u00f3rio de Advocacia ...",
+    "website": "https://advogadoriodejaneiro.com/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
     "site_analysis": {
       "lighthouse": {
         "performance_score": 75.5,
@@ -752,94 +434,94 @@
       "seo": {
         "meta_tags": {
           "title": true,
-          "description": true,
+          "description": false,
           "keywords": false,
-          "viewport": true,
+          "viewport": false,
           "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
+          "og_tags": 0,
+          "twitter_tags": 0
         },
         "headings": {
           "counts": {
-            "h1": 1,
-            "h2": 3,
-            "h3": 5,
-            "h4": 2,
+            "h1": 2,
+            "h2": 6,
+            "h3": 6,
+            "h4": 6,
             "h5": 0,
             "h6": 0
           },
-          "has_proper_hierarchy": true,
-          "total_headings": 11
+          "has_proper_hierarchy": false,
+          "total_headings": 20
         },
         "images": {
           "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
+          "images_with_alt": 0,
+          "alt_text_ratio": 0.0
         },
         "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
+          "total_links": 33,
+          "internal_links": 0,
+          "external_links": 33
         },
         "sitemap_found": true,
-        "total_score": 78.5
+        "total_score": 35
       },
-      "overall_score": 77.0
+      "overall_score": 55.25
     },
     "social_analysis": {
-      "business_name": "Caf\u00e9 Rio de Janeiro",
+      "business_name": "Advogado no Rio de Janeiro / Escrit\u00f3rio de Advocacia ...",
       "platforms": {
         "instagram": {
-          "username": "caf\u00e9riodejaneiro",
-          "followers": 48778,
-          "following": 858,
-          "posts_count": 94,
-          "engagement_rate": 2.05,
-          "avg_likes_per_post": 1000,
-          "posting_frequency": "Medium (2-3 posts/week)",
-          "profile_quality_score": 75,
+          "username": "advogadonoriodejaneiro/escrit\u00f3riodeadvocacia...",
+          "followers": 7314,
+          "following": 1950,
+          "posts_count": 437,
+          "engagement_rate": 1.71,
+          "avg_likes_per_post": 124,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 70,
           "last_post_date": "2024-01-15",
-          "bio_length": 71,
+          "bio_length": 162,
           "has_website_link": true,
           "has_business_category": false
         },
         "facebook": {
-          "page_name": "Caf\u00e9 Rio de Janeiro",
-          "followers": 61581,
-          "likes": 2502,
-          "posts_count": 759,
-          "engagement_rate": 0.67,
+          "page_name": "Advogado no Rio de Janeiro / Escrit\u00f3rio de Advocacia ...",
+          "followers": 84175,
+          "likes": 16467,
+          "posts_count": 263,
+          "engagement_rate": 2.67,
           "posting_frequency": "2-3 times/week",
-          "page_quality_score": 75,
-          "has_website": true,
-          "has_contact_info": false,
-          "response_rate": 81.00790425059881
+          "page_quality_score": 95,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 89.14161261893823
         },
         "linkedin": {
-          "company_name": "Caf\u00e9 Rio de Janeiro",
-          "followers": 30059,
-          "employees": 812,
-          "posts_count": 453,
+          "company_name": "Advogado no Rio de Janeiro / Escrit\u00f3rio de Advocacia ...",
+          "followers": 27529,
+          "employees": 473,
+          "posts_count": 194,
           "posting_frequency": "2-3 times/week",
-          "company_size": "500+ employees",
+          "company_size": "201-500 employees",
           "industry": "Manufacturing",
           "has_website": false,
           "has_job_postings": true,
-          "profile_completeness": 87.770587858567
+          "profile_completeness": 69.30264689323371
         }
       },
-      "overall_social_score": 79.26,
+      "overall_social_score": 78.1,
       "maturity_level": "Intermediate"
     }
   },
   {
-    "name": "Bistr\u00f4 Rio de Janeiro",
-    "website": "https://restaurantes7.com.br",
-    "email": "contato@restaurantes7.com.br",
-    "phone": "(21) 90007-0007",
-    "address": "Rua Restaurantes 7, Rio de Janeiro, RJ",
-    "source": "additional_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro",
+    "name": "Escrit\u00f3rio de Advocacia | Garcia Advogados | Especialistas",
+    "website": "https://advogadorj.com/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
     "site_analysis": {
       "lighthouse": {
         "performance_score": 75.5,
@@ -855,83 +537,907 @@
       "seo": {
         "meta_tags": {
           "title": true,
-          "description": true,
+          "description": false,
           "keywords": false,
-          "viewport": true,
+          "viewport": false,
           "robots": false,
-          "og_tags": 4,
-          "twitter_tags": 2
+          "og_tags": 0,
+          "twitter_tags": 0
         },
         "headings": {
           "counts": {
             "h1": 1,
-            "h2": 3,
-            "h3": 5,
+            "h2": 2,
+            "h3": 23,
             "h4": 2,
             "h5": 0,
             "h6": 0
           },
           "has_proper_hierarchy": true,
-          "total_headings": 11
+          "total_headings": 28
         },
         "images": {
-          "total_images": 8,
-          "images_with_alt": 7,
-          "alt_text_ratio": 0.875
+          "total_images": 1,
+          "images_with_alt": 1,
+          "alt_text_ratio": 1.0
         },
         "links": {
-          "total_links": 15,
-          "internal_links": 10,
-          "external_links": 5
+          "total_links": 78,
+          "internal_links": 2,
+          "external_links": 72
         },
         "sitemap_found": true,
-        "total_score": 78.5
+        "total_score": 70
       },
-      "overall_score": 77.0
+      "overall_score": 72.75
     },
     "social_analysis": {
-      "business_name": "Bistr\u00f4 Rio de Janeiro",
+      "business_name": "Escrit\u00f3rio de Advocacia | Garcia Advogados | Especialistas",
       "platforms": {
         "instagram": {
-          "username": "bistr\u00f4riodejaneiro",
-          "followers": 15363,
-          "following": 845,
-          "posts_count": 415,
-          "engagement_rate": 2.14,
-          "avg_likes_per_post": 329,
+          "username": "escrit\u00f3riodeadvocacia|garciaadvogados|especialistas",
+          "followers": 33502,
+          "following": 226,
+          "posts_count": 494,
+          "engagement_rate": 2.07,
+          "avg_likes_per_post": 692,
           "posting_frequency": "High (daily posts)",
           "profile_quality_score": 80,
           "last_post_date": "2024-01-15",
-          "bio_length": 133,
+          "bio_length": 157,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Escrit\u00f3rio de Advocacia | Garcia Advogados | Especialistas",
+          "followers": 55650,
+          "likes": 14205,
+          "posts_count": 517,
+          "engagement_rate": 1.81,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 90,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 52.236096341020584
+        },
+        "linkedin": {
+          "company_name": "Escrit\u00f3rio de Advocacia | Garcia Advogados | Especialistas",
+          "followers": 29535,
+          "employees": 459,
+          "posts_count": 291,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "201-500 employees",
+          "industry": "Manufacturing",
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 98.31012214388088
+        }
+      },
+      "overall_social_score": 89.44,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Basilio Advogados",
+    "website": "https://basilioadvogados.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 0,
+            "h2": 7,
+            "h3": 9,
+            "h4": 6,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": false,
+          "total_headings": 22
+        },
+        "images": {
+          "total_images": 22,
+          "images_with_alt": 12,
+          "alt_text_ratio": 0.5454545454545454
+        },
+        "links": {
+          "total_links": 93,
+          "internal_links": 12,
+          "external_links": 81
+        },
+        "sitemap_found": false,
+        "total_score": 35
+      },
+      "overall_score": 55.25
+    },
+    "social_analysis": {
+      "business_name": "Basilio Advogados",
+      "platforms": {
+        "instagram": {
+          "username": "basilioadvogados",
+          "followers": 46331,
+          "following": 605,
+          "posts_count": 54,
+          "engagement_rate": 1.98,
+          "avg_likes_per_post": 918,
+          "posting_frequency": "Medium (2-3 posts/week)",
+          "profile_quality_score": 75,
+          "last_post_date": "2024-01-15",
+          "bio_length": 137,
           "has_website_link": true,
           "has_business_category": true
         },
         "facebook": {
-          "page_name": "Bistr\u00f4 Rio de Janeiro",
-          "followers": 2409,
-          "likes": 1556,
-          "posts_count": 188,
-          "engagement_rate": 2.12,
+          "page_name": "Basilio Advogados",
+          "followers": 58075,
+          "likes": 25330,
+          "posts_count": 463,
+          "engagement_rate": 1.01,
           "posting_frequency": "Daily",
-          "page_quality_score": 55,
-          "has_website": false,
+          "page_quality_score": 80,
+          "has_website": true,
           "has_contact_info": true,
-          "response_rate": 72.80331573491506
+          "response_rate": 56.454656049799816
         },
         "linkedin": {
-          "company_name": "Bistr\u00f4 Rio de Janeiro",
-          "followers": 7207,
-          "employees": 973,
-          "posts_count": 115,
-          "posting_frequency": "Monthly",
-          "company_size": "500+ employees",
-          "industry": "Manufacturing",
-          "has_website": false,
+          "company_name": "Basilio Advogados",
+          "followers": 40245,
+          "employees": 231,
+          "posts_count": 43,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "201-500 employees",
+          "industry": "Healthcare",
+          "has_website": true,
           "has_job_postings": true,
-          "profile_completeness": 79.66876799668121
+          "profile_completeness": 93.93498686749703
         }
       },
-      "overall_social_score": 71.56,
+      "overall_social_score": 82.98,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "OABRJ | Defendendo direitos, garantindo Justi\u00e7a",
+    "website": "https://www.oabrj.org.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 0,
+            "h2": 5,
+            "h3": 1,
+            "h4": 0,
+            "h5": 0,
+            "h6": 13
+          },
+          "has_proper_hierarchy": false,
+          "total_headings": 19
+        },
+        "images": {
+          "total_images": 8,
+          "images_with_alt": 0,
+          "alt_text_ratio": 0.0
+        },
+        "links": {
+          "total_links": 104,
+          "internal_links": 61,
+          "external_links": 42
+        },
+        "sitemap_found": true,
+        "total_score": 45
+      },
+      "overall_score": 60.25
+    },
+    "social_analysis": {
+      "business_name": "OABRJ | Defendendo direitos, garantindo Justi\u00e7a",
+      "platforms": {
+        "instagram": {
+          "username": "oabrj|defendendodireitos,garantindojusti\u00e7a",
+          "followers": 6583,
+          "following": 542,
+          "posts_count": 282,
+          "engagement_rate": 1.87,
+          "avg_likes_per_post": 123,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 70,
+          "last_post_date": "2024-01-15",
+          "bio_length": 59,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "OABRJ | Defendendo direitos, garantindo Justi\u00e7a",
+          "followers": 45352,
+          "likes": 6979,
+          "posts_count": 442,
+          "engagement_rate": 2.53,
+          "posting_frequency": "Daily",
+          "page_quality_score": 85,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 54.29355435548903
+        },
+        "linkedin": {
+          "company_name": "OABRJ | Defendendo direitos, garantindo Justi\u00e7a",
+          "followers": 23787,
+          "employees": 480,
+          "posts_count": 397,
+          "posting_frequency": "2-3 times/week",
+          "company_size": "201-500 employees",
+          "industry": "Manufacturing",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 83.20246507282825
+        }
+      },
+      "overall_social_score": 79.4,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Bermudes Advogados",
+    "website": "https://bermudes.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 4,
+            "h2": 0,
+            "h3": 4,
+            "h4": 0,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": false,
+          "total_headings": 8
+        },
+        "images": {
+          "total_images": 6,
+          "images_with_alt": 0,
+          "alt_text_ratio": 0.0
+        },
+        "links": {
+          "total_links": 30,
+          "internal_links": 0,
+          "external_links": 22
+        },
+        "sitemap_found": true,
+        "total_score": 35
+      },
+      "overall_score": 55.25
+    },
+    "social_analysis": {
+      "business_name": "Bermudes Advogados",
+      "platforms": {
+        "instagram": {
+          "username": "bermudesadvogados",
+          "followers": 14841,
+          "following": 986,
+          "posts_count": 351,
+          "engagement_rate": 4.04,
+          "avg_likes_per_post": 599,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 186,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Bermudes Advogados",
+          "followers": 9348,
+          "likes": 7219,
+          "posts_count": 818,
+          "engagement_rate": 1.56,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 70,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 77.7768119649994
+        },
+        "linkedin": {
+          "company_name": "Bermudes Advogados",
+          "followers": 25609,
+          "employees": 236,
+          "posts_count": 366,
+          "posting_frequency": "Monthly",
+          "company_size": "201-500 employees",
+          "industry": "Finance",
+          "has_website": true,
+          "has_job_postings": true,
+          "profile_completeness": 65.79944023987261
+        }
+      },
+      "overall_social_score": 78.6,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Salom\u00e3o Advogados",
+    "website": "https://salomaoadv.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 0,
+            "h2": 8,
+            "h3": 33,
+            "h4": 4,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": false,
+          "total_headings": 45
+        },
+        "images": {
+          "total_images": 77,
+          "images_with_alt": 66,
+          "alt_text_ratio": 0.8571428571428571
+        },
+        "links": {
+          "total_links": 169,
+          "internal_links": 14,
+          "external_links": 155
+        },
+        "sitemap_found": false,
+        "total_score": 55
+      },
+      "overall_score": 65.25
+    },
+    "social_analysis": {
+      "business_name": "Salom\u00e3o Advogados",
+      "platforms": {
+        "instagram": {
+          "username": "salom\u00e3oadvogados",
+          "followers": 6134,
+          "following": 1858,
+          "posts_count": 361,
+          "engagement_rate": 1.32,
+          "avg_likes_per_post": 80,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 60,
+          "last_post_date": "2024-01-15",
+          "bio_length": 189,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "Salom\u00e3o Advogados",
+          "followers": 41775,
+          "likes": 3667,
+          "posts_count": 173,
+          "engagement_rate": 2.69,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 80,
+          "has_website": false,
+          "has_contact_info": true,
+          "response_rate": 85.60613775159368
+        },
+        "linkedin": {
+          "company_name": "Salom\u00e3o Advogados",
+          "followers": 30457,
+          "employees": 33,
+          "posts_count": 136,
+          "posting_frequency": "Weekly",
+          "company_size": "11-50 employees",
+          "industry": "Technology",
+          "has_website": false,
+          "has_job_postings": true,
+          "profile_completeness": 82.31729364486644
+        }
+      },
+      "overall_social_score": 74.11,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Martins Regina Escrit\u00f3rio de Advocacia \u2013 Rio de Janeiro \u2013 RJ ...",
+    "website": "https://escritoriodeadvocaciarj.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 5,
+            "h3": 21,
+            "h4": 0,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 27
+        },
+        "images": {
+          "total_images": 4,
+          "images_with_alt": 3,
+          "alt_text_ratio": 0.75
+        },
+        "links": {
+          "total_links": 86,
+          "internal_links": 2,
+          "external_links": 82
+        },
+        "sitemap_found": false,
+        "total_score": 40
+      },
+      "overall_score": 57.75
+    },
+    "social_analysis": {
+      "business_name": "Martins Regina Escrit\u00f3rio de Advocacia \u2013 Rio de Janeiro \u2013 RJ ...",
+      "platforms": {
+        "instagram": {
+          "username": "martinsreginaescrit\u00f3riodeadvocacia\u2013riodejaneiro\u2013rj...",
+          "followers": 49428,
+          "following": 231,
+          "posts_count": 37,
+          "engagement_rate": 4.59,
+          "avg_likes_per_post": 2267,
+          "posting_frequency": "Low (weekly posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 90,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Martins Regina Escrit\u00f3rio de Advocacia \u2013 Rio de Janeiro \u2013 RJ ...",
+          "followers": 86366,
+          "likes": 68957,
+          "posts_count": 273,
+          "engagement_rate": 1.02,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 80,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 76.99636389425989
+        },
+        "linkedin": {
+          "company_name": "Martins Regina Escrit\u00f3rio de Advocacia \u2013 Rio de Janeiro \u2013 RJ ...",
+          "followers": 44218,
+          "employees": 735,
+          "posts_count": 394,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 85.302292704022
+        }
+      },
+      "overall_social_score": 85.1,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "BRZ Advogados",
+    "website": "https://brzadvogados.com.br/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 0,
+            "h2": 14,
+            "h3": 6,
+            "h4": 4,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": false,
+          "total_headings": 24
+        },
+        "images": {
+          "total_images": 7,
+          "images_with_alt": 4,
+          "alt_text_ratio": 0.5714285714285714
+        },
+        "links": {
+          "total_links": 140,
+          "internal_links": 1,
+          "external_links": 132
+        },
+        "sitemap_found": true,
+        "total_score": 35
+      },
+      "overall_score": 55.25
+    },
+    "social_analysis": {
+      "business_name": "BRZ Advogados",
+      "platforms": {
+        "instagram": {
+          "username": "brzadvogados",
+          "followers": 47137,
+          "following": 1331,
+          "posts_count": 481,
+          "engagement_rate": 3.62,
+          "avg_likes_per_post": 1707,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 90,
+          "last_post_date": "2024-01-15",
+          "bio_length": 198,
+          "has_website_link": false,
+          "has_business_category": false
+        },
+        "facebook": {
+          "page_name": "BRZ Advogados",
+          "followers": 11257,
+          "likes": 1806,
+          "posts_count": 947,
+          "engagement_rate": 1.05,
+          "posting_frequency": "Weekly",
+          "page_quality_score": 70,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 59.89114637873589
+        },
+        "linkedin": {
+          "company_name": "BRZ Advogados",
+          "followers": 5422,
+          "employees": 717,
+          "posts_count": 436,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 63.67532105892338
+        }
+      },
+      "overall_social_score": 74.56,
+      "maturity_level": "Intermediate"
+    }
+  },
+  {
+    "name": "Advogado especializado no Rio de Janeiro (Estado)",
+    "website": "https://www.jusbrasil.com.br/advogados/rj/",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 4,
+            "h3": 1,
+            "h4": 0,
+            "h5": 1,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 7
+        },
+        "images": {
+          "total_images": 0,
+          "images_with_alt": 0,
+          "alt_text_ratio": 1
+        },
+        "links": {
+          "total_links": 89,
+          "internal_links": 47,
+          "external_links": 42
+        },
+        "sitemap_found": false,
+        "total_score": 70
+      },
+      "overall_score": 72.75
+    },
+    "social_analysis": {
+      "business_name": "Advogado especializado no Rio de Janeiro (Estado)",
+      "platforms": {
+        "instagram": {
+          "username": "advogadoespecializadonoriodejaneiro(estado)",
+          "followers": 10652,
+          "following": 980,
+          "posts_count": 136,
+          "engagement_rate": 4.36,
+          "avg_likes_per_post": 464,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 120,
+          "has_website_link": false,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Advogado especializado no Rio de Janeiro (Estado)",
+          "followers": 70544,
+          "likes": 44165,
+          "posts_count": 422,
+          "engagement_rate": 1.4,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 80,
+          "has_website": true,
+          "has_contact_info": true,
+          "response_rate": 55.545574439413045
+        },
+        "linkedin": {
+          "company_name": "Advogado especializado no Rio de Janeiro (Estado)",
+          "followers": 16587,
+          "employees": 663,
+          "posts_count": 204,
+          "posting_frequency": "Monthly",
+          "company_size": "500+ employees",
+          "industry": "Healthcare",
+          "has_website": false,
+          "has_job_postings": false,
+          "profile_completeness": 76.25185718862662
+        }
+      },
+      "overall_social_score": 85.42,
+      "maturity_level": "Advanced"
+    }
+  },
+  {
+    "name": "Rio de Janeiro | Locations",
+    "website": "https://www.tauilchequer.com.br/pt/about-us/locations/rio-de-janeiro-tc",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "description": "",
+    "source": "google_playwright",
+    "site_analysis": {
+      "lighthouse": {
+        "performance_score": 75.5,
+        "accessibility_score": 82.3,
+        "best_practices_score": 78.9,
+        "seo_score": 71.2,
+        "first_contentful_paint": 1200,
+        "largest_contentful_paint": 2500,
+        "cumulative_layout_shift": 0.05,
+        "total_blocking_time": 150,
+        "speed_index": 1800
+      },
+      "seo": {
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false,
+          "viewport": false,
+          "robots": false,
+          "og_tags": 0,
+          "twitter_tags": 0
+        },
+        "headings": {
+          "counts": {
+            "h1": 1,
+            "h2": 6,
+            "h3": 8,
+            "h4": 0,
+            "h5": 0,
+            "h6": 0
+          },
+          "has_proper_hierarchy": true,
+          "total_headings": 15
+        },
+        "images": {
+          "total_images": 6,
+          "images_with_alt": 0,
+          "alt_text_ratio": 0.0
+        },
+        "links": {
+          "total_links": 54,
+          "internal_links": 39,
+          "external_links": 12
+        },
+        "sitemap_found": false,
+        "total_score": 50
+      },
+      "overall_score": 62.75
+    },
+    "social_analysis": {
+      "business_name": "Rio de Janeiro | Locations",
+      "platforms": {
+        "instagram": {
+          "username": "riodejaneiro|locations",
+          "followers": 24021,
+          "following": 1622,
+          "posts_count": 178,
+          "engagement_rate": 4.38,
+          "avg_likes_per_post": 1051,
+          "posting_frequency": "High (daily posts)",
+          "profile_quality_score": 100,
+          "last_post_date": "2024-01-15",
+          "bio_length": 139,
+          "has_website_link": true,
+          "has_business_category": true
+        },
+        "facebook": {
+          "page_name": "Rio de Janeiro | Locations",
+          "followers": 8160,
+          "likes": 2435,
+          "posts_count": 548,
+          "engagement_rate": 2.08,
+          "posting_frequency": "2-3 times/week",
+          "page_quality_score": 70,
+          "has_website": false,
+          "has_contact_info": false,
+          "response_rate": 76.50427150785906
+        },
+        "linkedin": {
+          "company_name": "Rio de Janeiro | Locations",
+          "followers": 24587,
+          "employees": 709,
+          "posts_count": 33,
+          "posting_frequency": "Weekly",
+          "company_size": "500+ employees",
+          "industry": "Technology",
+          "has_website": true,
+          "has_job_postings": false,
+          "profile_completeness": 66.07127792657803
+        }
+      },
+      "overall_social_score": 78.69,
       "maturity_level": "Intermediate"
     }
   }

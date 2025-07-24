@@ -28,4 +28,7 @@ python-dotenv>=1.0.0
 # groq-sdk>=0.4.2
 
 # Optional: SendGrid for email
-# sendgrid>=6.10.0 
+# sendgrid>=6.10.0
+
+# Scheduler for daily campaigns
+schedule>=1.2.0 

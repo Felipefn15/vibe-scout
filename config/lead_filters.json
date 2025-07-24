@@ -1,0 +1,49 @@
+{
+  "invalid_keywords": [
+    "wikipedia", "wiki", "youtube", "facebook", "instagram", "twitter",
+    "linkedin", "google", "maps", "search", "resultado", "resultados",
+    "página", "página inicial", "home", "início", "sobre", "contato",
+    "política", "termos", "privacidade", "cookies", "anúncio", "anúncios",
+    "busca", "pesquisa", "encontrar", "localizar", "direções", "rota",
+    "glassdoor", "indeed", "monster", "vagas", "emprego", "carreira",
+    "salário", "salario", "trabalho", "job", "career", "salary",
+    "melhores empresas", "top empresas", "ranking", "lista",
+    "como consultar", "passo a passo", "guia", "tutorial",
+    "estácio", "universidade", "faculdade", "curso", "educação",
+    "blog", "artigo", "notícia", "noticia", "reportagem",
+    "fórum", "forum", "comunidade", "grupo", "discussão",
+    "análise", "analise", "review", "avaliação", "avaliacao",
+    "comparação", "comparacao", "vs", "versus", "diferença",
+    "preço", "preco", "valor", "custo", "orçamento", "orcamento"
+  ],
+  "invalid_domains": [
+    "wikipedia.org", "wikipedia.com", "wikimedia.org",
+    "youtube.com", "youtu.be", "facebook.com", "fb.com",
+    "instagram.com", "twitter.com", "x.com", "linkedin.com",
+    "google.com", "google.com.br", "maps.google.com",
+    "glassdoor.com", "glassdoor.com.br", "indeed.com",
+    "monster.com", "vagas.com", "empregos.com",
+    "estacio.br", "estacio.edu.br", "universidade",
+    "blogspot.com", "wordpress.com", "medium.com",
+    "reddit.com", "quora.com", "stackoverflow.com",
+    "jusbrasil.com.br", "salario.com.br", "guia.com.br",
+    "telelistas.net", "guiatelefone.com.br", "paginasamarelas.com.br"
+  ],
+  "valid_business_patterns": [
+    "advocacia", "advogados", "escritório", "escritorio",
+    "restaurante", "pizzaria", "churrascaria", "padaria",
+    "farmácia", "farmacia", "drogaria", "clínica", "clinica",
+    "academia", "ginástica", "ginastica", "fitness",
+    "salão", "salao", "beleza", "estética", "estetica",
+    "imobiliária", "imobiliaria", "imóveis", "imoveis",
+    "consultoria", "assessoria", "empresarial", "consultorio",
+    "psicologo", "psicologa", "psicoterapia", "psicoterapia",
+    "nutricionista", "nutricionista", "nutricao", "nutricao",
+    "odontologo", "odontologa", "odontologia", "odontologia",
+    "fisioterapia", "fisioterapia", "fisioterapeuta", "fisioterapeuta",
+    "escola", "educacao", "ensino"
+  ],
+  "minimum_name_length": 3,
+  "required_fields": ["name"],
+  "optional_fields": ["website", "email", "phone", "address", "description"]
+} 

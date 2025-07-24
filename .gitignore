@@ -5,3 +5,5 @@ mailer/__pycache__/*
 llm/__pycache__/*
 logs/*
 scraper/__pycache__/*
+utils/__pycache__/*
+

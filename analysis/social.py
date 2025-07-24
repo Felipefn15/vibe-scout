@@ -39,13 +39,31 @@ class SocialMediaAnalyzer:
             
             # Note: Instagram has strict anti-scraping measures
             # In production, you would need to use Instagram's API or other methods
-            # For demo purposes, we'll return mock data
+            # For now, return empty data instead of mock data
             
-            return self._get_mock_instagram_data(username)
+            return self._get_empty_instagram_data(username)
             
         except Exception as e:
             logger.error(f"Error analyzing Instagram profile {username}: {e}")
-            return self._get_mock_instagram_data(username)
+            return self._get_empty_instagram_data(username)
+    
+    def _get_empty_instagram_data(self, username: str) -> Dict:
+        """Return empty Instagram data when API is not available"""
+        return {
+            'username': username,
+            'followers': 0,
+            'following': 0,
+            'posts_count': 0,
+            'engagement_rate': 0.0,
+            'avg_likes_per_post': 0,
+            'posting_frequency': '',
+            'profile_quality_score': 0,
+            'last_post_date': '',
+            'bio_length': 0,
+            'has_website_link': False,
+            'has_business_category': False,
+            'status': 'no_data'
+        }
     
     def _get_mock_instagram_data(self, username: str) -> Dict:
         """Return mock Instagram data for testing"""
@@ -130,11 +148,27 @@ class SocialMediaAnalyzer:
             # Note: Facebook also has strict API policies
             # In production, you would use Facebook Graph API
             
-            return self._get_mock_facebook_data(page_name)
+            return self._get_empty_facebook_data(page_name)
             
         except Exception as e:
             logger.error(f"Error analyzing Facebook page {page_name}: {e}")
-            return self._get_mock_facebook_data(page_name)
+            return self._get_empty_facebook_data(page_name)
+    
+    def _get_empty_facebook_data(self, page_name: str) -> Dict:
+        """Return empty Facebook data when API is not available"""
+        return {
+            'page_name': page_name,
+            'followers': 0,
+            'likes': 0,
+            'posts_count': 0,
+            'engagement_rate': 0.0,
+            'posting_frequency': '',
+            'page_quality_score': 0,
+            'has_website': False,
+            'has_contact_info': False,
+            'response_rate': 0.0,
+            'status': 'no_data'
+        }
     
     def _get_mock_facebook_data(self, page_name: str) -> Dict:
         """Return mock Facebook data for testing"""
@@ -204,11 +238,27 @@ class SocialMediaAnalyzer:
             logger.info(f"Analyzing LinkedIn company: {company_name}")
             
             # LinkedIn company analysis simulation
-            return self._get_mock_linkedin_data(company_name)
+            return self._get_empty_linkedin_data(company_name)
             
         except Exception as e:
             logger.error(f"Error analyzing LinkedIn company {company_name}: {e}")
-            return self._get_linkedin_data(company_name)
+            return self._get_empty_linkedin_data(company_name)
+    
+    def _get_empty_linkedin_data(self, company_name: str) -> Dict:
+        """Return empty LinkedIn data when API is not available"""
+        return {
+            'company_name': company_name,
+            'followers': 0,
+            'employees': 0,
+            'posts_count': 0,
+            'posting_frequency': '',
+            'company_size': '',
+            'industry': '',
+            'has_website': False,
+            'has_job_postings': False,
+            'profile_completeness': 0.0,
+            'status': 'no_data'
+        }
     
     def _get_mock_linkedin_data(self, company_name: str) -> Dict:
         """Return mock LinkedIn data for testing"""
@@ -292,7 +342,7 @@ class SocialMediaAnalyzer:
             
         except Exception as e:
             logger.error(f"Error analyzing social presence for {business_name}: {e}")
-            return self._get_mock_social_presence(business_name)
+            return self._get_empty_social_presence(business_name)
     
     def _calculate_overall_social_score(self, platforms: Dict) -> float:
         """Calculate overall social media presence score"""
@@ -326,6 +376,20 @@ class SocialMediaAnalyzer:
             return "Basic"
         else:
             return "Beginner"
+    
+    def _get_empty_social_presence(self, business_name: str) -> Dict:
+        """Return empty social presence data when APIs are not available"""
+        return {
+            'business_name': business_name,
+            'platforms': {
+                'instagram': self._get_empty_instagram_data(f"@{business_name.lower().replace(' ', '')}"),
+                'facebook': self._get_empty_facebook_data(business_name),
+                'linkedin': self._get_empty_linkedin_data(business_name)
+            },
+            'overall_social_score': 0.0,
+            'maturity_level': 'No Data',
+            'status': 'no_data'
+        }
     
     def _get_mock_social_presence(self, business_name: str) -> Dict:
         """Return mock social presence data for testing"""
