@@ -7,6 +7,11 @@ from fake_useragent import UserAgent
 from typing import List, Dict, Optional
 import os
 from dotenv import load_dotenv
+import re
+import random
+from playwright.sync_api import sync_playwright
+import googlemaps
+from requests_html import HTMLSession
 
 load_dotenv()
 
@@ -21,263 +26,505 @@ class LeadCollector:
         self.session.headers.update({
             'User-Agent': self.ua.random,
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
             'Accept-Encoding': 'gzip, deflate',
             'Connection': 'keep-alive',
+            'DNT': '1',
+            'Upgrade-Insecure-Requests': '1',
         })
-        self.request_delay = int(os.getenv('REQUEST_DELAY', 2))
+        self.request_delay = int(os.getenv('REQUEST_DELAY', 3))
+        
+        # Initialize Google Maps API client
+        self.google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY')
+        if self.google_maps_api_key and self.google_maps_api_key != 'your_google_maps_api_key_here':
+            try:
+                self.gmaps = googlemaps.Client(key=self.google_maps_api_key)
+                logger.info("Google Maps API initialized")
+            except ValueError:
+                self.gmaps = None
+                logger.warning("Invalid Google Maps API key - using fallback methods")
+        else:
+            self.gmaps = None
+            logger.warning("Google Maps API key not found - using fallback methods")
+        
+        # Initialize Google Custom Search API
+        self.google_search_api_key = os.getenv('GOOGLE_SEARCH_API_KEY')
+        self.google_search_engine_id = os.getenv('GOOGLE_SEARCH_ENGINE_ID')
+        
+        # Rotate user agents
+        self.user_agents = [
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15'
+        ]
+        
+        # Initialize HTML session for requests-html
+        self.html_session = HTMLSession()
     
-    def search_google(self, query: str, region: str) -> List[Dict]:
-        """Search Google for businesses in the specified region and industry"""
+    def _get_random_user_agent(self):
+        """Get a random user agent"""
+        return random.choice(self.user_agents)
+    
+    def search_google_places_api(self, query: str, region: str) -> List[Dict]:
+        """Search using Google Places API (most reliable)"""
         leads = []
         
+        if not self.gmaps:
+            logger.warning("Google Maps API not available")
+            return leads
+        
         try:
-            # Google Search API simulation (using search results)
-            search_url = f"https://www.google.com/search?q={query}+{region}"
+            # Get coordinates for the region
+            geocode_result = self.gmaps.geocode(f"{region}, Brazil")
+            if not geocode_result:
+                logger.warning(f"Could not geocode region: {region}")
+                return leads
             
-            logger.info(f"Searching Google for: {query} in {region}")
-            response = self.session.get(search_url)
-            response.raise_for_status()
+            location = geocode_result[0]['geometry']['location']
+            lat, lng = location['lat'], location['lng']
             
-            soup = BeautifulSoup(response.content, 'html.parser')
+            logger.info(f"Searching Google Places API for: {query} in {region}")
             
-            # Extract business information from search results
-            search_results = soup.find_all('div', class_='g')
+            # Search for places
+            places_result = self.gmaps.places_nearby(
+                location=(lat, lng),
+                radius=50000,  # 50km radius
+                keyword=query,
+                type='establishment'
+            )
             
-            for result in search_results[:10]:  # Limit to first 10 results
+            for place in places_result.get('results', []):
                 try:
-                    title_elem = result.find('h3')
-                    link_elem = result.find('a')
-                    snippet_elem = result.find('div', class_='VwiC3b')
+                    name = place.get('name', '')
+                    address = place.get('vicinity', '')
+                    place_id = place.get('place_id', '')
                     
-                    if title_elem and link_elem:
+                    if self._is_valid_business(name, address):
+                        # Get detailed information
+                        place_details = self.gmaps.place(place_id, fields=['formatted_phone_number', 'website', 'formatted_address'])
+                        details = place_details.get('result', {})
+                        
                         lead = {
-                            'name': title_elem.get_text().strip(),
-                            'website': link_elem.get('href', ''),
-                            'description': snippet_elem.get_text().strip() if snippet_elem else '',
-                            'source': 'google_search'
+                            'name': name,
+                            'address': details.get('formatted_address', address),
+                            'phone': details.get('formatted_phone_number', ''),
+                            'website': details.get('website', ''),
+                            'source': 'google_places_api'
                         }
                         leads.append(lead)
                         
                 except Exception as e:
-                    logger.warning(f"Error parsing search result: {e}")
+                    logger.warning(f"Error processing place: {e}")
                     continue
             
-            time.sleep(self.request_delay)
+            # Add delay to respect API limits
+            time.sleep(1)
             
         except Exception as e:
-            logger.error(f"Error in Google search: {e}")
+            logger.error(f"Error in Google Places API search: {e}")
         
         return leads
     
-    def search_google_maps(self, query: str, region: str) -> List[Dict]:
-        """Search Google Maps for local businesses"""
+    def search_google_custom_search_api(self, query: str, region: str) -> List[Dict]:
+        """Search using Google Custom Search API"""
         leads = []
         
+        if not self.google_search_api_key or not self.google_search_engine_id:
+            logger.warning("Google Custom Search API not configured")
+            return leads
+        
         try:
-            # Google Maps search simulation
-            maps_url = f"https://www.google.com/maps/search/{query}+{region}"
+            logger.info(f"Searching Google Custom Search API for: {query} in {region}")
             
-            logger.info(f"Searching Google Maps for: {query} in {region}")
-            response = self.session.get(maps_url)
+            search_url = "https://www.googleapis.com/customsearch/v1"
+            params = {
+                'key': self.google_search_api_key,
+                'cx': self.google_search_engine_id,
+                'q': f"{query} {region}",
+                'num': 10,
+                'gl': 'br',
+                'lr': 'lang_pt'
+            }
+            
+            response = self.session.get(search_url, params=params, timeout=30)
             response.raise_for_status()
             
-            # Extract business information from Maps results
-            # Note: This is a simplified version. In production, you might need to use
-            # Google Places API or more sophisticated scraping techniques
+            data = response.json()
             
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Look for business listings
-            business_elements = soup.find_all('div', {'data-result-index': True})
-            
-            for element in business_elements[:10]:
+            for item in data.get('items', []):
                 try:
-                    name_elem = element.find('h3') or element.find('span', class_='fontHeadlineSmall')
-                    address_elem = element.find('span', class_='fontBodyMedium')
-                    phone_elem = element.find('span', class_='fontBodyMedium')
+                    name = item.get('title', '')
+                    website = item.get('link', '')
+                    description = item.get('snippet', '')
                     
-                    if name_elem:
+                    if self._is_valid_business(name, description):
                         lead = {
-                            'name': name_elem.get_text().strip(),
-                            'address': address_elem.get_text().strip() if address_elem else '',
-                            'phone': phone_elem.get_text().strip() if phone_elem else '',
-                            'source': 'google_maps'
+                            'name': name,
+                            'website': website,
+                            'description': description,
+                            'source': 'google_custom_search'
                         }
                         leads.append(lead)
                         
                 except Exception as e:
-                    logger.warning(f"Error parsing Maps result: {e}")
+                    logger.warning(f"Error processing search result: {e}")
                     continue
             
-            time.sleep(self.request_delay)
+            time.sleep(1)
             
         except Exception as e:
-            logger.error(f"Error in Google Maps search: {e}")
+            logger.error(f"Error in Google Custom Search API: {e}")
         
         return leads
     
-    def search_instagram(self, query: str, region: str) -> List[Dict]:
-        """Search Instagram for business profiles"""
+    def search_with_playwright(self, query: str, region: str, search_type: str = 'google') -> List[Dict]:
+        """Search using Playwright with stealth techniques"""
         leads = []
         
         try:
-            # Instagram search simulation
-            # Note: Instagram has strict anti-scraping measures
-            # In production, you might need to use Instagram's API or other methods
+            logger.info(f"Searching {search_type} with Playwright for: {query} in {region}")
             
-            logger.info(f"Searching Instagram for: {query} in {region}")
-            
-            # For demo purposes, we'll create mock Instagram data
-            # In a real implementation, you would scrape Instagram or use their API
-            
-            mock_instagram_leads = [
-                {
-                    'name': f"{query.capitalize()} {region}",
-                    'instagram_handle': f"@{query.lower()}_{region.lower()}",
-                    'followers': '1.2k',
-                    'posts_count': 45,
-                    'source': 'instagram'
-                },
-                {
-                    'name': f"Premium {query} {region}",
-                    'instagram_handle': f"@premium_{query.lower()}",
-                    'followers': '3.5k',
-                    'posts_count': 120,
-                    'source': 'instagram'
-                }
+            with sync_playwright() as p:
+                # Launch browser with stealth options
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-blink-features=AutomationControlled',
+                        '--disable-dev-shm-usage',
+                        '--disable-web-security',
+                        '--disable-features=VizDisplayCompositor'
+                    ]
+                )
+                
+                context = browser.new_context(
+                    user_agent=self._get_random_user_agent(),
+                    viewport={'width': 1280, 'height': 720},
+                    locale='pt-BR',
+                    timezone_id='America/Sao_Paulo'
+                )
+                
+                # Add stealth scripts
+                context.add_init_script("""
+                    Object.defineProperty(navigator, 'webdriver', {
+                        get: () => undefined,
+                    });
+                    Object.defineProperty(navigator, 'plugins', {
+                        get: () => [1, 2, 3, 4, 5],
+                    });
+                """)
+                
+                page = context.new_page()
+                
+                # Random delay to simulate human behavior
+                time.sleep(random.uniform(1, 3))
+                
+                if search_type == 'google':
+                    search_url = f"https://www.google.com/search?q={query}+{region}&num=20&hl=pt-BR&gl=br"
+                    page.goto(search_url)
+                    
+                    # Wait for results to load
+                    page.wait_for_selector('div.g', timeout=10000)
+                    
+                    # Extract results
+                    results = page.query_selector_all('div.g')
+                    
+                    for result in results[:15]:
+                        try:
+                            title_elem = result.query_selector('h3')
+                            link_elem = result.query_selector('a')
+                            snippet_elem = result.query_selector('div.VwiC3b')
+                            
+                            if title_elem and link_elem:
+                                name = title_elem.inner_text().strip()
+                                website = link_elem.get_attribute('href', '')
+                                description = snippet_elem.inner_text().strip() if snippet_elem else ''
+                                
+                                if self._is_valid_business(name, description):
+                                    lead = {
+                                        'name': name,
+                                        'website': website,
+                                        'description': description,
+                                        'source': 'google_playwright'
+                                    }
+                                    leads.append(lead)
+                                    
+                        except Exception as e:
+                            logger.warning(f"Error parsing Playwright result: {e}")
+                            continue
+                
+                elif search_type == 'bing':
+                    search_url = f"https://www.bing.com/search?q={query}+{region}&cc=BR&setlang=pt-BR"
+                    page.goto(search_url)
+                    
+                    # Wait for results
+                    page.wait_for_selector('li.b_algo', timeout=10000)
+                    
+                    results = page.query_selector_all('li.b_algo')
+                    
+                    for result in results[:10]:
+                        try:
+                            title_elem = result.query_selector('h2')
+                            link_elem = result.query_selector('a')
+                            snippet_elem = result.query_selector('p')
+                            
+                            if title_elem and link_elem:
+                                name = title_elem.inner_text().strip()
+                                website = link_elem.get_attribute('href', '')
+                                description = snippet_elem.inner_text().strip() if snippet_elem else ''
+                                
+                                if self._is_valid_business(name, description):
+                                    lead = {
+                                        'name': name,
+                                        'website': website,
+                                        'description': description,
+                                        'source': 'bing_playwright'
+                                    }
+                                    leads.append(lead)
+                                    
+                        except Exception as e:
+                            logger.warning(f"Error parsing Bing result: {e}")
+                            continue
+                
+                browser.close()
+                
+        except Exception as e:
+            logger.error(f"Error in Playwright search: {e}")
+        
+        return leads
+    
+    def search_yellow_pages_api(self, query: str, region: str) -> List[Dict]:
+        """Search Yellow Pages using requests-html (more reliable)"""
+        leads = []
+        
+        try:
+            # Try different Yellow Pages URLs with requests-html
+            yellow_pages_urls = [
+                f"https://www.telelistas.net/busca/{query}/{region}",
+                f"https://www.guiatelefone.com.br/busca/{query}/{region}"
             ]
             
-            leads.extend(mock_instagram_leads)
-            time.sleep(self.request_delay)
+            for url in yellow_pages_urls:
+                try:
+                    logger.info(f"Searching Yellow Pages: {url}")
+                    
+                    # Use requests-html for better JavaScript support
+                    response = self.html_session.get(url, timeout=30)
+                    response.html.render(timeout=30)
+                    
+                    # Try different selectors for business listings
+                    business_listings = response.html.find('div.listing, div.business-listing, div.result-item, div.company-card')
+                    
+                    for listing in business_listings[:5]:
+                        try:
+                            name_elem = listing.find('h3, a.business-name, div.company-name', first=True)
+                            phone_elem = listing.find('span.phone, div.phone-number', first=True)
+                            address_elem = listing.find('span.address, div.address', first=True)
+                            
+                            if name_elem:
+                                name = name_elem.text.strip()
+                                phone = phone_elem.text.strip() if phone_elem else ''
+                                address = address_elem.text.strip() if address_elem else ''
+                                
+                                if self._is_valid_business(name, address):
+                                    lead = {
+                                        'name': name,
+                                        'phone': phone,
+                                        'address': address,
+                                        'source': 'yellow_pages_api'
+                                    }
+                                    leads.append(lead)
+                                    
+                        except Exception as e:
+                            logger.warning(f"Error parsing Yellow Pages listing: {e}")
+                            continue
+                    
+                    # If we found results, break
+                    if leads:
+                        break
+                        
+                except Exception as e:
+                    logger.warning(f"Error with Yellow Pages URL {url}: {e}")
+                    continue
+            
+            time.sleep(self.request_delay + random.uniform(1, 3))
             
         except Exception as e:
-            logger.error(f"Error in Instagram search: {e}")
+            logger.error(f"Error in Yellow Pages API search: {e}")
         
         return leads
     
     def collect_leads(self, industry: str, region: str, test_mode: bool = False, target_count: int = 25) -> List[Dict]:
-        """Main method to collect leads from all sources"""
+        """Collect leads from multiple sources with priority to APIs"""
         all_leads = []
         
-        logger.info(f"Starting lead collection for {industry} in {region} (target: {target_count} leads)")
-        
         if test_mode:
-            # Return mock data for testing with more variety
-            mock_leads = []
-            for i in range(min(target_count, 25)):
-                mock_leads.append({
-                    'name': f'{industry.capitalize()} Teste {i+1}',
-                    'website': f'https://{industry.lower()}teste{i+1}.com',
-                    'email': f'test.{industry.lower()}teste{i+1}@example.com',
-                    'phone': f'(21) 9{str(i+1).zfill(4)}-{str(i+1).zfill(4)}',
-                    'address': f'Rua {industry.capitalize()} {i+1}, {region}, RJ',
-                    'source': 'google_search' if i % 2 == 0 else 'google_maps',
-                    'description': f'{industry.capitalize()} de qualidade em {region}'
-                })
-            logger.info(f"Test mode: Collected {len(mock_leads)} mock leads")
-            return mock_leads
+            logger.info("Running in test mode - using limited data collection")
+            target_count = min(target_count, 5)
         
-        # Collect from multiple sources with different keywords
-        keywords = self._get_industry_keywords(industry)
+        # Generate search keywords based on industry
+        keywords = self._generate_search_keywords(industry)
         
-        for keyword in keywords[:3]:  # Use top 3 keywords
-            # Google Search
-            google_leads = self.search_google(keyword, region)
-            all_leads.extend(google_leads)
+        logger.info(f"Collecting leads for {industry} in {region}")
+        logger.info(f"Using keywords: {keywords}")
+        
+        for keyword in keywords[:3]:  # Use top 3 keywords to avoid rate limits
+            # Priority 1: Google Places API (most reliable)
+            if self.gmaps:
+                places_leads = self.search_google_places_api(keyword, region)
+                all_leads.extend(places_leads)
+                logger.info(f"Found {len(places_leads)} leads from Google Places API")
             
-            # Google Maps
-            maps_leads = self.search_google_maps(keyword, region)
-            all_leads.extend(maps_leads)
+            # Priority 2: Google Custom Search API
+            if self.google_search_api_key:
+                custom_search_leads = self.search_google_custom_search_api(keyword, region)
+                all_leads.extend(custom_search_leads)
+                logger.info(f"Found {len(custom_search_leads)} leads from Google Custom Search API")
             
-            # Instagram
-            instagram_leads = self.search_instagram(keyword, region)
-            all_leads.extend(instagram_leads)
+            # Priority 3: Playwright with Google (fallback)
+            if len(all_leads) < target_count // 2:
+                google_playwright_leads = self.search_with_playwright(keyword, region, 'google')
+                all_leads.extend(google_playwright_leads)
+                logger.info(f"Found {len(google_playwright_leads)} leads from Google Playwright")
             
-            # Add some delay between searches
-            time.sleep(self.request_delay)
+            # Priority 4: Playwright with Bing (fallback)
+            if len(all_leads) < target_count // 2:
+                bing_playwright_leads = self.search_with_playwright(keyword, region, 'bing')
+                all_leads.extend(bing_playwright_leads)
+                logger.info(f"Found {len(bing_playwright_leads)} leads from Bing Playwright")
+            
+            # Priority 5: Yellow Pages API
+            yellow_leads = self.search_yellow_pages_api(keyword, region)
+            all_leads.extend(yellow_leads)
+            logger.info(f"Found {len(yellow_leads)} leads from Yellow Pages API")
+            
+            # Add delay between searches
+            time.sleep(self.request_delay + random.uniform(2, 5))
         
-        # Add some additional mock leads for variety (in real scenario, these would come from other sources)
-        additional_leads = self._generate_additional_leads(industry, region, target_count - len(all_leads))
-        all_leads.extend(additional_leads)
+        # Remove duplicates based on name and clean data
+        unique_leads = self._deduplicate_and_clean_leads(all_leads)
         
-        # Remove duplicates based on name
+        # Limit to target count
+        final_leads = unique_leads[:target_count]
+        
+        logger.info(f"Collected {len(final_leads)} unique leads from {len(all_leads)} total results")
+        
+        return final_leads
+    
+    def _generate_search_keywords(self, industry: str) -> List[str]:
+        """Generate search keywords for any industry"""
+        # Remove common words and create variations
+        industry_clean = industry.lower().strip()
+        
+        # Generate multiple keyword variations
+        keywords = [
+            industry_clean,
+            f"{industry_clean} {industry_clean}",
+            f"melhor {industry_clean}",
+            f"{industry_clean} perto de mim",
+            f"{industry_clean} próximo",
+            f"empresa {industry_clean}",
+            f"negócio {industry_clean}"
+        ]
+        
+        # Add industry-specific variations
+        if industry_clean in ['restaurante', 'restaurantes']:
+            keywords.extend(['gastronomia', 'comida', 'jantar', 'almoço', 'pizzaria', 'churrascaria'])
+        elif industry_clean in ['advocacia', 'advogado']:
+            keywords.extend(['escritório advocacia', 'advocacia', 'direito', 'consultoria jurídica'])
+        elif industry_clean in ['farmácia', 'farmacia']:
+            keywords.extend(['drogaria', 'medicamentos', 'remédios', 'farmácia popular'])
+        elif industry_clean in ['clínica', 'clinica']:
+            keywords.extend(['médico', 'consultório', 'saúde', 'médica', 'hospital'])
+        elif industry_clean in ['academia', 'ginástica']:
+            keywords.extend(['fitness', 'treino', 'esporte', 'musculação', 'academia de ginástica'])
+        elif industry_clean in ['salão', 'salao']:
+            keywords.extend(['beleza', 'cabeleireiro', 'estética', 'cabelo', 'salão de beleza'])
+        elif industry_clean in ['imobiliária', 'imobiliaria']:
+            keywords.extend(['imóveis', 'corretor', 'aluguel', 'venda', 'imobiliária'])
+        elif industry_clean in ['consultoria', 'consultor']:
+            keywords.extend(['assessoria', 'consulting', 'empresarial', 'consultoria empresarial'])
+        
+        return keywords
+    
+    def _is_valid_business(self, name: str, description: str = "") -> bool:
+        """Check if a result is a valid business"""
+        # Filter out obvious non-business results
+        invalid_keywords = [
+            'wikipedia', 'wiki', 'youtube', 'facebook', 'instagram', 'twitter',
+            'linkedin', 'google', 'maps', 'search', 'resultado', 'resultados',
+            'página', 'página inicial', 'home', 'início', 'sobre', 'contato',
+            'política', 'termos', 'privacidade', 'cookies', 'anúncio', 'anúncios',
+            'busca', 'pesquisa', 'encontrar', 'localizar', 'direções', 'rota'
+        ]
+        
+        name_lower = name.lower()
+        desc_lower = description.lower()
+        
+        # Check for invalid keywords
+        for keyword in invalid_keywords:
+            if keyword in name_lower or keyword in desc_lower:
+                return False
+        
+        # Check for minimum name length
+        if len(name.strip()) < 3:
+            return False
+        
+        # Check for obvious non-business patterns
+        if re.search(r'^\d+$', name.strip()):  # Just numbers
+            return False
+        
+        # Check for search result patterns
+        if re.search(r'resultado|busca|pesquisa|encontrar', name_lower):
+            return False
+        
+        return True
+    
+    def _deduplicate_and_clean_leads(self, leads: List[Dict]) -> List[Dict]:
+        """Remove duplicates and clean lead data"""
         unique_leads = []
         seen_names = set()
         
-        for lead in all_leads:
-            if lead['name'] not in seen_names:
-                unique_leads.append(lead)
-                seen_names.add(lead['name'])
-        
-        logger.info(f"Collected {len(unique_leads)} unique leads")
+        for lead in leads:
+            name = lead.get('name', '').strip()
+            
+            # Skip if no name or already seen
+            if not name or name in seen_names:
+                continue
+            
+            # Clean and validate the lead
+            if self._is_valid_business(name, lead.get('description', '')):
+                # Clean the lead data
+                clean_lead = {
+                    'name': name,
+                    'website': lead.get('website', ''),
+                    'email': lead.get('email', ''),
+                    'phone': lead.get('phone', ''),
+                    'address': lead.get('address', ''),
+                    'description': lead.get('description', ''),
+                    'source': lead.get('source', 'unknown')
+                }
+                
+                unique_leads.append(clean_lead)
+                seen_names.add(name)
         
         return unique_leads
-    
-    def _get_industry_keywords(self, industry: str) -> List[str]:
-        """Get relevant keywords for an industry"""
-        keywords_map = {
-            'restaurantes': ['restaurante', 'restaurantes', 'gastronomia', 'comida', 'jantar', 'almoço'],
-            'advocacias': ['advocacia', 'advogado', 'escritório de advocacia', 'advocacia', 'direito'],
-            'farmacias': ['farmácia', 'drogaria', 'farmácia', 'medicamentos', 'remédios'],
-            'clinicas': ['clínica', 'médico', 'consultório', 'saúde', 'médica'],
-            'academias': ['academia', 'ginástica', 'fitness', 'treino', 'esporte'],
-            'salões': ['salão', 'beleza', 'cabeleireiro', 'estética', 'cabelo'],
-            'imobiliarias': ['imobiliária', 'imóveis', 'corretor', 'aluguel', 'venda'],
-            'consultorias': ['consultoria', 'consultor', 'assessoria', 'consulting', 'empresarial']
-        }
-        return keywords_map.get(industry.lower(), [industry])
-    
-    def _generate_additional_leads(self, industry: str, region: str, count: int) -> List[Dict]:
-        """Generate additional leads to reach target count"""
-        if count <= 0:
-            return []
-        
-        additional_leads = []
-        industry_names = self._get_industry_names(industry)
-        
-        for i in range(count):
-            name = f"{industry_names[i % len(industry_names)]} {region}"
-            additional_leads.append({
-                'name': name,
-                'website': f'https://{industry.lower()}{i+1}.com.br',
-                'email': f'contato@{industry.lower()}{i+1}.com.br',
-                'phone': f'(21) 9{str(i+1).zfill(4)}-{str(i+1).zfill(4)}',
-                'address': f'Rua {industry.capitalize()} {i+1}, {region}, RJ',
-                'source': 'additional_search',
-                'description': f'{industry.capitalize()} de qualidade em {region}'
-            })
-        
-        return additional_leads
-    
-    def _get_industry_names(self, industry: str) -> List[str]:
-        """Get common business names for an industry"""
-        names_map = {
-            'restaurantes': ['Restaurante', 'Cantina', 'Pizzaria', 'Churrascaria', 'Sushi Bar', 'Café', 'Bistrô'],
-            'advocacias': ['Advocacia', 'Escritório de Advocacia', 'Sociedade de Advogados', 'Consultoria Jurídica'],
-            'farmacias': ['Farmácia', 'Drogaria', 'Farmácia Popular', 'Farmácia 24h'],
-            'clinicas': ['Clínica', 'Consultório', 'Centro Médico', 'Instituto', 'Clínica Especializada'],
-            'academias': ['Academia', 'Academia de Ginástica', 'Fitness Center', 'Academia de Musculação'],
-            'salões': ['Salão de Beleza', 'Salão', 'Cabeleireiro', 'Estética', 'Beauty Salon'],
-            'imobiliarias': ['Imobiliária', 'Imóveis', 'Corretora de Imóveis', 'Imobiliária Especializada'],
-            'consultorias': ['Consultoria', 'Consultoria Empresarial', 'Assessoria', 'Consulting']
-        }
-        return names_map.get(industry.lower(), [industry.capitalize()])
 
 def main(industry: str, region: str) -> List[Dict]:
-    """Main function to be called by CrewAI"""
+    """Main function to be called by the pipeline"""
     collector = LeadCollector()
     leads = collector.collect_leads(industry, region)
     
     # Save leads to JSON file for next step
-    with open('leads_data.json', 'w') as f:
-        json.dump(leads, f, indent=2)
+    with open('data/leads.json', 'w', encoding='utf-8') as f:
+        json.dump(leads, f, indent=2, ensure_ascii=False)
     
     return leads
 
 if __name__ == "__main__":
     # Test the scraper
-    test_leads = main("restaurant", "São Paulo")
+    test_leads = main("restaurantes", "Rio de Janeiro")
     print(f"Collected {len(test_leads)} leads")
     for lead in test_leads[:3]:
         print(f"- {lead['name']} ({lead['source']})") 

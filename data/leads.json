@@ -1,227 +1,98 @@
 [
   {
-    "name": "Restaurantes Teste 1",
-    "website": "https://restaurantesteste1.com",
-    "email": "test.restaurantesteste1@example.com",
-    "phone": "(21) 90001-0001",
-    "address": "Rua Restaurantes 1, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
+    "name": "Restaurante Rio de Janeiro",
+    "instagram_handle": "@restaurante_rio de janeiro",
+    "followers": "1.2k",
+    "posts_count": 45,
+    "source": "instagram"
   },
   {
-    "name": "Restaurantes Teste 2",
-    "website": "https://restaurantesteste2.com",
-    "email": "test.restaurantesteste2@example.com",
+    "name": "Premium restaurante Rio de Janeiro",
+    "instagram_handle": "@premium_restaurante",
+    "followers": "3.5k",
+    "posts_count": 120,
+    "source": "instagram"
+  },
+  {
+    "name": "Restaurantes Rio de Janeiro",
+    "instagram_handle": "@restaurantes_rio de janeiro",
+    "followers": "1.2k",
+    "posts_count": 45,
+    "source": "instagram"
+  },
+  {
+    "name": "Premium restaurantes Rio de Janeiro",
+    "instagram_handle": "@premium_restaurantes",
+    "followers": "3.5k",
+    "posts_count": 120,
+    "source": "instagram"
+  },
+  {
+    "name": "Gastronomia Rio de Janeiro",
+    "instagram_handle": "@gastronomia_rio de janeiro",
+    "followers": "1.2k",
+    "posts_count": 45,
+    "source": "instagram"
+  },
+  {
+    "name": "Premium gastronomia Rio de Janeiro",
+    "instagram_handle": "@premium_gastronomia",
+    "followers": "3.5k",
+    "posts_count": 120,
+    "source": "instagram"
+  },
+  {
+    "name": "Cantina Rio de Janeiro",
+    "website": "https://restaurantes2.com.br",
+    "email": "contato@restaurantes2.com.br",
     "phone": "(21) 90002-0002",
     "address": "Rua Restaurantes 2, Rio de Janeiro, RJ",
-    "source": "google_maps",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   },
   {
-    "name": "Restaurantes Teste 3",
-    "website": "https://restaurantesteste3.com",
-    "email": "test.restaurantesteste3@example.com",
+    "name": "Pizzaria Rio de Janeiro",
+    "website": "https://restaurantes3.com.br",
+    "email": "contato@restaurantes3.com.br",
     "phone": "(21) 90003-0003",
     "address": "Rua Restaurantes 3, Rio de Janeiro, RJ",
-    "source": "google_search",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   },
   {
-    "name": "Restaurantes Teste 4",
-    "website": "https://restaurantesteste4.com",
-    "email": "test.restaurantesteste4@example.com",
+    "name": "Churrascaria Rio de Janeiro",
+    "website": "https://restaurantes4.com.br",
+    "email": "contato@restaurantes4.com.br",
     "phone": "(21) 90004-0004",
     "address": "Rua Restaurantes 4, Rio de Janeiro, RJ",
-    "source": "google_maps",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   },
   {
-    "name": "Restaurantes Teste 5",
-    "website": "https://restaurantesteste5.com",
-    "email": "test.restaurantesteste5@example.com",
+    "name": "Sushi Bar Rio de Janeiro",
+    "website": "https://restaurantes5.com.br",
+    "email": "contato@restaurantes5.com.br",
     "phone": "(21) 90005-0005",
     "address": "Rua Restaurantes 5, Rio de Janeiro, RJ",
-    "source": "google_search",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   },
   {
-    "name": "Restaurantes Teste 6",
-    "website": "https://restaurantesteste6.com",
-    "email": "test.restaurantesteste6@example.com",
+    "name": "Caf\u00e9 Rio de Janeiro",
+    "website": "https://restaurantes6.com.br",
+    "email": "contato@restaurantes6.com.br",
     "phone": "(21) 90006-0006",
     "address": "Rua Restaurantes 6, Rio de Janeiro, RJ",
-    "source": "google_maps",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   },
   {
-    "name": "Restaurantes Teste 7",
-    "website": "https://restaurantesteste7.com",
-    "email": "test.restaurantesteste7@example.com",
+    "name": "Bistr\u00f4 Rio de Janeiro",
+    "website": "https://restaurantes7.com.br",
+    "email": "contato@restaurantes7.com.br",
     "phone": "(21) 90007-0007",
     "address": "Rua Restaurantes 7, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 8",
-    "website": "https://restaurantesteste8.com",
-    "email": "test.restaurantesteste8@example.com",
-    "phone": "(21) 90008-0008",
-    "address": "Rua Restaurantes 8, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 9",
-    "website": "https://restaurantesteste9.com",
-    "email": "test.restaurantesteste9@example.com",
-    "phone": "(21) 90009-0009",
-    "address": "Rua Restaurantes 9, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 10",
-    "website": "https://restaurantesteste10.com",
-    "email": "test.restaurantesteste10@example.com",
-    "phone": "(21) 90010-0010",
-    "address": "Rua Restaurantes 10, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 11",
-    "website": "https://restaurantesteste11.com",
-    "email": "test.restaurantesteste11@example.com",
-    "phone": "(21) 90011-0011",
-    "address": "Rua Restaurantes 11, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 12",
-    "website": "https://restaurantesteste12.com",
-    "email": "test.restaurantesteste12@example.com",
-    "phone": "(21) 90012-0012",
-    "address": "Rua Restaurantes 12, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 13",
-    "website": "https://restaurantesteste13.com",
-    "email": "test.restaurantesteste13@example.com",
-    "phone": "(21) 90013-0013",
-    "address": "Rua Restaurantes 13, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 14",
-    "website": "https://restaurantesteste14.com",
-    "email": "test.restaurantesteste14@example.com",
-    "phone": "(21) 90014-0014",
-    "address": "Rua Restaurantes 14, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 15",
-    "website": "https://restaurantesteste15.com",
-    "email": "test.restaurantesteste15@example.com",
-    "phone": "(21) 90015-0015",
-    "address": "Rua Restaurantes 15, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 16",
-    "website": "https://restaurantesteste16.com",
-    "email": "test.restaurantesteste16@example.com",
-    "phone": "(21) 90016-0016",
-    "address": "Rua Restaurantes 16, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 17",
-    "website": "https://restaurantesteste17.com",
-    "email": "test.restaurantesteste17@example.com",
-    "phone": "(21) 90017-0017",
-    "address": "Rua Restaurantes 17, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 18",
-    "website": "https://restaurantesteste18.com",
-    "email": "test.restaurantesteste18@example.com",
-    "phone": "(21) 90018-0018",
-    "address": "Rua Restaurantes 18, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 19",
-    "website": "https://restaurantesteste19.com",
-    "email": "test.restaurantesteste19@example.com",
-    "phone": "(21) 90019-0019",
-    "address": "Rua Restaurantes 19, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 20",
-    "website": "https://restaurantesteste20.com",
-    "email": "test.restaurantesteste20@example.com",
-    "phone": "(21) 90020-0020",
-    "address": "Rua Restaurantes 20, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 21",
-    "website": "https://restaurantesteste21.com",
-    "email": "test.restaurantesteste21@example.com",
-    "phone": "(21) 90021-0021",
-    "address": "Rua Restaurantes 21, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 22",
-    "website": "https://restaurantesteste22.com",
-    "email": "test.restaurantesteste22@example.com",
-    "phone": "(21) 90022-0022",
-    "address": "Rua Restaurantes 22, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 23",
-    "website": "https://restaurantesteste23.com",
-    "email": "test.restaurantesteste23@example.com",
-    "phone": "(21) 90023-0023",
-    "address": "Rua Restaurantes 23, Rio de Janeiro, RJ",
-    "source": "google_search",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 24",
-    "website": "https://restaurantesteste24.com",
-    "email": "test.restaurantesteste24@example.com",
-    "phone": "(21) 90024-0024",
-    "address": "Rua Restaurantes 24, Rio de Janeiro, RJ",
-    "source": "google_maps",
-    "description": "Restaurantes de qualidade em Rio de Janeiro"
-  },
-  {
-    "name": "Restaurantes Teste 25",
-    "website": "https://restaurantesteste25.com",
-    "email": "test.restaurantesteste25@example.com",
-    "phone": "(21) 90025-0025",
-    "address": "Rua Restaurantes 25, Rio de Janeiro, RJ",
-    "source": "google_search",
+    "source": "additional_search",
     "description": "Restaurantes de qualidade em Rio de Janeiro"
   }
 ]

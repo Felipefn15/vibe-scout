@@ -1,4 +1,7 @@
 /.env
 vibe_scout_report_*
 logs/*
-mailer/__pycache__/send_emails.cpython-313.pyc
+mailer/__pycache__/*
+llm/__pycache__/*
+logs/*
+scraper/__pycache__/*

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Vibe Scout - Digital Marketing Lead Generation Pipeline
-Main orchestration script using CrewAI
+Vibe Scout - Software Development Lead Generation Pipeline
+Main orchestration script for prospecting and evaluating digital presence
 """
 
 import os
@@ -308,9 +308,12 @@ def run_pipeline_simple(industry, region, test_mode=False):
         if not new_leads:
             logger.warning("No new leads to contact. All leads have been contacted before.")
             return {
-                'status': 'no_new_leads',
-                'message': 'All leads have been contacted before',
-                'stats': lead_manager.get_stats()
+                'status': 'warning',
+                'message': 'No new leads to contact',
+                'leads_collected': 0,
+                'emails_sent': 0,
+                'test_mode': test_mode,
+                'lead_stats': lead_manager.get_stats()
             }
         
         # Save leads
@@ -405,16 +408,16 @@ def main():
     """Main function to run the Vibe Scout pipeline"""
     
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Vibe Scout - Digital Marketing Lead Generation Pipeline')
-    parser.add_argument('--industry', default='restaurantes', help='Industry to search for (default: restaurantes)')
+    parser = argparse.ArgumentParser(description='Vibe Scout - Software Development Lead Generation Pipeline')
+    parser.add_argument('--industry', required=True, help='Industry to search for (e.g., restaurantes, advocacias, farmacias, etc.)')
     parser.add_argument('--region', default='Rio de Janeiro', help='Region to search in (default: Rio de Janeiro)')
-    parser.add_argument('--test', action='store_true', help='Run in test mode with mock data')
+    parser.add_argument('--test', action='store_true', help='Run in test mode with limited data collection')
     parser.add_argument('--simple', action='store_true', help='Use simple pipeline instead of CrewAI')
     
     args = parser.parse_args()
     
     print("=" * 60)
-    print("VIBE SCOUT - DIGITAL MARKETING PIPELINE")
+    print("VIBE SCOUT - SOFTWARE DEVELOPMENT PIPELINE")
     print("=" * 60)
     
     print(f"Industry: {args.industry}")
@@ -434,26 +437,37 @@ def main():
     else:
         result = run_crewai_pipeline(args.industry, args.region, args.test)
     
-    # Display results
-    print("\n" + "=" * 60)
-    print("PIPELINE RESULTS")
-    print("=" * 60)
-    
-    if result["status"] == "success":
-        print("✅ Pipeline completed successfully!")
-        if "leads_collected" in result:
-            print(f"📊 Leads collected: {result['leads_collected']}")
-        if "emails_sent" in result:
-            print(f"📧 Emails sent: {result['emails_sent']}")
-        if "report_file" in result:
-            print(f"📄 Report generated: {result['report_file']}")
-        if "result" in result:
-            print(f"🤖 CrewAI result: {result['result']}")
-    else:
-        print("❌ Pipeline failed!")
-        print(f"Error: {result['error']}")
-    
-    print("=" * 60)
+            # Display results
+        print("\n" + "=" * 60)
+        print("PIPELINE RESULTS")
+        print("=" * 60)
+        
+        if result["status"] == "success":
+            print("✅ Pipeline completed successfully!")
+            if "leads_collected" in result:
+                print(f"📊 Leads collected: {result['leads_collected']}")
+            if "emails_sent" in result:
+                print(f"📧 Emails sent: {result['emails_sent']}")
+            if "report_file" in result:
+                print(f"📄 Report generated: {result['report_file']}")
+            if "result" in result:
+                print(f"🤖 CrewAI result: {result['result']}")
+        elif result["status"] == "warning":
+            print("⚠️ Pipeline completed with warnings!")
+            if "message" in result:
+                print(f"Message: {result['message']}")
+            if "leads_collected" in result:
+                print(f"📊 Leads collected: {result['leads_collected']}")
+            if "emails_sent" in result:
+                print(f"📧 Emails sent: {result['emails_sent']}")
+        else:
+            print("❌ Pipeline failed!")
+            if "error" in result:
+                print(f"Error: {result['error']}")
+            else:
+                print("Unknown error occurred")
+        
+        print("=" * 60)
 
 if __name__ == "__main__":
     main() 
