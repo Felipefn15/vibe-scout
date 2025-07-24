@@ -12,7 +12,6 @@ import logging
 import psutil
 from datetime import datetime, timedelta
 from typing import List, Dict
-import schedule
 import time
 
 # Add project root to path
@@ -262,14 +261,7 @@ class DailyCampaignScheduler:
         except Exception as e:
             logger.warning(f"Could not log system health: {e}")
     
-    def schedule_daily_campaign(self, time: str = "08:00"):
-        """Schedule the daily campaign to run at specified time"""
-        schedule.every().day.at(time).do(self.run_daily_campaign)
-        logger.info(f"Scheduled daily campaign to run at {time}")
-        
-        while True:
-            schedule.run_pending()
-            time.sleep(60)  # Check every minute
+
 
 def main():
     """Main function to run the scheduler"""
@@ -278,12 +270,9 @@ def main():
     # Create logs directory
     os.makedirs('logs', exist_ok=True)
     
-    # Run immediately if called directly
-    if len(sys.argv) > 1 and sys.argv[1] == '--run-now':
-        scheduler.run_daily_campaign()
-    else:
-        # Schedule to run daily at 8 AM
-        scheduler.schedule_daily_campaign("08:00")
+    # Run the daily campaign immediately
+    # Railway will handle the scheduling via cron
+    scheduler.run_daily_campaign()
 
 if __name__ == "__main__":
     main() 
