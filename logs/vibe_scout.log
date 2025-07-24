@@ -1,0 +1,508 @@
+2025-07-23 21:07:18,863 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:07:20,200 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:07:21,145 - __main__ - ERROR - Error in CrewAI pipeline: No module named 'langchain'
+2025-07-23 21:07:21,145 - __main__ - INFO - Falling back to simple pipeline...
+2025-07-23 21:07:21,145 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:07:21,145 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:07:21,208 - __main__ - ERROR - Error in simple pipeline: LeadCollector.collect_leads() got an unexpected keyword argument 'test_mode'
+2025-07-23 21:07:47,800 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:07:49,285 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:07:50,535 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:07:50,535 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:07:50,535 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:07:50,600 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:07:50,600 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:07:52,952 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:07:55,416 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:07:57,417 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:07:57,417 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:07:57,419 - __main__ - ERROR - Error in simple pipeline: 'SiteAnalyzer' object has no attribute 'analyze_sites_from_leads'
+2025-07-23 21:08:25,931 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:08:27,135 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:08:28,224 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:08:28,224 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:08:28,224 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:08:28,286 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:08:28,286 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:08:30,594 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:08:33,350 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:08:35,356 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:08:35,356 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:08:35,362 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:08:35,362 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:08:35,362 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:08:35,362 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:08:35,363 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:08:35,364 - __main__ - ERROR - Error in simple pipeline: 'SocialMediaAnalyzer' object has no attribute 'analyze_social_media_for_leads'
+2025-07-23 21:08:58,675 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:00,249 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:09:01,344 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:09:01,344 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:01,344 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:09:01,408 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:09:01,408 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:09:03,721 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:09:06,567 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:09:08,568 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:09:08,568 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:09:08,570 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:09:08,570 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:09:08,570 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:09:08,570 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:09:08,570 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:09:08,573 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:09:08,573 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:09:08,573 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:09:08,573 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:09:08,573 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:09:08,573 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:09:09,579 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:09:09,580 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:09:09,580 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:09:09,580 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:09:09,580 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:09:10,585 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:09:10,585 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:09:10,614 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:09:10,614 - __main__ - ERROR - Error in simple pipeline: EmailGenerator.generate_bulk_emails() got an unexpected keyword argument 'test_mode'
+2025-07-23 21:09:28,223 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:29,306 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:09:30,411 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:09:30,411 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:30,411 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:09:30,475 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:09:30,476 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:09:32,801 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:09:35,584 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:09:37,585 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:09:37,585 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:09:37,587 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:09:37,587 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:09:37,587 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:09:37,587 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:09:37,587 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:09:37,588 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:09:37,588 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:09:37,588 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:09:37,588 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:09:37,588 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:09:37,588 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:09:38,589 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:09:38,592 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:09:38,592 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:09:38,592 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:09:38,592 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:09:39,597 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:09:39,597 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:09:39,631 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:09:39,632 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:09:39,632 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:09:39,632 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:09:39,632 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:09:39,632 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:09:39,655 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:09:39,655 - __main__ - ERROR - Error in simple pipeline: EmailSender.send_bulk_emails() got an unexpected keyword argument 'test_mode'
+2025-07-23 21:09:52,919 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:54,204 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:09:55,233 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:09:55,233 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:09:55,233 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:09:55,297 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:09:55,297 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:09:57,619 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:10:00,523 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:10:02,524 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:10:02,524 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:10:02,526 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:10:02,526 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:10:02,526 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:10:02,526 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:10:02,526 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:10:02,527 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:10:02,527 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:10:02,527 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:10:02,527 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:10:02,527 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:10:02,527 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:10:03,528 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:10:03,528 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:10:03,528 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:10:03,528 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:10:03,528 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:10:04,532 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:10:04,533 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:10:04,559 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:10:04,559 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:10:04,559 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:10:04,559 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:10:04,559 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:10:04,559 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:10:04,585 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:10:04,586 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:10:04,586 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:10:04,586 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:10:06,586 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:10:06,587 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:10:06,587 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:10:06,587 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:10:07,010 - __main__ - ERROR - Error in simple pipeline: ReportBuilder.build_comprehensive_report() got an unexpected keyword argument 'test_mode'
+2025-07-23 21:10:26,129 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:10:27,253 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:10:28,271 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:10:28,271 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:10:28,271 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:10:28,334 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:10:28,334 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:10:31,650 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:10:34,458 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:10:36,459 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:10:36,459 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:10:36,461 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:10:36,461 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:10:36,461 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:10:36,461 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:10:36,461 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:10:36,462 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:10:36,462 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:10:36,462 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:10:36,462 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:10:36,462 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:10:36,462 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:10:37,467 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:10:37,467 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:10:37,467 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:10:37,467 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:10:37,467 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:10:38,469 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:10:38,469 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:10:38,498 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:10:38,498 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:10:38,498 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:10:38,498 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:10:38,498 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:10:38,498 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:10:38,518 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:10:38,518 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:10:38,518 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:10:38,518 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:10:40,523 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:10:40,523 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:10:40,523 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:10:40,524 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:10:40,947 - __main__ - ERROR - Error in simple pipeline: ReportBuilder.build_comprehensive_report() missing 1 required positional argument: 'campaign_results'
+2025-07-23 21:10:51,483 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:10:52,536 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:10:53,542 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:10:53,542 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:10:53,542 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:10:53,603 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:10:53,603 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:10:55,935 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:10:58,441 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:11:00,443 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:11:00,443 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:11:00,445 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:11:00,445 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:11:00,445 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:11:00,445 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:11:00,445 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:11:00,446 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:11:00,446 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:11:00,446 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:11:00,446 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:11:00,446 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:11:00,446 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:11:01,449 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:11:01,449 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:11:01,449 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:11:01,449 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:11:01,449 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:11:02,450 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:11:02,450 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:11:02,474 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:11:02,474 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:11:02,474 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:11:02,474 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:11:02,474 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:11:02,474 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:11:02,494 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:11:02,494 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:11:02,494 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:11:02,494 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:11:04,495 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:11:04,496 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:11:04,496 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:11:04,496 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:11:04,892 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:11:04,906 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211104.xlsx
+2025-07-23 21:11:04,906 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:11:04,906 - __main__ - ERROR - Error in simple pipeline: EmailSender.send_summary_to_consultant() got an unexpected keyword argument 'test_mode'
+2025-07-23 21:11:16,242 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:11:17,364 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:11:18,369 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:11:18,370 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:11:18,370 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:11:18,474 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:11:18,474 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:11:20,924 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:11:24,510 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:11:26,512 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:11:26,512 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:11:26,520 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:11:26,521 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:11:26,521 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:11:26,521 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:11:26,521 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:11:26,523 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:11:26,523 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:11:26,523 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:11:26,523 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:11:26,523 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:11:26,523 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:11:27,525 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:11:27,525 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:11:27,525 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:11:27,525 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:11:27,526 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:11:28,531 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:11:28,531 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:11:28,566 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:11:28,566 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:11:28,566 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:11:28,566 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:11:28,566 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:11:28,566 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:11:28,593 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:11:28,593 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:11:28,593 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:11:28,593 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:11:30,594 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:11:30,595 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:11:30,596 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:11:30,596 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:11:31,117 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:11:31,131 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211131.xlsx
+2025-07-23 21:11:31,131 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:11:31,131 - __main__ - ERROR - Error in simple pipeline: EmailSender.send_summary_to_consultant() got multiple values for argument 'test_mode'
+2025-07-23 21:11:41,128 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:11:42,334 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:11:43,368 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:11:43,369 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:11:43,369 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:11:43,429 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:11:43,430 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:11:46,165 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:11:48,924 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:11:50,928 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:11:50,929 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:11:50,930 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:11:50,930 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:11:50,930 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:11:50,930 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:11:50,930 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:11:50,930 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:11:50,930 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:11:50,930 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:11:50,930 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:11:50,931 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:11:50,931 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:11:51,932 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:11:51,932 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:11:51,932 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:11:51,932 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:11:51,932 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:11:52,937 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:11:52,937 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:11:52,966 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:11:52,966 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:11:52,966 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:11:52,966 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:11:52,966 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:11:52,966 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:11:52,983 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:11:52,983 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:11:52,983 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:11:52,983 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:11:54,984 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:11:54,985 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:11:54,985 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:11:54,985 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:11:55,355 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:11:55,367 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211155.xlsx
+2025-07-23 21:11:55,367 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:11:55,367 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:11:55,367 - mailer.send_emails - INFO - Mock campaign summary sent to consultant
+2025-07-23 21:11:55,367 - __main__ - INFO - ✅ Pipeline completed successfully!
+2025-07-23 21:12:04,042 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:12:05,107 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:12:06,153 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:12:06,153 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:12:06,153 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:12:06,216 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:12:06,216 - scraper.collect - INFO - Searching Google for: restaurant in São Paulo
+2025-07-23 21:12:08,552 - scraper.collect - INFO - Searching Google Maps for: restaurant in São Paulo
+2025-07-23 21:12:11,046 - scraper.collect - INFO - Searching Instagram for: restaurant in São Paulo
+2025-07-23 21:12:13,048 - scraper.collect - INFO - Collected 2 unique leads
+2025-07-23 21:12:13,049 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:12:13,051 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:12:13,051 - analysis.site_seo - WARNING - No website found for Restaurant São Paulo
+2025-07-23 21:12:13,051 - analysis.site_seo - WARNING - No website found for Premium restaurant São Paulo
+2025-07-23 21:12:13,051 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:12:13,051 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:12:13,052 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:12:13,052 - analysis.social - INFO - Analyzing social media for: Restaurant São Paulo
+2025-07-23 21:12:13,052 - analysis.social - INFO - Analyzing social presence for: Restaurant São Paulo
+2025-07-23 21:12:13,053 - analysis.social - INFO - Analyzing Instagram profile: @restaurantsãopaulo
+2025-07-23 21:12:13,053 - analysis.social - INFO - Analyzing Facebook page: Restaurant São Paulo
+2025-07-23 21:12:13,053 - analysis.social - INFO - Analyzing LinkedIn company: Restaurant São Paulo
+2025-07-23 21:12:14,054 - analysis.social - INFO - Analyzing social media for: Premium restaurant São Paulo
+2025-07-23 21:12:14,055 - analysis.social - INFO - Analyzing social presence for: Premium restaurant São Paulo
+2025-07-23 21:12:14,055 - analysis.social - INFO - Analyzing Instagram profile: @premiumrestaurantsãopaulo
+2025-07-23 21:12:14,055 - analysis.social - INFO - Analyzing Facebook page: Premium restaurant São Paulo
+2025-07-23 21:12:14,055 - analysis.social - INFO - Analyzing LinkedIn company: Premium restaurant São Paulo
+2025-07-23 21:12:15,060 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:12:15,060 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:12:15,095 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:12:15,096 - llm.generate_email - INFO - Generating personalized email for: Restaurant São Paulo
+2025-07-23 21:12:15,096 - llm.generate_email - INFO - Generated email for Restaurant São Paulo
+2025-07-23 21:12:15,096 - llm.generate_email - INFO - Generating personalized email for: Premium restaurant São Paulo
+2025-07-23 21:12:15,096 - llm.generate_email - INFO - Generated email for Premium restaurant São Paulo
+2025-07-23 21:12:15,096 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:12:15,120 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:12:15,120 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:12:15,120 - mailer.send_emails - INFO - Sending email to: Restaurant São Paulo
+2025-07-23 21:12:15,120 - mailer.send_emails - INFO - Mock email sent to Restaurant São Paulo at test.restaurantsãopaulo@example.com
+2025-07-23 21:12:17,125 - mailer.send_emails - INFO - Sending email to: Premium restaurant São Paulo
+2025-07-23 21:12:17,126 - mailer.send_emails - INFO - Mock email sent to Premium restaurant São Paulo at test.premiumrestaurantsãopaulo@example.com
+2025-07-23 21:12:17,126 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:12:17,126 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:12:17,534 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:12:17,548 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211217.xlsx
+2025-07-23 21:12:17,548 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:12:17,548 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:12:17,548 - mailer.send_emails - INFO - Mock campaign summary sent to consultant
+2025-07-23 21:12:17,548 - __main__ - INFO - ✅ Pipeline completed successfully!
+2025-07-23 21:12:33,851 - __main__ - INFO - Starting Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:12:34,956 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:12:36,028 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:12:36,028 - __main__ - INFO - Starting simple Vibe Scout pipeline for restaurant in São Paulo
+2025-07-23 21:12:36,028 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:12:36,090 - scraper.collect - INFO - Starting lead collection for restaurant in São Paulo
+2025-07-23 21:12:36,090 - scraper.collect - INFO - Test mode: Collected 2 mock leads
+2025-07-23 21:12:36,090 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:12:36,091 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:12:36,091 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste1.com
+2025-07-23 21:12:36,091 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste1.com
+2025-07-23 21:12:36,104 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:12:36,104 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste1.com
+2025-07-23 21:12:36,247 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste1.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11ed11d30>: Failed to resolve 'restauranteteste1.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:12:36,247 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste2.com
+2025-07-23 21:12:36,247 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste2.com
+2025-07-23 21:12:36,253 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:12:36,254 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste2.com
+2025-07-23 21:12:36,391 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste2.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11eb879d0>: Failed to resolve 'restauranteteste2.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:12:36,391 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:12:36,391 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:12:36,393 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:12:36,393 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 1
+2025-07-23 21:12:36,393 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 1
+2025-07-23 21:12:36,393 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste1
+2025-07-23 21:12:36,393 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 1
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 1
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 2
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 2
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste2
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 2
+2025-07-23 21:12:36,394 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 2
+2025-07-23 21:12:36,394 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:12:36,394 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:12:36,426 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:12:36,426 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 1
+2025-07-23 21:12:36,426 - llm.generate_email - INFO - Generated email for Restaurante Teste 1
+2025-07-23 21:12:36,426 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 2
+2025-07-23 21:12:36,427 - llm.generate_email - INFO - Generated email for Restaurante Teste 2
+2025-07-23 21:12:36,427 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:12:36,469 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:12:36,469 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:12:36,469 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 1
+2025-07-23 21:12:36,469 - mailer.send_emails - INFO - Mock email sent to Restaurante Teste 1 at test.restauranteteste1@example.com
+2025-07-23 21:12:38,473 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 2
+2025-07-23 21:12:38,473 - mailer.send_emails - INFO - Mock email sent to Restaurante Teste 2 at test.restauranteteste2@example.com
+2025-07-23 21:12:38,473 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:12:38,473 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:12:38,878 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:12:38,890 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211238.xlsx
+2025-07-23 21:12:38,890 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:12:38,890 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:12:38,890 - mailer.send_emails - INFO - Mock campaign summary sent to consultant
+2025-07-23 21:12:38,890 - __main__ - INFO - ✅ Pipeline completed successfully!
+2025-07-23 21:12:42,523 - __main__ - INFO - Starting Vibe Scout pipeline for hotel in Rio de Janeiro
+2025-07-23 21:12:43,504 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:12:44,449 - __main__ - WARNING - No API keys found. Falling back to simple pipeline.
+2025-07-23 21:12:44,449 - __main__ - INFO - Starting simple Vibe Scout pipeline for hotel in Rio de Janeiro
+2025-07-23 21:12:44,449 - __main__ - INFO - Step 1: Collecting leads...
+2025-07-23 21:12:44,510 - scraper.collect - INFO - Starting lead collection for hotel in Rio de Janeiro
+2025-07-23 21:12:44,510 - scraper.collect - INFO - Test mode: Collected 2 mock leads
+2025-07-23 21:12:44,510 - __main__ - INFO - Step 2: Analyzing websites...
+2025-07-23 21:12:44,511 - analysis.site_seo - INFO - Starting site analysis for 2 leads
+2025-07-23 21:12:44,511 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste1.com
+2025-07-23 21:12:44,512 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste1.com
+2025-07-23 21:12:44,520 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:12:44,520 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste1.com
+2025-07-23 21:12:44,523 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste1.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x130011d30>: Failed to resolve 'restauranteteste1.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:12:44,523 - analysis.site_seo - INFO - Analyzing website: https://restauranteteste2.com
+2025-07-23 21:12:44,523 - analysis.site_seo - INFO - Running Lighthouse analysis for: https://restauranteteste2.com
+2025-07-23 21:12:44,529 - analysis.site_seo - WARNING - Lighthouse CLI not found. Using mock data.
+2025-07-23 21:12:44,529 - analysis.site_seo - INFO - Analyzing on-page SEO for: https://restauranteteste2.com
+2025-07-23 21:12:44,532 - analysis.site_seo - ERROR - Error analyzing SEO: HTTPSConnectionPool(host='restauranteteste2.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x127f879d0>: Failed to resolve 'restauranteteste2.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-07-23 21:12:44,532 - analysis.site_seo - INFO - Completed site analysis for 2 leads
+2025-07-23 21:12:44,532 - __main__ - INFO - Step 3: Analyzing social media...
+2025-07-23 21:12:44,533 - analysis.social - INFO - Starting social media analysis for 2 leads
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 1
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 1
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste1
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 1
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 1
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing social media for: Restaurante Teste 2
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing social presence for: Restaurante Teste 2
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing Instagram profile: @restauranteteste2
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing Facebook page: Restaurante Teste 2
+2025-07-23 21:12:44,533 - analysis.social - INFO - Analyzing LinkedIn company: Restaurante Teste 2
+2025-07-23 21:12:44,533 - analysis.social - INFO - Completed social media analysis for 2 leads
+2025-07-23 21:12:44,533 - __main__ - INFO - Step 4: Generating personalized emails...
+2025-07-23 21:12:44,555 - llm.generate_email - WARNING - GROQ_API_KEY not found. Using mock email generation.
+2025-07-23 21:12:44,555 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 1
+2025-07-23 21:12:44,555 - llm.generate_email - INFO - Generated email for Restaurante Teste 1
+2025-07-23 21:12:44,555 - llm.generate_email - INFO - Generating personalized email for: Restaurante Teste 2
+2025-07-23 21:12:44,555 - llm.generate_email - INFO - Generated email for Restaurante Teste 2
+2025-07-23 21:12:44,555 - __main__ - INFO - Step 5: Sending emails...
+2025-07-23 21:12:44,573 - mailer.send_emails - WARNING - SENDGRID_API_KEY not found. Using mock email sending.
+2025-07-23 21:12:44,573 - mailer.send_emails - INFO - Starting bulk email send for 2 emails
+2025-07-23 21:12:44,573 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 1
+2025-07-23 21:12:44,574 - mailer.send_emails - INFO - Mock email sent to Restaurante Teste 1 at test.restauranteteste1@example.com
+2025-07-23 21:12:46,574 - mailer.send_emails - INFO - Sending email to: Restaurante Teste 2
+2025-07-23 21:12:46,574 - mailer.send_emails - INFO - Mock email sent to Restaurante Teste 2 at test.restauranteteste2@example.com
+2025-07-23 21:12:46,574 - mailer.send_emails - INFO - Bulk email send completed. Sent: 2, Failed: 0
+2025-07-23 21:12:46,574 - __main__ - INFO - Step 6: Generating final report...
+2025-07-23 21:12:46,901 - reports.build_report - INFO - Building comprehensive report
+2025-07-23 21:12:46,913 - reports.build_report - INFO - Report saved as: vibe_scout_report_20250723_211246.xlsx
+2025-07-23 21:12:46,913 - __main__ - INFO - Step 7: Sending summary to consultant...
+2025-07-23 21:12:46,913 - mailer.send_emails - INFO - Sending campaign summary to consultant
+2025-07-23 21:12:46,913 - mailer.send_emails - INFO - Mock campaign summary sent to consultant
+2025-07-23 21:12:46,913 - __main__ - INFO - ✅ Pipeline completed successfully!
+2025-07-23 21:17:12,213 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:17:13,325 - __main__ - INFO - Starting CrewAI pipeline for restaurant in São Paulo
+2025-07-23 21:17:13,325 - __main__ - INFO - Test mode: True
+2025-07-23 21:17:13,328 - __main__ - ERROR - Error in CrewAI pipeline: 2 validation errors for Task
+context.list[function-after[check_output(), function-after[check_tools(), function-after[set_attributes_based_on_config(), function-after[ensure_guardrail_is_callable(), function-after[validate_required_fields(), Task]]]]]]
+  Input should be a valid list [type=list_type, input_value={'industry': 'restaurant'...ulo', 'test_mode': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+context.is-instance[_NotSpecified]
+  Input should be an instance of _NotSpecified [type=is_instance_of, input_value={'industry': 'restaurant'...ulo', 'test_mode': True}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/is_instance_of
+2025-07-23 21:18:08,206 - httpx - INFO - HTTP Request: GET https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json "HTTP/1.1 200 OK"
+2025-07-23 21:18:10,370 - __main__ - INFO - Starting CrewAI pipeline for restaurant in São Paulo
+2025-07-23 21:18:10,371 - __main__ - INFO - Test mode: True
+2025-07-23 21:18:10,379 - __main__ - INFO - Starting CrewAI pipeline execution...
+2025-07-23 21:18:10,405 - __main__ - ERROR - Error in CrewAI pipeline: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=llama3-8b-8192
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers

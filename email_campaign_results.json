@@ -1,0 +1,30 @@
+{
+  "total_emails": 2,
+  "sent_count": 2,
+  "failed_count": 0,
+  "sent_emails": [
+    {
+      "lead_id": "Restaurante Teste 1",
+      "email": "test.restauranteteste1@example.com",
+      "subject": "Melhorias Digitais para Restaurante Teste 1",
+      "status": "sent_mock",
+      "status_code": 200,
+      "message_id": "mock_1753315587",
+      "sent_at": "2025-07-23 21:06:27",
+      "personalization_score": 75,
+      "note": "Mock email - not actually sent"
+    },
+    {
+      "lead_id": "Restaurante Teste 2",
+      "email": "test.restauranteteste2@example.com",
+      "subject": "Melhorias Digitais para Restaurante Teste 2",
+      "status": "sent_mock",
+      "status_code": 200,
+      "message_id": "mock_1753315589",
+      "sent_at": "2025-07-23 21:06:29",
+      "personalization_score": 75,
+      "note": "Mock email - not actually sent"
+    }
+  ],
+  "failed_emails": []
+}

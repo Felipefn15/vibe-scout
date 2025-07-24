@@ -1,0 +1,31 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+pandas>=2.1.4
+openpyxl>=3.1.2
+
+# Web automation
+selenium>=4.15.2
+webdriver-manager>=4.0.1
+fake-useragent>=1.4.0
+
+# Environment and utilities
+python-dotenv>=1.0.0
+
+# Optional: CrewAI (may need manual installation)
+# crewai>=0.150.0
+
+# Optional: Playwright for advanced web scraping
+# playwright>=1.40.0
+
+# Optional: Scrapy for web scraping
+# scrapy>=2.11.0
+
+# Optional: Pyppeteer for headless browser
+# pyppeteer>=1.0.2
+
+# Optional: Groq SDK for LLM integration
+# groq-sdk>=0.4.2
+
+# Optional: SendGrid for email
+# sendgrid>=6.10.0 

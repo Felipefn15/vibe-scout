@@ -1,0 +1,1 @@
+# Vibe Scout - Mailer Module 

@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Restaurante Teste 1",
+    "website": "https://exemplo1.com",
+    "phone": "(11) 99999-9999",
+    "email": "contato@exemplo1.com",
+    "address": "Rua Teste, 123 - São Paulo",
+    "source": "google_search",
+    "description": "Restaurante italiano tradicional",
+    "analysis": {
+      "lighthouse": {
+        "performance_score": 65.5,
+        "seo_score": 58.2,
+        "accessibility_score": 72.1,
+        "best_practices_score": 68.9,
+        "first_contentful_paint": 2.1,
+        "largest_contentful_paint": 4.5,
+        "cumulative_layout_shift": 0.15
+      },
+      "seo": {
+        "total_score": 62.5,
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false
+        },
+        "headings": {
+          "total_headings": 8,
+          "h1_count": 1,
+          "h2_count": 3,
+          "h3_count": 4
+        },
+        "images": {
+          "total_images": 12,
+          "alt_text_ratio": 0.6,
+          "missing_alt": 5
+        },
+        "sitemap_found": false,
+        "robots_txt_found": true
+      }
+    }
+  },
+  {
+    "name": "Restaurante Teste 2",
+    "website": "https://exemplo2.com",
+    "phone": "(11) 88888-8888",
+    "email": "contato@exemplo2.com",
+    "address": "Av. Teste, 456 - São Paulo",
+    "source": "google_maps",
+    "description": "Restaurante japonês moderno",
+    "analysis": {
+      "lighthouse": {
+        "performance_score": 65.5,
+        "seo_score": 58.2,
+        "accessibility_score": 72.1,
+        "best_practices_score": 68.9,
+        "first_contentful_paint": 2.1,
+        "largest_contentful_paint": 4.5,
+        "cumulative_layout_shift": 0.15
+      },
+      "seo": {
+        "total_score": 62.5,
+        "meta_tags": {
+          "title": true,
+          "description": false,
+          "keywords": false
+        },
+        "headings": {
+          "total_headings": 8,
+          "h1_count": 1,
+          "h2_count": 3,
+          "h3_count": 4
+        },
+        "images": {
+          "total_images": 12,
+          "alt_text_ratio": 0.6,
+          "missing_alt": 5
+        },
+        "sitemap_found": false,
+        "robots_txt_found": true
+      }
+    }
+  }
+]
