@@ -1,0 +1,22 @@
+{
+  "restaurante": {
+    "leads": [],
+    "stats": {}
+  },
+  "advogado": {
+    "leads": [],
+    "stats": {}
+  },
+  "dentista": {
+    "leads": [],
+    "stats": {}
+  },
+  "psicologo": {
+    "leads": [],
+    "stats": {}
+  },
+  "imobiliaria": {
+    "leads": [],
+    "stats": {}
+  }
+}

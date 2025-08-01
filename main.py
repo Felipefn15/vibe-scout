@@ -9,6 +9,7 @@ import sys
 import logging
 import json
 import argparse
+import asyncio
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -33,18 +34,57 @@ def run_crewai_pipeline(industry: str, region: str, test_mode: bool = False):
     """
     try:
         from crewai import Agent, Task, Crew, Process
-        from langchain_groq import ChatGroq
+        from llm.llm_client import ModularLLMClient
         
-        # Configure Groq LLM
-        groq_api_key = os.getenv('GROQ_API_KEY')
-        if not groq_api_key:
-            logger.warning("GROQ_API_KEY not found. Using mock mode.")
+        # Configure modular LLM client
+        llm_client = ModularLLMClient()
+        
+        # Check if any LLM providers are available
+        available_providers = llm_client.get_available_providers()
+        if not available_providers or available_providers == ['Mock']:
+            logger.warning("No LLM providers available. Using mock mode.")
             test_mode = True
         
-        llm = ChatGroq(
-            groq_api_key=groq_api_key,
-            model_name="mixtral-8x7b-32768"  # Fast and cost-effective model
-        ) if groq_api_key else None
+        logger.info(f"Available LLM providers: {available_providers}")
+        
+        # Create LangChain compatible LLM wrapper for CrewAI
+        class LangChainLLMWrapper:
+            def __init__(self, llm_client):
+                self.llm_client = llm_client
+            
+            async def ainvoke(self, messages, **kwargs):
+                # Extract the last user message
+                user_message = None
+                for message in reversed(messages):
+                    if message.type == "human":
+                        user_message = message.content
+                        break
+                
+                if not user_message:
+                    user_message = str(messages[-1].content)
+                
+                # Generate response using modular client
+                response = await self.llm_client.generate(
+                    user_message,
+                    max_tokens=kwargs.get('max_tokens', 2048),
+                    temperature=kwargs.get('temperature', 0.7)
+                )
+                
+                # Return in LangChain format
+                from langchain.schema import AIMessage
+                return AIMessage(content=response.content)
+            
+            def invoke(self, messages, **kwargs):
+                import asyncio
+                try:
+                    loop = asyncio.get_event_loop()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                
+                return loop.run_until_complete(self.ainvoke(messages, **kwargs))
+        
+        llm = LangChainLLMWrapper(llm_client) if not test_mode else None
         
         logger.info(f"Starting CrewAI pipeline for {industry} in {region}")
         logger.info(f"Test mode: {test_mode}")
@@ -200,7 +240,7 @@ def run_crewai_pipeline(industry: str, region: str, test_mode: bool = False):
             4. Handle bounces and errors
             5. Save campaign results to 'data/campaign_results.json'
             
-            Expected output: Campaign results and statistics
+            Expected output: Campaign results and delivery statistics
             """,
             agent=email_sender_agent,
             expected_output="JSON file with campaign results"
@@ -208,25 +248,19 @@ def run_crewai_pipeline(industry: str, region: str, test_mode: bool = False):
         
         build_report_task = Task(
             description="""
-            Create comprehensive campaign report and send to consultant.
+            Create comprehensive campaign report with insights and recommendations.
             
             Steps:
-            1. Load all data: leads, analysis, emails, campaign results
-            2. Create Excel report with multiple sheets:
-               - Summary dashboard
-               - Lead details
-               - Performance analysis
-               - Social media insights
-               - Email campaign results
-               - Opportunities and recommendations
-            3. Generate charts and visualizations
-            4. Send report to consultant via email
-            5. Save report as 'reports/vibe_scout_report.xlsx'
+            1. Load all campaign data (leads, analysis, emails, results)
+            2. Calculate key metrics and performance indicators
+            3. Identify patterns and insights
+            4. Generate actionable recommendations
+            5. Create professional report in markdown format
             
-            Expected output: Professional Excel report and email notification
+            Expected output: Comprehensive campaign report
             """,
             agent=report_builder_agent,
-            expected_output="Excel report file and email confirmation"
+            expected_output="Markdown report with campaign insights"
         )
         
         # Create Crew
@@ -247,227 +281,130 @@ def run_crewai_pipeline(industry: str, region: str, test_mode: bool = False):
                 send_emails_task,
                 build_report_task
             ],
-            verbose=True,
-            process=Process.sequential
+            process=Process.sequential,
+            verbose=True
         )
         
-        # Execute pipeline
+        # Run the crew
         logger.info("Starting CrewAI pipeline execution...")
         result = crew.kickoff()
         
+        # Save LLM statistics
+        stats = llm_client.get_stats()
+        with open('llm_stats.json', 'w') as f:
+            json.dump(stats, f, indent=2, ensure_ascii=False)
+        
         logger.info("CrewAI pipeline completed successfully!")
-        logger.info(f"Result: {result}")
+        logger.info(f"LLM Statistics: {json.dumps(stats, indent=2)}")
         
-        return {
-            "status": "success",
-            "result": result,
-            "test_mode": test_mode
-        }
+        return result
         
+    except ImportError as e:
+        logger.error(f"Missing required dependencies: {e}")
+        logger.info("Please install CrewAI: pip install crewai")
+        return None
     except Exception as e:
-        logger.error(f"Error in CrewAI pipeline: {str(e)}")
-        return {
-            "status": "error",
-            "error": str(e),
-            "test_mode": test_mode
-        }
+        logger.error(f"Error in CrewAI pipeline: {e}")
+        return None
 
-def run_pipeline_simple(industry, region, test_mode=False):
+async def run_pipeline_simple(industry, region, test_mode=False):
     """
-    Run the pipeline without CrewAI (simple sequential execution)
+    Run a simplified pipeline without CrewAI for testing
     """
     try:
-        logger.info(f"Starting simple Vibe Scout pipeline for {industry} in {region}")
+        logger.info(f"Running simple pipeline for {industry} in {region}")
         
-        # Initialize lead manager
-        from utils.lead_manager import LeadManager
-        lead_manager = LeadManager()
-        
-        # Step 1: Lead Collection
-        logger.info("Step 1: Collecting leads...")
+        # Import required modules
         from scraper.collect import LeadCollector
-        collector = LeadCollector()
-        
-        # Get target count from market config
-        target_count = 25  # Default
-        try:
-            with open('config/markets.json', 'r', encoding='utf-8') as f:
-                markets_config = json.load(f)
-                for market in markets_config['markets']:
-                    if market['name'].lower() == industry.lower():
-                        target_count = market.get('target_count', 25)
-                        break
-        except Exception as e:
-            logger.warning(f"Could not load market config: {e}")
-        
-        leads = collector.collect_leads(industry, region, test_mode=test_mode, target_count=target_count)
-        
-        # Filter out already contacted leads
-        new_leads = lead_manager.filter_new_leads(leads)
-        
-        if not new_leads:
-            logger.warning("No new leads to contact. All leads have been contacted before.")
-            return {
-                'status': 'warning',
-                'message': 'No new leads to contact',
-                'leads_collected': 0,
-                'emails_sent': 0,
-                'test_mode': test_mode,
-                'lead_stats': lead_manager.get_stats()
-            }
-        
-        # Save leads
-        os.makedirs('data', exist_ok=True)
-        with open('data/leads.json', 'w') as f:
-            json.dump(new_leads, f, indent=2)
-        
-        # Step 2: Site Analysis
-        logger.info("Step 2: Analyzing websites...")
-        from analysis.site_seo import SiteAnalyzer
-        site_analyzer = SiteAnalyzer()
-        site_analyzed_leads = site_analyzer.analyze_sites_from_leads(leads, test_mode=test_mode)
-        
-        # Save site analysis
-        with open('data/site_analysis.json', 'w') as f:
-            json.dump(site_analyzed_leads, f, indent=2)
-        
-        # Step 3: Social Media Analysis
-        logger.info("Step 3: Analyzing social media...")
-        from analysis.social import SocialMediaAnalyzer
-        social_analyzer = SocialMediaAnalyzer()
-        social_analyzed_leads = social_analyzer.analyze_social_media_for_leads(site_analyzed_leads, test_mode=test_mode)
-        
-        # Save social analysis
-        with open('data/social_analysis.json', 'w') as f:
-            json.dump(social_analyzed_leads, f, indent=2)
-        
-        # Step 4: Email Generation
-        logger.info("Step 4: Generating emails...")
+        from utils.lead_scorer import LeadScorer
         from llm.generate_email import EmailGenerator
+        
+        # Initialize components
+        collector = LeadCollector()
+        scorer = LeadScorer()
         email_generator = EmailGenerator()
-        emails = email_generator.generate_bulk_emails(social_analyzed_leads, test_mode=test_mode)
         
-        # Save emails
-        with open('data/emails.json', 'w') as f:
-            json.dump(emails, f, indent=2)
+        # Collect leads
+        logger.info("Collecting leads...")
+        leads = await collector.collect_leads(industry, region)
         
-        # Step 5: Email Sending
-        logger.info("Step 5: Sending emails...")
-        from mailer.send_emails import EmailSender
-        email_sender = EmailSender()
+        if not leads:
+            logger.warning("No leads collected")
+            return []
         
-        # Add industry and region info to emails
-        for email in emails:
-            email['industry'] = industry
-            email['region'] = region
+        # Score leads
+        logger.info("Scoring leads...")
+        scored_leads = []
+        for lead in leads:
+            score_data = scorer.calculate_lead_score(lead)
+            lead['score'] = score_data
+            scored_leads.append(lead)
         
-        send_results = email_sender.send_bulk_emails(emails, test_mode=test_mode)
+        # Filter high-quality leads
+        high_quality_leads = [lead for lead in scored_leads if lead['score']['total_score'] >= 70]
         
-        # Add campaign metadata to results
-        send_results['industry'] = industry
-        send_results['region'] = region
-        send_results['campaign_date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        logger.info(f"Collected {len(leads)} leads, {len(high_quality_leads)} high-quality")
         
-        # Save campaign results
-        with open('data/campaign_results.json', 'w') as f:
-            json.dump(send_results, f, indent=2)
+        # Generate emails for high-quality leads
+        if high_quality_leads:
+            logger.info("Generating personalized emails...")
+            emails = email_generator.generate_bulk_emails(high_quality_leads, test_mode=test_mode)
+            
+            # Save results
+            with open('data/leads.json', 'w') as f:
+                json.dump(leads, f, indent=2, ensure_ascii=False)
+            
+            with open('data/scored_leads.json', 'w') as f:
+                json.dump(scored_leads, f, indent=2, ensure_ascii=False)
+            
+            with open('data/emails.json', 'w') as f:
+                json.dump(emails, f, indent=2, ensure_ascii=False)
+            
+            # Save LLM statistics
+            stats = email_generator.get_llm_stats()
+            with open('llm_stats.json', 'w') as f:
+                json.dump(stats, f, indent=2, ensure_ascii=False)
+            
+            logger.info(f"Generated {len(emails)} emails")
+            logger.info(f"LLM Statistics: {json.dumps(stats, indent=2)}")
+            
+            return emails
         
-        # Step 6: Report Generation
-        logger.info("Step 6: Generating final report...")
-        from reports.build_report import ReportBuilder
-        report_builder = ReportBuilder()
-        report_file = report_builder.build_comprehensive_report(social_analyzed_leads, send_results, test_mode=test_mode)
-        
-        # Step 7: Send summary to consultant
-        logger.info("Step 7: Sending summary to consultant...")
-        email_sender.send_summary_to_consultant(send_results, test_mode=test_mode)
-        
-        # Mark leads as contacted
-        for lead in new_leads:
-            lead_manager.mark_contacted(lead['name'])
-        
-        logger.info("Simple pipeline completed successfully!")
-        return {
-            "status": "success",
-            "leads_collected": len(new_leads),
-            "emails_sent": len(emails),
-            "report_file": report_file,
-            "test_mode": test_mode,
-            "lead_stats": lead_manager.get_stats()
-        }
+        return []
         
     except Exception as e:
-        logger.error(f"Error in simple pipeline: {str(e)}")
-        return {
-            "status": "error",
-            "error": str(e),
-            "test_mode": test_mode
-        }
+        logger.error(f"Error in simple pipeline: {e}")
+        return []
 
 def main():
-    """Main function to run the Vibe Scout pipeline"""
-    
-    # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Vibe Scout - Software Development Lead Generation Pipeline')
-    parser.add_argument('--industry', required=True, help='Industry to search for (e.g., restaurantes, advocacias, farmacias, etc.)')
-    parser.add_argument('--region', default='Rio de Janeiro', help='Region to search in (default: Rio de Janeiro)')
-    parser.add_argument('--test', action='store_true', help='Run in test mode with limited data collection')
-    parser.add_argument('--simple', action='store_true', help='Use simple pipeline instead of CrewAI')
+    """Main function"""
+    parser = argparse.ArgumentParser(description='Vibe Scout Lead Generation Pipeline')
+    parser.add_argument('--industry', type=str, default='restaurante', help='Target industry')
+    parser.add_argument('--region', type=str, default='São Paulo', help='Target region')
+    parser.add_argument('--test', action='store_true', help='Run in test mode')
+    parser.add_argument('--simple', action='store_true', help='Use simple pipeline without CrewAI')
     
     args = parser.parse_args()
     
-    print("=" * 60)
-    print("VIBE SCOUT - SOFTWARE DEVELOPMENT PIPELINE")
-    print("=" * 60)
+    logger.info("Starting Vibe Scout Lead Generation Pipeline")
+    logger.info(f"Industry: {args.industry}")
+    logger.info(f"Region: {args.region}")
+    logger.info(f"Test mode: {args.test}")
+    logger.info(f"Simple mode: {args.simple}")
     
-    print(f"Industry: {args.industry}")
-    print(f"Region: {args.region}")
-    print(f"Test Mode: {args.test}")
-    print(f"Pipeline Type: {'Simple' if args.simple else 'CrewAI'}")
-    print("=" * 60)
-    
-    # Create necessary directories
+    # Create data directory if it doesn't exist
     os.makedirs('data', exist_ok=True)
     os.makedirs('logs', exist_ok=True)
-    os.makedirs('reports', exist_ok=True)
     
-    # Run pipeline
     if args.simple:
-        result = run_pipeline_simple(args.industry, args.region, args.test)
+        result = asyncio.run(run_pipeline_simple(args.industry, args.region, args.test))
     else:
         result = run_crewai_pipeline(args.industry, args.region, args.test)
     
-            # Display results
-        print("\n" + "=" * 60)
-        print("PIPELINE RESULTS")
-        print("=" * 60)
-        
-        if result["status"] == "success":
-            print("✅ Pipeline completed successfully!")
-            if "leads_collected" in result:
-                print(f"📊 Leads collected: {result['leads_collected']}")
-            if "emails_sent" in result:
-                print(f"📧 Emails sent: {result['emails_sent']}")
-            if "report_file" in result:
-                print(f"📄 Report generated: {result['report_file']}")
-            if "result" in result:
-                print(f"🤖 CrewAI result: {result['result']}")
-        elif result["status"] == "warning":
-            print("⚠️ Pipeline completed with warnings!")
-            if "message" in result:
-                print(f"Message: {result['message']}")
-            if "leads_collected" in result:
-                print(f"📊 Leads collected: {result['leads_collected']}")
-            if "emails_sent" in result:
-                print(f"📧 Emails sent: {result['emails_sent']}")
-        else:
-            print("❌ Pipeline failed!")
-            if "error" in result:
-                print(f"Error: {result['error']}")
-            else:
-                print("Unknown error occurred")
-        
-        print("=" * 60)
+    if result:
+        logger.info("Pipeline completed successfully!")
+    else:
+        logger.error("Pipeline failed!")
 
 if __name__ == "__main__":
     main() 

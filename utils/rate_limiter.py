@@ -58,8 +58,37 @@ class RateLimiter:
         self.requests.append(current_time)
         self.last_request_time = current_time
     
-    def wait(self):
-        """Alias for wait_if_needed for backward compatibility"""
+    async def wait(self):
+        """Async version of wait_if_needed for backward compatibility"""
+        import asyncio
+        current_time = time.time()
+        
+        # Clean old requests outside the time window
+        self.requests = [req_time for req_time in self.requests 
+                        if current_time - req_time < self.time_window]
+        
+        # Check if we're at the limit
+        if len(self.requests) >= self.max_requests:
+            # Calculate wait time
+            oldest_request = min(self.requests)
+            wait_time = self.time_window - (current_time - oldest_request)
+            
+            # Add jitter to avoid thundering herd
+            jitter_amount = wait_time * self.jitter * random.random()
+            total_wait = wait_time + jitter_amount
+            
+            logger.info(f"Rate limit reached. Waiting {total_wait:.2f} seconds...")
+            await asyncio.sleep(total_wait)
+            
+            # Update current time after waiting
+            current_time = time.time()
+        
+        # Record this request
+        self.requests.append(current_time)
+        self.last_request_time = current_time
+    
+    def wait_sync(self):
+        """Synchronous version of wait_if_needed for backward compatibility"""
         return self.wait_if_needed()
     
     def exponential_backoff(self, attempt: int, base_delay: float = 1.0, max_delay: float = 60.0) -> float:

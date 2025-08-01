@@ -4,275 +4,233 @@ Daily Campaign Scheduler
 Automatically runs scraping and email campaigns for 5 random sectors daily
 """
 
-import os
-import sys
+import asyncio
 import json
+import os
 import random
-import logging
-import psutil
-from datetime import datetime, timedelta
-from typing import List, Dict
 import time
-
-# Add project root to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from datetime import datetime
+from typing import List, Dict
+import psutil
 
 from scraper.collect import LeadCollector
-from analysis.social import SocialMediaAnalyzer
 from analysis.site_seo import SiteSEOAnalyzer
+from analysis.social import SocialMediaAnalyzer
 from llm.generate_email import EmailGenerator
 from email_sender.sendgrid_sender import SendGridSender
-from utils.rate_limiter import RateLimiter
 from utils.logger import get_logger
+from utils.rate_limiter import RateLimiter
+from utils.email_extractor import EmailExtractor
+from config.sectors import load_sectors
+from config.lead_filters import LeadFilter
+from reports.build_report import ReportBuilder
 
-# Configure logger
-logger = get_logger("daily_campaign")
+logger = get_logger(__name__)
 
-class DailyCampaignScheduler:
+class DailyCampaign:
     def __init__(self):
         self.lead_collector = LeadCollector()
+        self.seo_analyzer = SiteSEOAnalyzer()
         self.social_analyzer = SocialMediaAnalyzer()
-        self.site_analyzer = SiteSEOAnalyzer()
         self.email_generator = EmailGenerator()
         self.email_sender = SendGridSender()
+        self.email_extractor = EmailExtractor()
         self.rate_limiter = RateLimiter()
+        self.lead_filter = LeadFilter()
+        self.report_builder = ReportBuilder()
         
-        # Load sector configuration
-        self.sectors = self._load_sectors()
-        self.regions = self._load_regions()
+        # Load configuration
+        self.sectors = load_sectors()
+        self.max_emails_per_day = int(os.getenv('MAX_EMAILS_PER_DAY', '100'))
+        self.consultant_email = os.getenv('CONSULTANT_EMAIL', '')
         
-        # Campaign limits
-        self.max_leads_per_sector = 20  # 5 sectors * 20 leads = 100 emails max
-        self.max_emails_per_day = 100
-        
-        # Track daily usage
-        self.daily_usage_file = 'data/daily_usage.json'
-        self.daily_usage = self._load_daily_usage()
-    
-    def _load_sectors(self) -> List[Dict]:
-        """Load available sectors from configuration"""
-        try:
-            with open('config/sectors.json', 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            logger.warning("sectors.json not found, using default sectors")
-            return [
-                {"name": "Advocacia", "keywords": ["advocacia", "advogados", "escritório de advocacia"]},
-                {"name": "Restaurantes", "keywords": ["restaurante", "pizzaria", "churrascaria"]},
-                {"name": "Farmácias", "keywords": ["farmácia", "drogaria", "farmacia"]},
-                {"name": "Clínicas", "keywords": ["clínica", "consultório", "clinica"]},
-                {"name": "Academias", "keywords": ["academia", "ginástica", "fitness"]},
-                {"name": "Salões de Beleza", "keywords": ["salão de beleza", "salao de beleza", "estética"]},
-                {"name": "Imobiliárias", "keywords": ["imobiliária", "imobiliaria", "imóveis"]},
-                {"name": "Consultorias", "keywords": ["consultoria", "assessoria", "empresarial"]},
-                {"name": "Padarias", "keywords": ["padaria", "panificadora", "confeitaria"]},
-                {"name": "Lojas", "keywords": ["loja", "comércio", "comercio", "varejo"]}
-            ]
-    
-    def _load_regions(self) -> List[str]:
-        """Load available regions"""
-        return [
-            "Rio de Janeiro",
-            "São Paulo",
-            "Belo Horizonte",
-            "Brasília",
-            "Salvador",
-            "Fortaleza",
-            "Recife",
-            "Porto Alegre",
-            "Curitiba",
-            "Goiânia"
-        ]
-    
-    def _load_daily_usage(self) -> Dict:
-        """Load daily email usage tracking"""
-        try:
-            with open(self.daily_usage_file, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            return {"date": "", "emails_sent": 0, "sectors_processed": []}
-    
-    def _save_daily_usage(self):
-        """Save daily email usage tracking"""
-        os.makedirs(os.path.dirname(self.daily_usage_file), exist_ok=True)
-        with open(self.daily_usage_file, 'w') as f:
-            json.dump(self.daily_usage, f, indent=2)
-    
-    def _reset_daily_usage(self):
-        """Reset daily usage counter if it's a new day"""
-        today = datetime.now().strftime('%Y-%m-%d')
-        if self.daily_usage.get('date') != today:
-            self.daily_usage = {
-                "date": today,
-                "emails_sent": 0,
-                "sectors_processed": []
-            }
-            self._save_daily_usage()
-            logger.info(f"Reset daily usage counter for {today}")
-    
-    def _select_random_sectors(self, count: int = 5) -> List[Dict]:
-        """Select random sectors for today's campaign"""
-        # Get sectors that haven't been processed today
-        processed_sectors = set(self.daily_usage.get('sectors_processed', []))
-        available_sectors = [s for s in self.sectors if s['name'] not in processed_sectors]
-        
-        # If we've processed all sectors, reset and start over
-        if not available_sectors:
-            logger.info("All sectors processed today, resetting for tomorrow")
-            return random.sample(self.sectors, min(count, len(self.sectors)))
+    async def run_campaign(self):
+        """Run the daily campaign with improved email extraction"""
+        start_time = time.time()
+        logger.info("🚀 Starting daily campaign")
         
         # Select random sectors
-        selected = random.sample(available_sectors, min(count, len(available_sectors)))
-        logger.info(f"Selected sectors for today: {[s['name'] for s in selected]}")
-        return selected
-    
-    def _select_random_regions(self, count: int = 3) -> List[str]:
-        """Select random regions for today's campaign"""
-        return random.sample(self.regions, min(count, len(self.regions)))
-    
-    def _can_send_more_emails(self) -> bool:
-        """Check if we can send more emails today"""
-        return self.daily_usage.get('emails_sent', 0) < self.max_emails_per_day
-    
-    def _process_sector(self, sector: Dict, regions: List[str]) -> int:
-        """Process a single sector and return number of emails sent"""
-        sector_name = sector['name']
-        emails_sent = 0
-        leads_found = 0
-        
-        for region in regions:
-            if not self._can_send_more_emails():
-                logger.api_limit_reached("SendGrid", self.max_emails_per_day)
-                break
-            
-            try:
-                # Log sector start
-                logger.sector_start(sector_name, region)
-                
-                # Collect leads for this sector and region
-                leads = self.lead_collector.collect_leads(
-                    industry=sector_name,
-                    region=region,
-                    test_mode=False,
-                    target_count=self.max_leads_per_sector
-                )
-                
-                if not leads:
-                    logger.warning(f"No leads found for {sector_name} in {region}")
-                    continue
-                
-                leads_found += len(leads)
-                
-                # Process each lead
-                for lead in leads:
-                    if not self._can_send_more_emails():
-                        break
-                    
-                    try:
-                        # Log lead collected
-                        logger.lead_collected(lead.get('name', ''), sector_name, region)
-                        
-                        # Analyze lead
-                        analysis_data = self.site_analyzer.analyze_website(lead.get('website', ''))
-                        social_data = self.social_analyzer.analyze_social_presence(lead.get('name', ''))
-                        
-                        # Generate email
-                        email_data = self.email_generator.generate_email(lead, analysis_data, social_data)
-                        
-                        if email_data and email_data.get('body'):
-                            # Send email
-                            success = self.email_sender.send_email(
-                                to_email=lead.get('email', ''),
-                                subject=email_data.get('subject', ''),
-                                body=email_data.get('body', ''),
-                                lead_name=lead.get('name', '')
-                            )
-                            
-                            if success:
-                                emails_sent += 1
-                                self.daily_usage['emails_sent'] += 1
-                                # Log email sent
-                                logger.email_sent(lead.get('name', ''), lead.get('email', ''), sector_name)
-                            else:
-                                logger.email_failed(lead.get('name', ''), lead.get('email', ''), "SendGrid error")
-                        
-                        # Rate limiting
-                        self.rate_limiter.wait()
-                        
-                    except Exception as e:
-                        logger.error(f"Error processing lead {lead.get('name', '')}: {e}")
-                        continue
-                
-            except Exception as e:
-                logger.error(f"Error processing sector {sector_name} in region {region}: {e}")
-                continue
-        
-        # Mark sector as processed
-        self.daily_usage['sectors_processed'].append(sector_name)
-        self._save_daily_usage()
-        
-        # Log sector completion
-        logger.sector_complete(sector_name, region, leads_found, emails_sent)
-        return emails_sent
-    
-    def run_daily_campaign(self):
-        """Run the daily campaign"""
-        start_time = time.time()
-        
-        # Reset daily usage if it's a new day
-        self._reset_daily_usage()
-        
-        # Check if we've already sent emails today
-        if self.daily_usage.get('emails_sent', 0) >= self.max_emails_per_day:
-            logger.warning("Daily email limit already reached, skipping campaign")
-            return
-        
-        # Select random sectors and regions
-        selected_sectors = self._select_random_sectors(5)
-        selected_regions = self._select_random_regions(3)
-        
-        sector_names = [s['name'] for s in selected_sectors]
-        
-        # Log campaign start with structured data
-        logger.campaign_start(sector_names, selected_regions, self.max_emails_per_day)
+        selected_sectors = self._select_random_sectors()
+        logger.info(f"Selected sectors: {selected_sectors}")
         
         total_emails_sent = 0
+        all_campaign_data = []
         
-        # Process each sector
         for sector in selected_sectors:
-            if not self._can_send_more_emails():
-                logger.api_limit_reached("SendGrid", self.max_emails_per_day)
+            if total_emails_sent >= self.max_emails_per_day:
+                logger.info(f"Reached daily email limit ({self.max_emails_per_day})")
                 break
+                
+            sector_data = await self._process_sector(sector, total_emails_sent)
+            all_campaign_data.append(sector_data)
+            total_emails_sent += sector_data['emails_sent']
             
-            emails_sent = self._process_sector(sector, selected_regions)
-            total_emails_sent += emails_sent
+            # Rate limiting between sectors
+            await asyncio.sleep(5)
         
-        duration = time.time() - start_time
-        
-        # Log campaign completion with structured data
-        logger.campaign_complete(total_emails_sent, self.daily_usage['sectors_processed'], duration)
+        # Build and send report
+        await self._send_campaign_report(all_campaign_data, start_time)
         
         # Log system health
+        self._log_system_health()
+        
+        logger.info("✅ Daily campaign completed successfully")
+    
+    def _select_random_sectors(self) -> List[str]:
+        """Select random sectors for the campaign"""
+        available_sectors = list(self.sectors.keys())
+        num_sectors = min(3, len(available_sectors))  # Process 3 sectors max
+        return random.sample(available_sectors, num_sectors)
+    
+    async def _process_sector(self, sector: str, emails_sent_so_far: int) -> Dict:
+        """Process a single sector with improved email handling"""
+        sector_start_time = time.time()
+        logger.info(f"🏢 Processing sector: {sector}")
+        
+        sector_data = {
+            'sector': sector,
+            'leads_found': 0,
+            'emails_sent': 0,
+            'leads_processed': []
+        }
+        
+        # Collect leads for each region
+        for region in self.sectors[sector]:
+            if emails_sent_so_far + sector_data['emails_sent'] >= self.max_emails_per_day:
+                break
+                
+            logger.info(f"🏢 Processing setor: {sector} - {region}")
+            
+            try:
+                # Collect leads
+                leads = await self.lead_collector.collect_leads(sector, region)
+                logger.info(f"Found {len(leads)} leads for {sector} in {region}")
+                
+                # Extract emails for leads
+                leads_with_emails = await self.email_extractor.extract_emails_batch(leads)
+                logger.info(f"Extracted emails for {len(leads_with_emails)} leads")
+                
+                # Process each lead
+                for lead in leads_with_emails:
+                    if emails_sent_so_far + sector_data['emails_sent'] >= self.max_emails_per_day:
+                        break
+                    
+                    lead_result = await self._process_lead(lead, sector, region)
+                    sector_data['leads_processed'].append(lead_result)
+                    
+                    if lead_result['email_sent']:
+                        sector_data['emails_sent'] += 1
+                        emails_sent_so_far += 1
+                
+                sector_data['leads_found'] += len(leads)
+                
+            except Exception as e:
+                logger.error(f"Error processing {sector} - {region}: {e}")
+        
+        sector_duration = time.time() - sector_start_time
+        logger.info(f"✅ Setor concluído: {sector} - {region} | {{'event': 'sector_complete', 'sector': '{sector}', 'region': '{region}', 'leads_found': {sector_data['leads_found']}, 'emails_sent': {sector_data['emails_sent']}, 'timestamp': '{datetime.now().isoformat()}'}}")
+        
+        return sector_data
+    
+    async def _process_lead(self, lead: Dict, sector: str, region: str) -> Dict:
+        """Process a single lead with improved email handling"""
+        lead_name = lead.get('name', 'Unknown')
+        email = lead.get('email', '')
+        
+        logger.info(f"🎯 Lead coletado: {lead_name} | {{'event': 'lead_collected', 'lead_name': '{lead_name}', 'sector': '{sector}', 'region': '{region}', 'timestamp': '{datetime.now().isoformat()}'}}")
+        
+        result = {
+            'name': lead_name,
+            'sector': sector,
+            'region': region,
+            'email': email,
+            'email_sent': False,
+            'error': None
+        }
+        
+        try:
+            # Analyze website if available
+            website = lead.get('website', '')
+            if website:
+                seo_data = await self.seo_analyzer.analyze_website(website)
+                social_data = await self.social_analyzer.analyze_social_presence(lead_name)
+            else:
+                seo_data = {}
+                social_data = {}
+            
+            # Generate personalized email
+            email_content = await self.email_generator.generate_email(
+                lead_name, sector, region, seo_data, social_data
+            )
+            
+            # Send email if we have an email address
+            if email and email.strip():
+                success = await self.email_sender.send_email(
+                    to_email=email,
+                    to_name=lead_name,
+                    subject=email_content['subject'],
+                    html_content=email_content['html_content']
+                )
+                
+                if success:
+                    result['email_sent'] = True
+                    logger.info(f"✅ Email enviado: {lead_name} | {{'event': 'email_sent', 'lead_name': '{lead_name}', 'email': '{email}', 'timestamp': '{datetime.now().isoformat()}'}}")
+                else:
+                    result['error'] = 'SendGrid error'
+                    logger.error(f"❌ Falha no envio: {lead_name} | {{'event': 'email_failed', 'lead_name': '{lead_name}', 'email': '{email}', 'error': 'SendGrid error', 'timestamp': '{datetime.now().isoformat()}'}}")
+            else:
+                result['error'] = 'No email address'
+                logger.warning(f"⚠️ Sem email: {lead_name} | {{'event': 'no_email', 'lead_name': '{lead_name}', 'timestamp': '{datetime.now().isoformat()}'}}")
+            
+        except Exception as e:
+            result['error'] = str(e)
+            logger.error(f"❌ Error processing lead {lead_name}: {e}")
+        
+        return result
+    
+    async def _send_campaign_report(self, campaign_data: List[Dict], start_time: float):
+        """Send campaign report to consultant"""
+        try:
+            duration = time.time() - start_time
+            total_emails = sum(sector['emails_sent'] for sector in campaign_data)
+            total_leads = sum(sector['leads_found'] for sector in campaign_data)
+            
+            # Build report
+            report_html = self.report_builder.build_campaign_report(
+                campaign_data, duration, total_emails, total_leads
+            )
+            
+            # Send report email
+            if self.consultant_email:
+                await self.email_sender.send_email(
+                    to_email=self.consultant_email,
+                    to_name="Consultor",
+                    subject=f"Relatório de Campanha - {datetime.now().strftime('%d/%m/%Y')}",
+                    html_content=report_html
+                )
+                logger.info(f"📊 Relatório enviado para {self.consultant_email}")
+            
+            logger.info(f"✅ Campanha concluída | {{'event': 'campaign_complete', 'total_emails': {total_emails}, 'sectors_processed': {[s['sector'] for s in campaign_data]}, 'duration_seconds': {duration:.1f}, 'timestamp': '{datetime.now().isoformat()}'}}")
+            
+        except Exception as e:
+            logger.error(f"Error sending campaign report: {e}")
+    
+    def _log_system_health(self):
+        """Log system health metrics"""
         try:
             memory = psutil.virtual_memory()
             cpu = psutil.cpu_percent()
-            disk = psutil.disk_usage('/').percent
-            logger.system_health(memory.used / 1024 / 1024, cpu, disk)
+            disk = psutil.disk_usage('/')
+            
+            logger.info(f"💚 Saúde do sistema | {{'event': 'system_health', 'memory_usage_mb': {memory.used / 1024 / 1024:.2f}, 'cpu_usage_percent': {cpu}, 'disk_usage_percent': {disk.percent}, 'timestamp': '{datetime.now().isoformat()}'}}")
+            
         except Exception as e:
-            logger.warning(f"Could not log system health: {e}")
-    
+            logger.error(f"Error logging system health: {e}")
 
-
-def main():
-    """Main function to run the scheduler"""
-    scheduler = DailyCampaignScheduler()
-    
-    # Create logs directory
-    os.makedirs('logs', exist_ok=True)
-    
-    # Run the daily campaign immediately
-    # Railway will handle the scheduling via cron
-    scheduler.run_daily_campaign()
+async def main():
+    """Main function to run the campaign"""
+    campaign = DailyCampaign()
+    await campaign.run_campaign()
 
 if __name__ == "__main__":
-    main() 
+    asyncio.run(main()) 

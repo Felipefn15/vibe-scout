@@ -1,0 +1,39 @@
+{
+  "total_requests": 2,
+  "successful_requests": 2,
+  "failed_requests": 0,
+  "provider_stats": {
+    "Groq": {
+      "requests": 2,
+      "successes": 2,
+      "failures": 0,
+      "total_latency": 1.587568998336792,
+      "success_rate": 1.0,
+      "avg_latency": 0.793784499168396
+    },
+    "OpenRouter": {
+      "requests": 0,
+      "successes": 0,
+      "failures": 0,
+      "total_latency": 0,
+      "success_rate": 0,
+      "avg_latency": 0
+    },
+    "HuggingFace": {
+      "requests": 0,
+      "successes": 0,
+      "failures": 0,
+      "total_latency": 0,
+      "success_rate": 0,
+      "avg_latency": 0
+    },
+    "Mock": {
+      "requests": 0,
+      "successes": 0,
+      "failures": 0,
+      "total_latency": 0,
+      "success_rate": 0,
+      "avg_latency": 0
+    }
+  }
+}

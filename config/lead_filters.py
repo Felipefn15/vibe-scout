@@ -12,7 +12,7 @@ from typing import Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
-class LeadFilters:
+class LeadFilter:
     """Lead filtering system"""
     
     def __init__(self, config_path: str = "config/lead_filters.json"):
@@ -72,7 +72,7 @@ class LeadFilters:
             "optional_fields": ["website", "email", "phone", "address", "description"]
         }
     
-    def is_valid_business(self, lead_name: str) -> bool:
+    def is_valid_business_name(self, lead_name: str) -> bool:
         """Check if a lead name represents a valid business"""
         if not lead_name or not isinstance(lead_name, str):
             return False
@@ -117,7 +117,15 @@ class LeadFilters:
             r'\b(preço|valor|custo|orçamento|salário)\b',  # price/salary content
             r'\b(vagas|emprego|carreira|trabalho|job)\b',  # job content
             r'\b(universidade|faculdade|escola|curso|educação)\b',  # education content
-            r'\b(estudante|aluno|professor|acadêmico)\b'  # academic content
+            r'\b(estudante|aluno|professor|acadêmico)\b',  # academic content
+            r'\b(prefeitura|governo|municipal|estadual|federal)\b',  # government
+            r'\b(secretaria|departamento|conselho|associação)\b',  # government departments
+            r'\b(sindicato|cooperativa|fundação|instituto)\b',  # organizations
+            r'\b(portal|sistema|serviço|atendimento)\b',  # portals/services
+            r'\b(consulta|agendamento|marcar|agendar)\b',  # appointment booking
+            r'\b(especializações|áreas|setores|categorias)\b',  # categories/specializations
+            r'\b(veja|saiba|leia|continue|clique)\b',  # action words
+            r'\b(home|início|sobre|contato|política)\b'  # navigation
         ]
         
         for pattern in invalid_patterns:
@@ -127,6 +135,11 @@ class LeadFilters:
         
         logger.debug(f"Lead passed all filters: {lead_name}")
         return True
+    
+    def validate_lead(self, lead: Dict) -> bool:
+        """Validate a single lead"""
+        lead_name = lead.get('name', '')
+        return self.is_valid_business_name(lead_name)
     
     def filter_leads(self, leads: List[Dict]) -> List[Dict]:
         """Filter a list of leads"""

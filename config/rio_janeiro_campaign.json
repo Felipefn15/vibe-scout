@@ -1,0 +1,69 @@
+{
+  "campaign_name": "Rio de Janeiro - 5 Áreas Principais",
+  "region": "Rio de Janeiro",
+  "test_mode": false,
+  "areas": [
+    {
+      "name": "advocacia",
+      "display_name": "Advocacia",
+      "keywords": ["advocacia", "advogado", "escritório de advocacia", "sociedade de advogados", "consultoria jurídica"],
+      "priority": 1,
+      "target_count": 15
+    },
+    {
+      "name": "contabilidade",
+      "display_name": "Contabilidade",
+      "keywords": ["contabilidade", "contador", "escritório contábil", "consultoria contábil", "gestão fiscal"],
+      "priority": 2,
+      "target_count": 15
+    },
+    {
+      "name": "psicologia",
+      "display_name": "Psicologia",
+      "keywords": ["psicologia", "psicólogo", "clínica de psicologia", "consultório psicológico", "terapia"],
+      "priority": 3,
+      "target_count": 15
+    },
+    {
+      "name": "dentista",
+      "display_name": "Dentista",
+      "keywords": ["dentista", "odontologia", "clínica odontológica", "consultório odontológico", "ortodontia"],
+      "priority": 4,
+      "target_count": 15
+    },
+    {
+      "name": "imobiliaria",
+      "display_name": "Imobiliária",
+      "keywords": ["imobiliária", "imobiliaria", "corretor de imóveis", "imóveis", "aluguel", "venda de imóveis"],
+      "priority": 5,
+      "target_count": 15
+    }
+  ],
+  "region_keywords": [
+    "Rio de Janeiro",
+    "RJ",
+    "Copacabana",
+    "Ipanema",
+    "Leblon",
+    "Botafogo",
+    "Flamengo",
+    "Centro",
+    "Barra da Tijuca",
+    "Zona Sul",
+    "Zona Norte",
+    "Zona Oeste",
+    "Tijuca",
+    "Vila Isabel",
+    "Grajaú",
+    "Jacarepaguá",
+    "Recreio dos Bandeirantes"
+  ],
+  "settings": {
+    "delay_between_areas": 30,
+    "delay_between_searches": 5,
+    "max_retries": 3,
+    "timeout": 30,
+    "save_screenshots": true,
+    "log_level": "INFO"
+  }
+} 

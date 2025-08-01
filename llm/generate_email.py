@@ -4,8 +4,7 @@ import time
 from typing import Dict, List, Optional
 import os
 from dotenv import load_dotenv
-from groq import Groq
-from utils.rate_limiter import groq_limiter, rate_limited
+from llm.llm_client import ModularLLMClient, LLMResponse
 
 load_dotenv()
 
@@ -14,45 +13,80 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class EmailGenerator:
-    def __init__(self):
-        self.groq_api_key = os.getenv('GROQ_API_KEY')
-        if not self.groq_api_key:
-            logger.warning("GROQ_API_KEY not found. Using mock email generation.")
-            self.client = None
-        else:
-            self.client = Groq(api_key=self.groq_api_key)
+    def __init__(self, providers: List[str] = None):
+        """
+        Initialize email generator with modular LLM client
         
-        self.model = "llama3-8b-8192"  # Free tier model
+        Args:
+            providers: List of LLM providers to use (in order of preference)
+        """
+        self.llm_client = ModularLLMClient(providers)
+        self.default_model = "llama3-8b-8192"  # Default model for email generation
     
     def generate_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
         """Generate a personalized email based on lead analysis (alias for generate_personalized_email)"""
         return self.generate_personalized_email(lead_data, analysis_data, social_data)
     
-    def generate_personalized_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
-        """Generate a personalized email based on lead analysis"""
+    async def generate_personalized_email_async(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
+        """Generate a personalized email using async LLM client"""
         try:
             logger.info(f"Generating personalized email for: {lead_data['name']}")
-            
-            if not self.client:
-                return self._generate_empty_email(lead_data, analysis_data, social_data)
             
             # Prepare context for the LLM
             context = self._prepare_context(lead_data, analysis_data, social_data)
             
-            # Generate email using Groq
-            email_content = self._call_groq_api(context)
+            # Generate email using modular LLM client
+            llm_response = await self.llm_client.generate(
+                context, 
+                model=self.default_model,
+                max_tokens=500,
+                temperature=0.7
+            )
             
-            return {
-                'lead_name': lead_data['name'],
-                'subject': email_content.get('subject', 'Oportunidade de Melhoria Digital'),
-                'body': email_content.get('body', ''),
-                'personalization_score': email_content.get('personalization_score', 85),
-                'generation_status': 'success'
-            }
+            if llm_response.success:
+                # Try to parse JSON response
+                try:
+                    email_content = json.loads(llm_response.content)
+                except json.JSONDecodeError:
+                    # If JSON parsing fails, use the raw content as body
+                    email_content = {
+                        'subject': 'Oportunidade de Melhoria Digital',
+                        'body': llm_response.content,
+                        'personalization_score': 75
+                    }
+                
+                return {
+                    'lead_name': lead_data['name'],
+                    'subject': email_content.get('subject', 'Oportunidade de Melhoria Digital'),
+                    'body': email_content.get('body', ''),
+                    'personalization_score': email_content.get('personalization_score', 85),
+                    'generation_status': 'success',
+                    'llm_provider': llm_response.provider,
+                    'llm_model': llm_response.model,
+                    'latency': llm_response.latency
+                }
+            else:
+                logger.warning(f"LLM generation failed: {llm_response.error_message}")
+                return self._generate_fallback_email(lead_data, analysis_data, social_data)
             
         except Exception as e:
             logger.error(f"Error generating email for {lead_data['name']}: {e}")
-            return self._generate_empty_email(lead_data, analysis_data, social_data)
+            return self._generate_fallback_email(lead_data, analysis_data, social_data)
+    
+    def generate_personalized_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
+        """Generate a personalized email based on lead analysis (synchronous wrapper)"""
+        import asyncio
+        
+        # Run async method in sync context
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+        
+        return loop.run_until_complete(
+            self.generate_personalized_email_async(lead_data, analysis_data, social_data)
+        )
     
     def _prepare_context(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> str:
         """Prepare context information for the LLM"""
@@ -132,82 +166,14 @@ class EmailGenerator:
         
         return context
     
-    @rate_limited(max_requests=45, time_window=60, retries=3)
-    def _call_groq_api(self, context: str) -> Dict:
-        """Call Groq API to generate email content with rate limiting"""
-        try:
-            prompt = f"""
-            You are Felipe França, a software developer and full stack specialist from TECHNOLOGIE FELIPE FRANCA, writing personalized outreach emails to business owners.
-            
-            {context}
-            
-            Focus on software development services:
-            - Web development and optimization
-            - Mobile app development
-            - System modernization
-            - Performance improvements
-            - New features and functionality development
-            
-            Always end your emails with this signature:
-            
-            Atenciosamente,
-            
-            Felipe França
-            Desenvolvedor Full Stack
-            TECHNOLOGIE FELIPE FRANCA
-            Transformando Negócios Digitais
-            
-            Respond only with valid JSON in this exact format:
-            {{
-                "subject": "Email subject line",
-                "body": "Email body text",
-                "personalization_score": 85
-            }}
-            """
-            
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a professional digital marketing consultant. Always respond in Portuguese and provide valid JSON."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                temperature=0.7,
-                max_tokens=500
-            )
-            
-            # Parse the response
-            content = response.choices[0].message.content.strip()
-            
-            # Try to extract JSON from the response
-            try:
-                # Remove any markdown formatting
-                if content.startswith('```json'):
-                    content = content[7:]
-                if content.endswith('```'):
-                    content = content[:-3]
-                
-                email_data = json.loads(content)
-                return email_data
-                
-            except json.JSONDecodeError:
-                logger.warning("Failed to parse JSON response, using fallback")
-                return self._generate_fallback_email()
-                
-        except Exception as e:
-            logger.error(f"Error calling Groq API: {e}")
-            return self._generate_fallback_email()
-    
-    def _generate_fallback_email(self) -> Dict:
-        """Generate a fallback email when API fails"""
+    def _generate_fallback_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
+        """Generate a fallback email when LLM fails"""
+        business_name = lead_data.get('name', 'Empresa')
+        
         return {
-            "subject": "Oportunidade de Melhoria Digital para seu Negócio",
-            "body": """Olá!
+            'lead_name': business_name,
+            'subject': f'Oportunidade de Melhoria Digital para {business_name}',
+            'body': f"""Olá {business_name}!
 
 Identificamos que seu site tem potencial para melhorias significativas em performance e funcionalidades. 
 
@@ -227,7 +193,11 @@ Felipe França
 Desenvolvedor Full Stack
 TECHNOLOGIE FELIPE FRANCA
 Transformando Negócios Digitais""",
-            "personalization_score": 60
+            'personalization_score': 60,
+            'generation_status': 'fallback',
+            'llm_provider': 'fallback',
+            'llm_model': 'template',
+            'latency': None
         }
     
     def _generate_empty_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
@@ -259,7 +229,10 @@ Desenvolvedor Full Stack
 TECHNOLOGIE FELIPE FRANCA
 Transformando Negócios Digitais""",
             'personalization_score': 60,
-            'generation_status': 'no_api'
+            'generation_status': 'no_api',
+            'llm_provider': 'none',
+            'llm_model': 'none',
+            'latency': None
         }
     
     def _generate_mock_email(self, lead_data: Dict, analysis_data: Dict, social_data: Dict) -> Dict:
@@ -305,11 +278,14 @@ Desenvolvedor Full Stack
 TECHNOLOGIE FELIPE FRANCA
 Transformando Negócios Digitais""",
             'personalization_score': 75,
-            'generation_status': 'mock'
+            'generation_status': 'mock',
+            'llm_provider': 'mock',
+            'llm_model': 'mock-model',
+            'latency': None
         }
     
-    def generate_bulk_emails(self, leads_data: List[Dict], test_mode: bool = False) -> List[Dict]:
-        """Generate personalized emails for all leads with rate limiting"""
+    async def generate_bulk_emails_async(self, leads_data: List[Dict], test_mode: bool = False) -> List[Dict]:
+        """Generate personalized emails for all leads with async processing"""
         emails = []
         batch_size = 10  # Process in batches to avoid overwhelming the API
         
@@ -320,7 +296,7 @@ Transformando Negócios Digitais""",
                 social_data = lead.get('social_analysis', {})
                 
                 # Generate email
-                email = self.generate_personalized_email(lead, analysis_data, social_data)
+                email = await self.generate_personalized_email_async(lead, analysis_data, social_data)
                 
                 # Add lead information
                 email['lead_id'] = lead.get('name', 'Unknown')
@@ -329,11 +305,11 @@ Transformando Negócios Digitais""",
                 
                 emails.append(email)
                 
-                logger.info(f"Generated email for {lead['name']} ({i+1}/{len(leads_data)})")
+                logger.info(f"Generated email for {lead['name']} ({i+1}/{len(leads_data)}) using {email.get('llm_provider', 'unknown')}")
                 
                 # Add delay between batches to respect rate limits
                 if (i + 1) % batch_size == 0 and i < len(leads_data) - 1:
-                    groq_limiter.wait_between_batches(batch_size)
+                    await asyncio.sleep(2)  # 2 second delay between batches
                 
             except Exception as e:
                 logger.error(f"Error generating email for {lead.get('name', 'Unknown')}: {e}")
@@ -346,11 +322,37 @@ Transformando Negócios Digitais""",
                     'body': 'Erro técnico na geração do email personalizado.',
                     'personalization_score': 0,
                     'generation_status': 'error',
-                    'error_message': str(e)
+                    'error_message': str(e),
+                    'llm_provider': 'error',
+                    'llm_model': 'error',
+                    'latency': None
                 }
                 emails.append(error_email)
         
         return emails
+    
+    def generate_bulk_emails(self, leads_data: List[Dict], test_mode: bool = False) -> List[Dict]:
+        """Generate personalized emails for all leads (synchronous wrapper)"""
+        import asyncio
+        
+        # Run async method in sync context
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+        
+        return loop.run_until_complete(
+            self.generate_bulk_emails_async(leads_data, test_mode)
+        )
+    
+    def get_llm_stats(self) -> Dict:
+        """Get LLM usage statistics"""
+        return self.llm_client.get_stats()
+    
+    def get_available_providers(self) -> List[str]:
+        """Get list of available LLM providers"""
+        return self.llm_client.get_available_providers()
 
 def generate_emails_for_leads(leads_data: List[Dict]) -> List[Dict]:
     """Main function to generate emails for all leads"""
@@ -360,6 +362,11 @@ def generate_emails_for_leads(leads_data: List[Dict]) -> List[Dict]:
     # Save generated emails
     with open('generated_emails.json', 'w') as f:
         json.dump(emails, f, indent=2, ensure_ascii=False)
+    
+    # Save LLM statistics
+    stats = generator.get_llm_stats()
+    with open('llm_stats.json', 'w') as f:
+        json.dump(stats, f, indent=2, ensure_ascii=False)
     
     return emails
 
@@ -418,4 +425,11 @@ if __name__ == "__main__":
     print(f"Generated email for {email['lead_name']}:")
     print(f"Subject: {email['subject']}")
     print(f"Personalization Score: {email['personalization_score']}")
-    print(f"Body: {email['body'][:100]}...") 
+    print(f"LLM Provider: {email.get('llm_provider', 'unknown')}")
+    print(f"LLM Model: {email.get('llm_model', 'unknown')}")
+    print(f"Body: {email['body'][:100]}...")
+    
+    # Print LLM statistics
+    print("\nLLM Statistics:")
+    stats = generator.get_llm_stats()
+    print(json.dumps(stats, indent=2)) 

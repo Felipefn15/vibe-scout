@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Restaurante Teste 1",
+    "website": "https://restauranteteste1.com.br",
+    "phone": "(11) 99999-9999",
+    "address": "Rua Teste, 123 - São Paulo",
+    "source": "mock",
+    "keyword": "restaurante",
+    "region": "São Paulo",
+    "sector": "restaurante",
+    "description": "Restaurante tradicional com cardápio brasileiro, precisando modernizar sistema de pedidos",
+    "employees": 25,
+    "size": "pequena",
+    "digital_maturity": "baixa",
+    "pain_points": [
+      "sistema manual de pedidos",
+      "falta de integração",
+      "processos em papel"
+    ],
+    "opportunities": [
+      "automação de pedidos",
+      "sistema de delivery",
+      "gestão de estoque"
+    ],
+    "website_analysis": {
+      "tech_stack": [
+        "wordpress",
+        "php",
+        "mysql"
+      ],
+      "it_needs_score": 75,
+      "digital_maturity": "low",
+      "pain_points": [
+        "sistema manual de pedidos",
+        "falta de integração",
+        "processos em papel"
+      ],
+      "opportunities": [
+        "automação de pedidos",
+        "sistema de delivery",
+        "gestão de estoque"
+      ]
+    },
+    "social_media": {
+      "facebook": {
+        "followers": 500,
+        "posts_per_month": 10
+      },
+      "instagram": {
+        "followers": 800,
+        "posts_per_month": 15
+      },
+      "it_indicators": [
+        "falta de automação",
+        "processos manuais"
+      ],
+      "growth_indicators": [
+        "aumento de pedidos",
+        "expansão planejada"
+      ]
+    },
+    "score": {
+      "total_score": 45,
+      "sector_score": 65,
+      "size_score": 25,
+      "digital_presence_score": 50,
+      "region_score": 25,
+      "digitalization_indicators_score": 50,
+      "contact_quality_score": 25,
+      "website_analysis_score": 0,
+      "social_media_score": 0,
+      "recommendations": [
+        "Implementar automação de processos"
+      ]
+    }
+  },
+  {
+    "name": "Restaurante Teste 2",
+    "website": "https://restauranteteste2.com.br",
+    "phone": "(11) 88888-8888",
+    "address": "Av. Teste, 456 - São Paulo",
+    "source": "mock",
+    "keyword": "restaurante",
+    "region": "São Paulo",
+    "sector": "restaurante",
+    "description": "Restaurante italiano com potencial de expansão, necessitando sistema de gestão",
+    "employees": 45,
+    "size": "média",
+    "digital_maturity": "média",
+    "pain_points": [
+      "gestão manual de fornecedores",
+      "falta de relatórios",
+      "controle de caixa manual"
+    ],
+    "opportunities": [
+      "ERP integrado",
+      "business intelligence",
+      "automação de compras"
+    ],
+    "website_analysis": {
+      "tech_stack": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "it_needs_score": 85,
+      "digital_maturity": "medium",
+      "pain_points": [
+        "gestão manual de fornecedores",
+        "falta de relatórios",
+        "controle de caixa manual"
+      ],
+      "opportunities": [
+        "ERP integrado",
+        "business intelligence",
+        "automação de compras"
+      ]
+    },
+    "social_media": {
+      "facebook": {
+        "followers": 1200,
+        "posts_per_month": 20
+      },
+      "instagram": {
+        "followers": 2000,
+        "posts_per_month": 25
+      },
+      "it_indicators": [
+        "sistema legado",
+        "falta de integração"
+      ],
+      "growth_indicators": [
+        "expansão para delivery",
+        "novos mercados"
+      ]
+    },
+    "score": {
+      "total_score": 45,
+      "sector_score": 65,
+      "size_score": 25,
+      "digital_presence_score": 50,
+      "region_score": 25,
+      "digitalization_indicators_score": 50,
+      "contact_quality_score": 25,
+      "website_analysis_score": 0,
+      "social_media_score": 0,
+      "recommendations": [
+        "Implementar automação de processos"
+      ]
+    }
+  }
+]

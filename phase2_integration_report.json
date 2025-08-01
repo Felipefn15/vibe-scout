@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-07-25T08:48:55.443975",
+  "test_config": {
+    "sectors": [
+      "tecnologia",
+      "software",
+      "consultoria"
+    ],
+    "regions": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Brasil"
+    ],
+    "min_score": 60
+  },
+  "results": {
+    "tecnologia_São Paulo": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "tecnologia_Rio de Janeiro": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "tecnologia_Brasil": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "software_São Paulo": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "software_Rio de Janeiro": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "software_Brasil": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "consultoria_São Paulo": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "consultoria_Rio de Janeiro": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    },
+    "consultoria_Brasil": {
+      "total_leads": 0,
+      "high_quality_leads": 0,
+      "medium_quality_leads": 0,
+      "sample_leads": []
+    }
+  }
+}
