@@ -1,286 +1,173 @@
-# Vibe Scout - Sistema de Prospecção e Análise Digital
+# Vibe Scout - Sistema de Lead Generation
 
-Sistema automatizado de prospecção de leads, análise de performance digital e outreach personalizado usando CrewAI.
+Sistema avançado de coleta e qualificação de leads para empresas de marketing digital e desenvolvimento web.
 
-## 🚀 Visão Geral
+## 🚀 Funcionalidades
 
-O Vibe Scout é um pipeline completo de marketing digital que:
-
-1. **Coleta leads** de Google Search, Maps e Instagram
-2. **Analisa performance** de sites usando Lighthouse e SEO
-3. **Avalia presença** nas redes sociais
-4. **Gera emails personalizados** usando LLM (Groq)
-5. **Executa campanhas** de email via SendGrid
-6. **Gera relatórios** completos em Excel
-
-## 📋 Pré-requisitos
-
-- Python 3.8+
-- Contas gratuitas nas APIs:
-  - [Groq](https://console.groq.com/) (LLM)
-  - [SendGrid](https://sendgrid.com/) (Email)
-  - [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse) (Opcional)
-
-## 🛠️ Instalação
-
-### 1. Clone o repositório
-```bash
-cd /Users/felipe/Desktop
-git clone <repository-url> vibe-scout
-cd vibe-scout
-```
-
-### 2. Crie ambiente virtual
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-```
-
-### 3. Instale dependências
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure variáveis de ambiente
-```bash
-cp env.example .env
-```
-
-Edite o arquivo `.env` com suas chaves de API:
-```env
-# API Keys (Free tier)
-GROQ_API_KEY=your_groq_api_key_here
-SENDGRID_API_KEY=your_sendgrid_api_key_here
-
-# Email Configuration
-FROM_EMAIL=your_email@domain.com
-CONSULTANT_EMAIL=consultant@domain.com
-
-# Scraping Configuration
-USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-REQUEST_DELAY=2
-
-# Analysis Configuration
-LIGHTHOUSE_TIMEOUT=30000
-SEO_SCORE_THRESHOLD=70
-
-# Logging
-LOG_LEVEL=INFO
-LOG_FILE=logs/vibe_scout.log
-```
-
-### 5. Instale Lighthouse CLI (Opcional)
-```bash
-npm install -g lighthouse
-```
-
-## 🎯 Como Usar
-
-### Execução Completa do Pipeline
-
-```bash
-python main.py --industry "restaurant" --region "São Paulo"
-```
-
-### Parâmetros Disponíveis
-
-- `--industry`: Setor/indústria alvo (padrão: "restaurant")
-- `--region`: Região/estado alvo (padrão: "São Paulo")
-- `--test`: Modo de teste com dados mock
-
-### Exemplos de Uso
-
-```bash
-# Análise de restaurantes em São Paulo
-python main.py --industry "restaurant" --region "São Paulo"
-
-# Análise de lojas de roupas no Rio de Janeiro
-python main.py --industry "clothing store" --region "Rio de Janeiro"
-
-# Modo de teste
-python main.py --industry "coffee shop" --region "Belo Horizonte" --test
-```
+- **Web Scraping Inteligente**: Coleta leads de múltiplas fontes
+- **Detecção de Problemas Web**: Identifica empresas com problemas de presença digital
+- **Qualificação Automática**: Filtra e pontua leads automaticamente
+- **Geração de Emails**: Cria emails personalizados com IA
+- **Campanhas Automatizadas**: Execução programada de campanhas
+- **Análise de SEO**: Avalia problemas de SEO das empresas
 
 ## 📁 Estrutura do Projeto
 
 ```
 vibe-scout/
-├── scraper/              # Coleta de leads
-│   └── collect.py
-├── analysis/             # Análise de sites e redes sociais
-│   ├── site_seo.py
-│   └── social.py
-├── llm/                  # Geração de emails com IA
-│   └── generate_email.py
-├── mailer/               # Envio de emails
-│   └── send_emails.py
-├── reports/              # Geração de relatórios
-│   └── build_report.py
-├── main.py               # Pipeline principal com CrewAI
-├── requirements.txt      # Dependências
-├── env.example          # Exemplo de configuração
-└── README.md            # Este arquivo
+├── analysis/           # Análise de sites e SEO
+├── config/            # Configurações do sistema
+├── data/              # Dados coletados
+├── docs/              # Documentação
+├── email_sender/      # Sistema de envio de emails
+├── llm/               # Integração com IA/LLM
+├── logs/              # Logs do sistema
+├── mailer/            # Sistema de email marketing
+├── reports/           # Geração de relatórios
+├── scraper/           # Sistema de web scraping
+├── scripts/           # Scripts de execução
+├── scheduler/         # Agendamento de tarefas
+├── utils/             # Utilitários
+├── venv/              # Ambiente virtual
+├── main.py            # Arquivo principal
+├── requirements.txt   # Dependências
+└── README.md          # Este arquivo
 ```
 
-## 🔄 Fluxo do Pipeline
+## 🛠️ Instalação
 
-1. **Coleta de Leads** (`scraper/collect.py`)
-   - Busca no Google Search
-   - Busca no Google Maps
-   - Busca no Instagram
-   - Remove duplicatas
-   - Salva em `leads_data.json`
+### Pré-requisitos
+- Python 3.8+
+- pip
+- Git
 
-2. **Análise de Sites** (`analysis/site_seo.py`)
-   - Executa Lighthouse CLI
-   - Análise SEO on-page
-   - Métricas de performance
-   - Salva em `analyzed_leads.json`
-
-3. **Análise de Redes Sociais** (`analysis/social.py`)
-   - Análise de Instagram
-   - Análise de Facebook
-   - Análise de LinkedIn
-   - Salva em `leads_with_social.json`
-
-4. **Geração de Emails** (`llm/generate_email.py`)
-   - Usa Groq LLM
-   - Personalização baseada em análise
-   - Emails em português
-   - Salva em `generated_emails.json`
-
-5. **Envio de Emails** (`mailer/send_emails.py`)
-   - Envio via SendGrid
-   - Tracking de delivery
-   - Relatório para consultor
-   - Salva em `email_campaign_results.json`
-
-6. **Geração de Relatório** (`reports/build_report.py`)
-   - Relatório Excel completo
-   - Múltiplas abas
-   - Gráficos e visualizações
-   - Salva como `vibe_scout_report_YYYYMMDD_HHMMSS.xlsx`
-
-## 📊 Arquivos de Saída
-
-- `leads_data.json`: Leads coletados
-- `analyzed_leads.json`: Análise de sites
-- `leads_with_social.json`: Análise de redes sociais
-- `generated_emails.json`: Emails gerados
-- `email_campaign_results.json`: Resultados da campanha
-- `vibe_scout_report_*.xlsx`: Relatório final
-- `vibe_scout.log`: Logs do sistema
-
-## 🎛️ Configuração Avançada
-
-### Personalização de Análise
-
-Edite os arquivos de análise para ajustar:
-- Thresholds de scores
-- Métricas específicas
-- Critérios de qualidade
-
-### Personalização de Emails
-
-Modifique `llm/generate_email.py` para:
-- Ajustar tom de voz
-- Incluir informações específicas
-- Personalizar call-to-action
-
-### Configuração de APIs
-
-Para usar APIs pagas:
-- Atualize as chaves no `.env`
-- Modifique os endpoints nos módulos
-- Ajuste rate limits conforme necessário
-
-## 🧪 Modo de Teste
-
-O sistema inclui dados mock para teste:
-
+### Configuração
 ```bash
-python main.py --test
+# Clonar repositório
+git clone <repository-url>
+cd vibe-scout
+
+# Criar ambiente virtual
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# ou
+venv\Scripts\activate     # Windows
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Configurar variáveis de ambiente
+cp env.example .env
+# Editar .env com suas configurações
 ```
 
-Isso executa o pipeline completo com dados simulados, útil para:
-- Testar a integração
-- Verificar o fluxo
-- Desenvolver novas funcionalidades
+## 🚀 Uso
+
+### Execução Básica
+```bash
+# Executar sistema principal
+python main.py
+
+# Testar web scraper
+python scripts/test_enhanced_scraper.py
+
+# Executar campanha específica
+python scripts/run_rio_janeiro_campaign.py
+```
+
+### Configuração de Campanhas
+```bash
+# Configurar cron para execução automática
+chmod +x scripts/setup_cron.sh
+./scripts/setup_cron.sh
+```
+
+## 🔧 Configuração
+
+### Variáveis de Ambiente
+```bash
+# .env
+SENDGRID_API_KEY=your_sendgrid_key
+GROQ_API_KEY=your_groq_key
+OPENAI_API_KEY=your_openai_key
+```
+
+### Configurações de Filtros
+Edite `config/lead_filters_improved.json` para personalizar:
+- Filtros de qualidade de leads
+- Palavras-chave por setor
+- Indicadores de problemas web
+- Limites de pontuação
+
+## 📊 Funcionalidades Principais
+
+### 1. Web Scraping Aprimorado
+- **Múltiplas Fontes**: Google, Bing, Google Maps, diretórios locais
+- **Anti-Detecção**: Rotação de user agents, rate limiting
+- **Fallback Automático**: Se uma fonte falha, tenta outra
+- **Detecção de Problemas Web**: Identifica empresas sem site ou com problemas
+
+### 2. Qualificação Inteligente
+- **Filtros Avançados**: Validação de nomes, endereços, telefones
+- **Pontuação Automática**: Sistema de scoring baseado em múltiplos critérios
+- **Deduplicação**: Remove leads duplicados automaticamente
+- **Blacklist**: Evita contatar empresas já conhecidas
+
+### 3. Geração de Emails
+- **IA Integrada**: Usa Groq/OpenAI para gerar emails personalizados
+- **Templates Dinâmicos**: Adapta conteúdo baseado no lead
+- **A/B Testing**: Testa diferentes abordagens
+- **Análise de Resposta**: Monitora taxas de abertura e resposta
+
+### 4. Campanhas Automatizadas
+- **Agendamento**: Execução programada via cron
+- **Segmentação**: Campanhas por setor e região
+- **Monitoramento**: Tracking de performance em tempo real
+- **Relatórios**: Geração automática de relatórios
 
 ## 📈 Monitoramento
 
 ### Logs
-- Logs detalhados em `vibe_scout.log`
-- Níveis: INFO, WARNING, ERROR
-- Timestamps e contexto
+- Logs estruturados em `logs/`
+- Diferentes níveis: INFO, WARNING, ERROR
+- Rotação automática de logs
 
 ### Métricas
-- Taxa de sucesso de emails
-- Scores de personalização
-- Performance de análise
-- Tempo de execução
+- Leads coletados por dia
+- Taxa de conversão
+- Performance de campanhas
+- Uso de APIs
 
-## 🔧 Troubleshooting
+## 🔒 Segurança
 
-### Problemas Comuns
-
-1. **Erro de API Key**
-   ```
-   GROQ_API_KEY not found. Using mock email generation.
-   ```
-   Solução: Configure a chave no arquivo `.env`
-
-2. **Lighthouse não encontrado**
-   ```
-   Lighthouse CLI not found. Using mock data.
-   ```
-   Solução: Instale o Lighthouse CLI ou use dados mock
-
-3. **Erro de conexão**
-   ```
-   Error in Google search: Connection timeout
-   ```
-   Solução: Verifique a conexão de internet e aumente `REQUEST_DELAY`
-
-### Logs de Debug
-
-Para debug detalhado:
-```bash
-export LOG_LEVEL=DEBUG
-python main.py
-```
+- **Rate Limiting**: Respeita limites das APIs
+- **Validação de Dados**: Sanitização de inputs
+- **Logs Seguros**: Não expõe informações sensíveis
+- **Ambiente Isolado**: Execução em venv
 
 ## 🤝 Contribuição
 
 1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
+## 📝 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 🆘 Suporte
 
-Para suporte:
+Para suporte e dúvidas:
 - Abra uma issue no GitHub
-- Consulte os logs em `vibe_scout.log`
-- Verifique a documentação das APIs
+- Consulte a documentação em `docs/`
+- Verifique os logs em `logs/`
 
-## 🔮 Roadmap
+## 🔄 Changelog
 
-- [ ] Integração com mais redes sociais
-- [ ] Análise de concorrência
-- [ ] Dashboard web
-- [ ] Integração com CRM
-- [ ] Automação de follow-up
-- [ ] Análise de sentimentos
-- [ ] Machine Learning para scoring
+Veja `CHANGELOG.md` para histórico de mudanças.
 
 ---
 
-**Vibe Scout** - Transformando dados em oportunidades de negócio! 🚀 
+**Vibe Scout** - Transformando leads em oportunidades de negócio! 🎯 

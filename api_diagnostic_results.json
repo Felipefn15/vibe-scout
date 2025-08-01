@@ -1,0 +1,16 @@
+{
+  "format_validation": {
+    "groq": true,
+    "sendgrid": true,
+    "email_config": true,
+    "railway": false
+  },
+  "connection_tests": {
+    "groq": true,
+    "sendgrid": false
+  },
+  "functionality_tests": {
+    "email_generation": true,
+    "email_sending": true
+  }
+}
