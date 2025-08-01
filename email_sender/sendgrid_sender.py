@@ -105,10 +105,16 @@ class SendGridSender:
             return False
         
         try:
-            # Try to get account info to test connection
-            response = self.client.client.user.account.get()
+            # Try to get user profile to test connection (this endpoint works with limited permissions)
+            response = self.client.client.user.profile.get()
             if response.status_code == 200:
                 logger.info("SendGrid connection test successful")
+                try:
+                    import json
+                    profile = json.loads(response.body)
+                    logger.info(f"Connected as: {profile.get('first_name', '')} {profile.get('last_name', '')}")
+                except:
+                    logger.info("Connected successfully (profile parsing failed)")
                 return True
             else:
                 logger.error(f"SendGrid connection test failed: {response.status_code}")

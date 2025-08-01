@@ -1,0 +1,70 @@
+{
+  "service_status": {
+    "overall_status": "\u2705 OPERACIONAL",
+    "services": {
+      "groq": {
+        "available": true,
+        "success_rate": 1.0,
+        "avg_response_time": 0.33994895219802856
+      },
+      "sendgrid": {
+        "available": true,
+        "success_rate": 0.7,
+        "avg_response_time": 0.5332804918289185
+      }
+    }
+  },
+  "prompt_optimization": {
+    "Lead Analysis": {
+      "original_length": 361,
+      "optimized_length": 1075,
+      "improvement_percent": -197.78393351800554,
+      "optimization_level": "high",
+      "success_rate": 1.0
+    },
+    "Search Strategy": {
+      "original_length": 278,
+      "optimized_length": 1075,
+      "improvement_percent": -286.69064748201436,
+      "optimization_level": "high",
+      "success_rate": 1.0
+    }
+  },
+  "intelligent_analysis": {
+    "lead_name": "Restaurante Italiano Bella Vista",
+    "intelligence_score": 35,
+    "business_potential": "unknown",
+    "digital_maturity": "unknown",
+    "conversion_probability": 50,
+    "priority_level": "low",
+    "pain_points": [],
+    "opportunities": []
+  },
+  "intelligent_scraping": {
+    "leads_collected": 0,
+    "scraper_stats": {
+      "total_requests": 0,
+      "successful_scrapes": 0,
+      "llm_analyses": 0,
+      "intelligent_decisions": 0,
+      "time_saved": 2.7642128467559814,
+      "quality_improvement": 0
+    },
+    "llm_stats": {
+      "total_requests": 4,
+      "successful_requests": 3,
+      "failed_requests": 0,
+      "provider_stats": {
+        "Groq": {
+          "requests": 3,
+          "successes": 3,
+          "failures": 0,
+          "total_latency": 2.7610368728637695,
+          "success_rate": 1.0,
+          "avg_latency": 0.9203456242879232
+        }
+      }
+    },
+    "sample_leads": []
+  }
+}

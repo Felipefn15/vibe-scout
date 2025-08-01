@@ -81,15 +81,34 @@ class ServiceMonitor:
         try:
             from llm.llm_client import ModularLLMClient
             import asyncio
+            import concurrent.futures
             
             start_time = time.time()
             
-            async def test_groq():
-                client = ModularLLMClient(['Groq'])
-                response = await client.generate("Teste de conectividade", max_tokens=5)
-                return response.success
+            def test_groq_sync():
+                """Versão síncrona do teste do Groq"""
+                try:
+                    # Criar um novo event loop em uma thread separada
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    
+                    async def test_groq_async():
+                        client = ModularLLMClient(['Groq'])
+                        response = await client.generate("Teste de conectividade", max_tokens=5)
+                        return response.success
+                    
+                    success = loop.run_until_complete(test_groq_async())
+                    loop.close()
+                    return success
+                except Exception as e:
+                    logger.error(f"Erro no teste síncrono do Groq: {e}")
+                    return False
             
-            success = asyncio.run(test_groq())
+            # Executar em thread separada para evitar conflitos
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                future = executor.submit(test_groq_sync)
+                success = future.result(timeout=30)  # Timeout de 30 segundos
+                
             response_time = time.time() - start_time
             
             # Atualizar ou criar status
